@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+body {
+    font-family: "UD Digi Kyokasho N-R";
+}
+
+#text {
+    font-size: 32px;
+}
+
+.text-box {
+    height: 150px;
+    border: solid 3px;
+}
+
+.pointer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.left-triangle {
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 75px solid red;
+}
+
+.right-triangle {
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 75px solid blue;
+}
+
