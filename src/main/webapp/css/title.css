@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body {
+    font-family: "UD Digi Kyokasho N-R";
+    background-image: url("../img/background/top_title.png");
+}
+
+.title-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 25%;
+}
+
+.button-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+}
+
+.start-button {
+    height: 80px;
+    width: 300px;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    border: none;
+    border-radius: 40px; 
+}
+
+.start-button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.start-button:focus {
+	outline: none;
+}
