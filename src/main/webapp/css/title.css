@@ -3,6 +3,7 @@
 body {
     font-family: "UD Digi Kyokasho N-R";
     background-image: url("../img/background/top_title.png");
+    background-size: cover;
 }
 
 .title-wrapper {
@@ -32,6 +33,7 @@ body {
     color: black;
     border: 1px solid black;
     cursor: pointer;
+    transition: all 0.5s;
 }
 
 .start-button:focus {

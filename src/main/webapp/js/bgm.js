@@ -1,7 +1,7 @@
 const bgm = document.getElementById("bgm");
 const muteButton = document.getElementById('mute');
 
-const mute = function() {
+const mute = () => {
     if (bgm.muted) {
         bgm.muted = false;
         muteButton.src = "../../img/icon/volume_off.svg";
@@ -11,6 +11,6 @@ const mute = function() {
     }
 }
 
-muteButton.onclick = function() {
+muteButton.onclick = () => {
     mute();
 }
