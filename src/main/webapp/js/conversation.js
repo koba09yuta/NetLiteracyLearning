@@ -36,7 +36,7 @@ const storyData = [
                 "main-person": "",
                 "secondary-person": "<img src='../../img/people/akira.svg'>",
                 "tertiary-person": "",
-                "back-img": "<img src='../../img/other/dragon_hunter.svg'>",
+                "back-img": "<img src='../../img/other/dragon_hunter.svg' style='height: 90vh;'>",
             },
             {
                 "title": "あなた",
@@ -142,14 +142,14 @@ $(window).on('load', function () { // 全ての読み込みが完了したら実
     showOpening();
 });
     
-//10秒たったら強制的にロード画面を非表示
+/**
+ * 10秒たったら強制的にロード画面を非表示
+ */
 $(() => {
-    setTimeout('stopload()', 10000);
+    setTimeout(() => {
+        $('#loading').delay(1000).fadeOut(1000);
+    }, 10000);
 });
-    
-const stopload = () => {
-    $('#loading').delay(1000).fadeOut(1000);
-};
 
 /**
  * シーンが進む際の処理をする関数
@@ -190,13 +190,19 @@ $('#opening-wrapper').on("click", () => {
  * 進むボタンを押したときにテキストや画像を表示するイベントハンドラ
  */
 $('#forward').on("click", () => {
+    if ((sceneId == 2) && (sentenceId == sentenceLength - 1)) {
+        location.replace("../html/mission.html");
+    }
     if (sentenceId < sentenceLength - 1) {
         makeSound();
         sentenceId++;
         showConversation();
-    } else if (sentenceId == sentenceLength - 1) {
+        return;
+    }
+    if (sentenceId == sentenceLength - 1) {
         makeSound();
         sceneAdvance();
+        return;
     }
 });
 
