@@ -43,13 +43,51 @@
             </div>
         </div>
     </div>
-    <!-- 会話テキストラッパー -->
+    <!-- 人物ラッパー -->
+    <div id="people-wrapper">
+        <div class="container">
+            <div class="row">
+                <div id="most-left" class="col-3"></div>
+                <div id="center-left" class="col-3"></div>
+                <div id="center-right" class="col-3"></div>
+                <div id="most-right" class="col-3"></div>
+            </div>
+        </div>
+    </div>
+    <!-- ニャテラシーラッパー -->
+    <div id="nyateracy-wrapper">
+        <div class="container">
+            <div class="row">
+                <div id="nyateracy" class="col-6 offset-3"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 画像ラッパー -->
+    <div id="img-wrapper">
+        <div class="container">
+            <div id="back-img"></div>
+        </div>
+    </div>
+    <!-- 選択肢ラッパー -->
+    <div id="selection-wrapper">
+        <div class="container">
+            <div class="selections">
+                <div class="selection">
+                    <div id="selection1"></div>
+                </div>
+                <div class="selection">
+                    <div id="selection2"></div>
+                </div>
+                <div class="selection">
+                    <div id="selection3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 会話ラッパー -->
     <div id="conversation-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-1 pointer" style="display: none;">
-                    <div id="backward" class="left-triangle"></div>
-                </div>
                 <div class="col-10 offset-1">
                     <div class="title-box text-light px-3 d-flex align-items-center">
                         <div id="title"></div>
@@ -64,27 +102,16 @@
             </div>
         </div>
     </div>
-    <!-- 会話者ラッパー -->
-    <div id="people-wrapper">
+    <!-- PCラッパー -->
+    <div id="pc-wrapper" hidden>
         <div class="container">
-            <div class="row">
-                <div id="main-person" class="col-3"></div>
-                <div id="tertiary-person" class="col-3"></div>
-                <div class="col-3"></div>
-                <div id="secondary-person" class="col-3"></div>
-            </div>
-        </div>
-    </div>
-    <!-- 画像ラッパー -->
-    <div id="back-wrapper">
-        <div class="container">
-            <div id="back-img"></div>
+            
         </div>
     </div>
     <!-- 暗転ラッパー -->
     <div id="darkness-wrapper"></div>
     <!-- ミュートボタン（非公開） -->
-    <div class="sound-button" hidden>
+    <div class="sound-button" style="display: none;">
         <img id="mute" src="../../img/icon/volume_off.svg">
     </div>
     <!-- 音楽 -->
@@ -95,8 +122,7 @@
         <source src="../../music/sound_effect/sample_sound_effect.mp3" type="audio/mp3">
     </audio>
     <!-- Javascript -->
-    <script src="../../js/conversation.js"></script>
-    <script src="../../js/bgm.js"></script>
+    <script src="../../js/conversation.js" type="module"></script>
 </body>
 
 </html>

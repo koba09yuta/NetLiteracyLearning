@@ -1,4 +1,4 @@
-import storyData from './sampleData.js'
+import storyData from './sampleData2.js'
 
 /** シーン番号 */
 let sceneId = 0;
