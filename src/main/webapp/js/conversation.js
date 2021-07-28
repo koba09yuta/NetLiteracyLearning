@@ -6,7 +6,7 @@ let sceneId = 0;
 /** 効果音 */
 const soundEffect = document.getElementById("sound-effect");
 
-/** ローディングを見せる関数 */
+/** ローディングを見せる関数*/
 const loading = () => {
     $('#loading').delay(1000).fadeOut(1000);
     $('#darkness-wrapper').hide();
