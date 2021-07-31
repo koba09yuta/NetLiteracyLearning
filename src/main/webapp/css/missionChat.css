@@ -168,11 +168,12 @@ body:hover{
     display:none;
     }
     #text8{
-        display:none;
-        }
-         #text9{
-        display:none;
-        }
+    display:none;
+    }
+    #text9{
+    display:none;
+    }
+    
   .url{
     color: blue;
     font-size: 100%;

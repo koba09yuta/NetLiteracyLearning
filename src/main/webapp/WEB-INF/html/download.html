@@ -29,10 +29,12 @@
         <div class="container">
             <!-- ダウンロードゲージ -->
             <div>
-                <progress id="myProgress" value="0" max="100">0%</progress>
+                <progress id="dlProgress" value="0" max="100">0%</progress>
               </div>
-              <input type="button" id="myButton" onclick="func1()" value="スタート">
-            
+              <input type="button" id="dlButton" onclick="func1()" value="ダウンロード">
+              <label id="complete">ダウンロードが完了しました</label>
+              <!-- 遷移先を入れてください -->
+              <a id="exit" href="">ページを閉じる</a>
               <script language="javascript" type="text/javascript">
               // プログレスバーの進捗値
               var val;
@@ -43,7 +45,7 @@
               function func1() {
                 val = 0;
                 // ボタンを無効にする(何回も押せないように)
-                document.getElementById("myButton").disabled = true;
+                document.getElementById("dlButton").disabled = true;
                 // 50msおきにプログレスバーを更新する
                 intervalID = setInterval("updateProgress()", 50);
               }
@@ -52,14 +54,16 @@
               function updateProgress() {
                 // プログレスバーの進捗値を更新し、プログレスバーに反映させる
                 val += 1;
-                document.getElementById("myProgress").value = val;
-                document.getElementById("myProgress").innerText = val + "%";
+                document.getElementById("dlProgress").value = val;
+                document.getElementById("dlProgress").innerText = val + "%";
                 console.log("progress:", val, "%");
             
-                // 最大値まで達したら終了
+                // 最大値まで達したら終了＆文字を表示する
                 if (val == 100) {
                   clearInterval(intervalID);
-                  document.getElementById("myButton").disabled = false;
+                  document.getElementById("dlButton").disabled = false;
+                  $('#complete').fadeIn(500);
+                  $('#exit').fadeIn(500);
                 }
               }
               </script>
