@@ -108,7 +108,7 @@ body:hover{
 
 .line__container {
     padding:0;
-    background:rgba(0,0,0,0.5);
+    background:rgba(255, 255, 255, 0.7);
     overflow: hidden;
     max-width: 750px;
     margin: 20px auto;
@@ -122,9 +122,11 @@ body:hover{
     padding: 10px;
     text-align: center;
     font-size: 150%;
-    color: #ffffff;
+    font-weight: 900;
+    color: #000000;
   }
-  
+
+
   /* 会話部分 */
   .line__container .line__contents {
     padding: px;
@@ -134,9 +136,37 @@ body:hover{
 
   .text{
       color: black;
-      font-size: 200%;
+      font-size: 180%;
       text-align: center;
   }
+
+    #text1{
+    display:none;
+    }
+    #text2{
+    display:none;
+    }
+    #text3{
+    display:none;
+    }
+    #text4{
+    display:none;
+    }
+    #text5{
+    display:none;
+    }
+    #text6{
+    display:none;
+    }
+    #text7{
+    display:none;
+    }
+    #text22{
+        display:none;
+        }
+        #text44{
+        display:none;
+        }
 
   .url{
     color: blue;
@@ -185,7 +215,7 @@ body:hover{
   
   .line__container .line__left .line__left-text .name {
     font-size: 100%;
-    color: #ffffff;
+    color: #000000;
     margin-left: 20px;
   }
   
@@ -257,5 +287,5 @@ body:hover{
     left: -30px;
     bottom: 0px;
     font-size: 80%;
-    color: #ffffff;
+    color: #000000;
   }
