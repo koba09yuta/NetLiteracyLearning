@@ -7,9 +7,11 @@ const loading = () => {
     $('#text4').delay(11000);
     $('#text5').delay(14000);
     $('#text6').delay(16000);
-    $('#text7').delay(18000);
+    $('#text7').delay(24000);
     $('#text22').delay(7000);
     $('#text44').delay(12000);
+    $('#text8').delay(19000);
+    $('#text9').delay(19500);
 }
 
 /** ページを読み込む */
@@ -24,4 +26,6 @@ $(window).on('load', loading());
     $('#text7').fadeIn(500);
     $('#text22').fadeIn(500);
     $('#text44').fadeIn(500);
+    $('#text8').fadeIn(500);
+    $('#text9').fadeIn(500);
       

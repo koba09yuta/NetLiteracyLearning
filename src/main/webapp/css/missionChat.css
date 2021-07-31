@@ -162,12 +162,17 @@ body:hover{
     display:none;
     }
     #text22{
+    display:none;
+    }
+     #text44{
+    display:none;
+    }
+    #text8{
         display:none;
         }
-        #text44{
+         #text9{
         display:none;
         }
-
   .url{
     color: blue;
     font-size: 100%;
