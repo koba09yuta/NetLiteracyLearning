@@ -73,7 +73,7 @@ const storyData = [
         "nyateracy": "",
         "img": objectData.img.dragonHunter
     },
-    //1問目
+    //1問目:
     {
         "mode": "selection",
         "bgm": "",
@@ -102,7 +102,7 @@ const storyData = [
             "nyateracy": objectData.character.nyateracy.pose1
         },
     },
-    //２問目
+    //２問目:
     {
         "mode": "selection",
         "bgm": "",
@@ -131,7 +131,7 @@ const storyData = [
             "nyateracy": objectData.character.nyateracy.pose1
         },
     },
-    //３問目
+    //３問目:
     {
         "mode": "selection",
         "bgm": "",
