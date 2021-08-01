@@ -73,6 +73,7 @@ const storyData = [
         "nyateracy": "",
         "img": objectData.img.dragonHunter
     },
+    //1問目
     {
         "mode": "selection",
         "bgm": "",
@@ -98,6 +99,64 @@ const storyData = [
             "answer": true,
             "title": objectData.character.nyateracy.name,
             "text": "その通り！知らない人を信用して言われるがままにソフトをインストールしてしまったんだ。",
+            "nyateracy": objectData.character.nyateracy.pose1
+        },
+    },
+    //２問目
+    {
+        "mode": "selection",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.nyateracy.name,
+        "text": "IDを決めるときに気を付けることは？",
+        "selection1": {
+            "selection": "",
+            "answer": false,
+            "title": objectData.character.nyateracy.name,
+            "text": "うん、それもあるね。でももっと大事なところがあるよ。",
+            "nyateracy": objectData.character.nyateracy.pose1
+        },
+        "selection2": {
+            "selection": "",
+            "answer": false,
+            "title": objectData.character.nyateracy.name,
+            "text": "うん、それもあるね。でももっと大事なところがあるよ。",
+            "nyateracy": objectData.character.nyateracy.pose1
+        },
+        "selection3": {
+            "selection": "",
+            "answer": true,
+            "title": objectData.character.nyateracy.name,
+            "text": "その通り！",
+            "nyateracy": objectData.character.nyateracy.pose1
+        },
+    },
+    //３問目
+    {
+        "mode": "selection",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.nyateracy.name,
+        "text": "ダウンロードをするときに気を付けることは？？",
+        "selection1": {
+            "selection": "",
+            "answer": false,
+            "title": objectData.character.nyateracy.name,
+            "text": "",
+            "nyateracy": objectData.character.nyateracy.pose1
+        },
+        "selection2": {
+            "selection": "",
+            "answer": false,
+            "title": objectData.character.nyateracy.name,
+            "text": "うん、それもあるね。でももっと大事なところがあるよ。",
+            "nyateracy": objectData.character.nyateracy.pose1
+        },
+        "selection3": {
+            "selection": "",
+            "answer": true,
+            "title": objectData.character.nyateracy.name,
+            "text": "その通り！",
             "nyateracy": objectData.character.nyateracy.pose1
         },
     },
