@@ -73,7 +73,7 @@ const storyData = [
         "nyateracy": "",
         "img": objectData.img.dragonHunter
     },
-    //1問目:
+    //1問目:問題の原因が理解できているか
     {
         "mode": "selection",
         "bgm": "",
@@ -102,58 +102,58 @@ const storyData = [
             "nyateracy": objectData.character.nyateracy.pose1
         },
     },
-    //２問目:
+    //２問目:顔の見えない人とやりとりについて
     {
         "mode": "selection",
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
-        "text": "IDを決めるときに気を付けることは？",
+        "text": "顔の見えない人とのやりとりについて、正しいのはどれ？",
         "selection1": {
-            "selection": "",
+            "selection": "知らない人とつながってしまうゲームをいっさいしない",
             "answer": false,
             "title": objectData.character.nyateracy.name,
-            "text": "うん、それもあるね。でももっと大事なところがあるよ。",
+            "text": "うん、それもあるね。あぶないつかいかたをしないようにしようね",
             "nyateracy": objectData.character.nyateracy.pose1
         },
         "selection2": {
-            "selection": "",
+            "selection": "こじんじょうほうを伝えると自分のことを知ってもらえてよい",
             "answer": false,
             "title": objectData.character.nyateracy.name,
-            "text": "うん、それもあるね。でももっと大事なところがあるよ。",
+            "text": "うん、それもあるね。でもこじんじょうほうは伝えちゃだめだよ",
             "nyateracy": objectData.character.nyateracy.pose1
         },
         "selection3": {
-            "selection": "",
+            "selection": "こじんじょうほうがわかる書きこみをすると、悪い人に利用されてしまうかもしれない",
             "answer": true,
             "title": objectData.character.nyateracy.name,
             "text": "その通り！",
             "nyateracy": objectData.character.nyateracy.pose1
         },
     },
-    //３問目:
+    //３問目:オンライン機器の正しい使い方
     {
         "mode": "selection",
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
-        "text": "ダウンロードをするときに気を付けることは？？",
+        "text": "正しいパソコンの使い方はどれ？",
         "selection1": {
-            "selection": "",
+            "selection": "たのしいことはどんどんする",
             "answer": false,
             "title": objectData.character.nyateracy.name,
             "text": "",
             "nyateracy": objectData.character.nyateracy.pose1
         },
         "selection2": {
-            "selection": "",
+            "selection": "とくに問題がなさそうなので勝手に判断して行動した",
             "answer": false,
             "title": objectData.character.nyateracy.name,
             "text": "うん、それもあるね。でももっと大事なところがあるよ。",
             "nyateracy": objectData.character.nyateracy.pose1
         },
         "selection3": {
-            "selection": "",
+            "selection": "勝手にソフトをダウンロードしたりしない",
             "answer": true,
             "title": objectData.character.nyateracy.name,
             "text": "その通り！",
