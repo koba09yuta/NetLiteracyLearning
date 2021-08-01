@@ -28,12 +28,13 @@
     <div id="pc-wrapper">
         <div class="container">
             <!-- ダウンロードゲージ -->
+            <label id="thanks">【公式】DRAGON HUNTER 強化ソフト</label>
             <div>
                 <progress id="dlProgress" value="0" max="100">0%</progress>
               </div>
-              <input type="button" id="dlButton" onclick="func1()" value="ダウンロード">
+              <input type="button" id="dlButton" onclick="func1()" value="">
               <label id="complete">ダウンロードが完了しました</label>
-              <!-- 遷移先を入れてください -->
+              <!-- 遷移先を入れる -->
               <a id="exit" href="">ページを閉じる</a>
               <script language="javascript" type="text/javascript">
               // プログレスバーの進捗値
@@ -43,11 +44,12 @@
             
               // ボタンを押した時に動く関数
               function func1() {
+                $('#dlProgress').fadeIn();
                 val = 0;
                 // ボタンを無効にする(何回も押せないように)
                 document.getElementById("dlButton").disabled = true;
                 // 50msおきにプログレスバーを更新する
-                intervalID = setInterval("updateProgress()", 50);
+                intervalID = setInterval("updateProgress()", 30);
               }
             
               // プログレスバーを更新する
