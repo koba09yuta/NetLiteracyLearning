@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+/* 全体 */
+body {
+    font-family: "UD Digi Kyokasho N-B";
+    /* background-image: url("../img/background/top_title.png"); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+/* ローディング */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 250;
+}
+
+#animation {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: flush 1s linear 0s infinite;
+}
+
+.loading-text {
+    color: white;
+    font-size: 5vh;
+}
+
+.loading-circle{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-top: 10px solid #fff;
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear 0s infinite;
+}
+
+@keyframes flush{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* ロゴラッパー */
+#logo-wrapper {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.logo {
+    height: 60vh;
+}
+
+/* タイトルラッパー */
+#title-wrapper {
+    width: 100vw;
+    font-size: 10vh;
+    position: absolute;
+    top: 25%;
+}
+
+/* ボタンラッパー */
+#button-wrapper {
+    width: 100vw;
+    position: absolute;
+    top: 60%;
+}
+
+#start-button {
+    height: 12vh;
+    width: 25vw;
+    background-color: black;
+    color: white;
+    font-size: 6vh;
+    border: none;
+    border-radius: 6vh; 
+}
+
+#start-button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#start-button:focus {
+	outline: none;
+}
+
+/* ニャテラシーラッパー */
+#nyateracy-wrapper {
+    position: absolute;
+    top: 60vh;
+    left: 5vw;
+}
+
+#nyateracy-img {
+    height: 30vh;
+}
+
+/* 暗転ラッパー */
+#darkness-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0;
+    z-index: 1000;
+}
