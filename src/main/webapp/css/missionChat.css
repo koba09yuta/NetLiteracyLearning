@@ -1,0 +1,297 @@
+@charset "UTF-8";
+
+/* 全体 */
+body {
+    font-family: "UD Digi Kyokasho N-R";
+    background-size: cover;
+
+    /*
+        スクロールしないように、
+        ・高さをビューポートに対して100%
+        ・はみ出し部分を表示しないように設定
+    */
+    height: 100vh;
+    overflow: hidden;
+}
+
+body:hover{
+    cursor: default;
+}
+
+/* ローディング */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 250;
+}
+
+#animation {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: flush 1s linear 0s infinite;
+}
+
+.loading-text {
+    color: white;
+    font-size: 5vh;
+}
+
+.loading-circle{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-top: 10px solid #fff;
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear 0s infinite;
+}
+
+@keyframes flush{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* PCラッパー */
+#pc-wrapper {
+    width: 80vw;
+    height: 90vh;
+    background-image: url(../img/background/chatHaikei.jpg);
+    border: solid 2vh gray;
+    border-radius: 5vh;
+    position: absolute;
+    top: 5vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    background-size: cover;
+    
+}
+
+.line__container {
+    padding:0;
+    background:rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    max-width: 750px;
+    margin: 20px auto;
+    font-size: 80%;
+    border-radius: 1%;
+  }
+  
+  /* タイトル部分 */
+  .line__container .line__title {
+    background:rgb(221, 75, 75);
+    padding: 10px;
+    text-align: center;
+    font-size: 150%;
+    font-weight: 900;
+    color: #000000;
+  }
+
+
+  /* 会話部分 */
+  .line__container .line__contents {
+    padding: px;
+    overflow: hidden;
+    line-height: 300%;
+  }
+
+  .text{
+      color: black;
+      font-size: 180%;
+      text-align: center;
+  }
+
+    #text1{
+    display:none;
+    }
+    #text2{
+    display:none;
+    }
+    #text3{
+    display:none;
+    }
+    #text4{
+    display:none;
+    }
+    #text5{
+    display:none;
+    }
+    #text6{
+    display:none;
+    }
+    #text7{
+    display:none;
+    }
+    #text22{
+    display:none;
+    }
+     #text44{
+    display:none;
+    }
+    #text8{
+    display:none;
+    }
+    #text9{
+    display:none;
+    }
+    
+  .url{
+    color: blue;
+    font-size: 100%;
+    text-align: center;
+}
+  
+  .line__container .scroll {
+    height: 500px;
+    overflow-y: scroll;
+  }
+  
+  /* 相手の会話 */
+  .line__container .line__left {
+      width: 100%;
+      position: relative;
+      display: block;
+      margin-bottom: 5px;
+      max-width: 80%;
+      clear: both;
+  }
+  
+  /* アイコン画像 */
+  .line__container .line__left figure {
+      width: 100px;
+      position: absolute;
+      top: 15px;
+      left: 0;
+      padding: 0;
+      margin: 0;
+  
+  }
+  
+  /* 正方形を用意 */
+  .line__container .line__left figure img{
+      border-radius: 50%;
+      width: 90px;
+      height:90px;
+      background:rgb(221, 75, 75);
+      margin-left: 10px;
+  }
+  
+  .line__container .line__left .line__left-text {
+    margin-left: 70px;
+  }
+  
+  .line__container .line__left .line__left-text .name {
+    font-size: 100%;
+    color: #000000;
+    margin-left: 20px;
+  }
+  
+  /* コメントエリア */
+  .line__container .line__left .text {
+    margin: 0;
+    position: relative;
+    padding: 10px;
+    left: 50px;
+    border-radius: 20px;
+    background-color: #e96f6f;
+  }
+  
+  /* 吹き出し */
+  .line__container .line__left .text::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -10px;
+    top: 10px;
+    border-right: 20px solid #e96f6f;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  
+  /* 自分の会話 */
+  .line__container .line__right {
+      position: relative;
+      display: block;
+      margin: 5px 0;
+      max-width: 75%;
+      float: right;
+      margin-right: 15px;
+      clear: both;
+  }
+  
+  /* コメントエリア */
+  .line__container .line__right .text {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #5a9ef7;
+    margin: 0;
+    margin-left: 80px;
+  }
+  
+  /* 吹き出し */
+  .line__container .line__right .text::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    right: -10px;
+    top: 10px;
+    border-left: 20px solid #5a9ef7;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  
+  /* 既読エリア */
+  .line__container .line__right .date {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100px;
+    text-align: right;
+    left: -30px;
+    bottom: 0px;
+    font-size: 80%;
+    color: #000000;
+  }

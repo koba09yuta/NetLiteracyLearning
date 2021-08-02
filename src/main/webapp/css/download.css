@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* 全体 */
+body {
+    font-family: "UD Digi Kyokasho N-R";
+    background-size: cover;
+
+    /*
+        スクロールしないように、
+        ・高さをビューポートに対して100%
+        ・はみ出し部分を表示しないように設定
+    */
+    height: 100vh;
+    overflow: hidden;
+}
+
+body:hover{
+    cursor: default;
+}
+
+
+/* PCラッパー */
+#pc-wrapper {
+    width: 80vw;
+    height: 90vh;
+    background: rgb(8, 218, 172);
+    border: solid 2vh gray;
+    border-radius: 5vh;
+    position: absolute;
+    top: 5vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    background-size: cover;
+}
+
+/* 進捗ゲージ */
+#dlProgress{
+    width: 50vw;
+    height: 5vh;
+    position: absolute;
+    top: 60vh;
+    left: 40vw;
+    transform: translateX(-50%);
+    display: none;
+}
+
+/* 上部の文字 */
+#thanks{
+    font-size: 4vh;
+    position: absolute;
+    top: 10vh;
+    left: 40vw;
+    transform: translateX(-50%);
+}
+
+/* ダウンロードボタン */
+#dlButton{
+    background-image: url(../img/icon/images.png);
+    background-position: center;
+    width: 35vh;
+    height: 35vh;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: 20vh;
+    left: 40vw;
+    transform: translateX(-50%);
+}
+
+/* ダウンロード完了の文字 */
+#complete{
+    font-size: 3vh;
+    display: none;
+    position: absolute;
+    top: 70vh;
+    left: 40vw;
+    transform: translateX(-50%);
+}
+
+
+/* ページを閉じるの文字 */
+#exit{
+    
+    display: none;
+    position: absolute;
+    top: 75vh;
+    left: 40vw;
+    transform: translateX(-50%);
+}
+
