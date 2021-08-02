@@ -6,7 +6,7 @@ const story1_2Data = [
         "bgm": objectData.bgm.sample1,
         "bgimg": objectData.bgimg.roomNight,
         "title": objectData.character.akira.name,
-        "text": "こんなん一人じゃ勝てないって！！もっと強い人たちに手伝ってもらお！",
+        "text": "こんなん一人じゃ勝てないって！どうしたら勝てるかなあ？",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",

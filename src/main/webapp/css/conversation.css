@@ -4,12 +4,6 @@
 body {
     font-family: "UD Digi Kyokasho N-R";
     background-size: cover;
-
-    /*
-        スクロールしないように、
-        ・高さをビューポートに対して100%
-        ・はみ出し部分を表示しないように設定
-    */
     height: 100vh;
     overflow: hidden;
 }
@@ -236,6 +230,15 @@ body:hover{
     top: 5vh;
     left: 50vw;
     transform: translateX(-50%);
+    overflow: hidden;
+}
+
+#nyateracy {
+    width: 40%;
+    position: absolute;
+    top: 5vh;
+    left: 50vw;
+    transform: translateX(-80%);  
 }
 
 .pc-soft {
@@ -274,6 +277,18 @@ body:hover{
     100%{
         opacity: 0.5;
     }
+}
+
+/* チュートリアルラッパー */
+#transparent-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 0;
+    z-index: 45;
 }
 
 /* 暗転ラッパー */

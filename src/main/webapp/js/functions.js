@@ -1,18 +1,40 @@
-import objectData from './story1ObjectData.js'
-import storyData from './story1_1Data.js'
+/** ローディングを見せる関数 */
+import objectData from './story1ObjectData.js';
+import story1_1Data from './story1_1Data.js';
+import story1_2Data from './story1_2Data.js';
+
+/** ストーリーデータ */
+let storyData = {};
 
 /** シーン番号 */
 let sceneId = 0;
 
+/** シーンを進める関数 */
+export const sceneAdvance = () => {
+    sceneId++
+}
+
 /** ローディングを見せる関数 */
-const loading = () => {
-    $('#loading').delay(1000).fadeOut(1000);
+export const loading = () => {
+    const fileName = window.location.href.split('/').pop();
+    if (fileName === "conversation1_1.html") {
+        storyData = story1_1Data;
+    } else if (fileName === "conversation1_2.html") {
+        storyData = story1_2Data;
+    }
     $('#darkness-wrapper').hide();
+    $('#loading').delay(1000).fadeOut(1000, function () {
+        if (storyData[sceneId].mode === "opening") {
+            $('#sound-effect source').attr('src', objectData.soundEffect.opening);
+            document.querySelector("#sound-effect").load();
+            $('#sound-effect').get(0).play();
+        }
+    });
     sceneShow();
 }
 
 /** オープニングを見せる関数 */
-const showOpening = () => {
+export const showOpening = () => {
     changeHide("opening");
     changeBack();
     $('#chapter-number').html(storyData[sceneId].chapterNumber);
@@ -20,7 +42,7 @@ const showOpening = () => {
 }
 
 /** 会話を見せる関数 */
-const showConversation = () => {
+export const showConversation = () => {
     changeHide("conversation");
     changeBack();
     $('#title').html(storyData[sceneId].title);
@@ -29,28 +51,28 @@ const showConversation = () => {
     $('#center-left').html(storyData[sceneId].centerLeft);
     $('#center-right').html(storyData[sceneId].centerRight);
     $('#most-right').html(storyData[sceneId].mostRight);
-    $('#nyateracy').html(storyData[sceneId].nyateracy);
     $('#back-img').html(storyData[sceneId].img);
 }
 
 /** 暗転を見せる関数 */
-const showDarkness = () => {
+export const showDarkness = () => {
     // 暗転
-    $('#darkness-wrapper').show().animate({'opacity': 1}, 500, 'swing', () => {
+    $('#darkness-wrapper').show().animate({ 'opacity': 1 }, 500, 'swing', () => {
         // 暗転中に場面を切り替える
         sceneId++;
-        showConversation();
+        sceneShow();
         // 明転
-        $('#darkness-wrapper').animate({'opacity': 0}, 500, 'swing', () => {
+        $('#darkness-wrapper').animate({ 'opacity': 0 }, 500, 'swing', () => {
             $('#darkness-wrapper').hide();
         });
     })
 }
 
 /** 選択肢を見せる関数 */
-const showSelection = () => {
+export const showSelection = () => {
     changeHide("selection");
     changeBack();
+    showDisplay(storyData[sceneId].displayId);
     $('#title').html(storyData[sceneId].title);
     $('#text').html(storyData[sceneId].text);
     $('#selection1').html(storyData[sceneId].selection1.selection);
@@ -59,7 +81,7 @@ const showSelection = () => {
 }
 
 /** 選択肢の答えを見せる関数 */
-const showAnswer = (selectionNumber) => {
+export const showAnswer = (selectionNumber) => {
     let selectionData = {};
     if (selectionNumber === 1) {
         selectionData = storyData[sceneId].selection1;
@@ -71,85 +93,152 @@ const showAnswer = (selectionNumber) => {
 
     $('#selection-wrapper').hide();
     $('.pointer').show();
-    if (selectionData.nyateracy) {
-        $('#nyateracy-wrapper').show();
-        $('#nyateracy').html(selectionData.nyateracy);
-    }
+    $('#nyateracy').show();
     $('#title').html(selectionData.title);
     $('#text').html(selectionData.text);
+    $('#nyateracy').html(selectionData.nyateracy);
     if (!selectionData.answer) {
         $('#sound-effect source').attr('src', objectData.soundEffect.incorrect);
-        document.querySelector("#sound-effect").load();
-        $('#sound-effect').get(0).play();
         sceneId--;
     } else {
         $('#sound-effect source').attr('src', objectData.soundEffect.correct);
-        document.querySelector("#sound-effect").load();
-        $('#sound-effect').get(0).play();
-    } 
+    }
+    document.querySelector("#sound-effect").load();
+    $('#sound-effect').get(0).play();
     return;
 }
 
-/** パソコン操作を表示する関数 */
-const showOperation = () => {
-    changeHide("operation");
-    changeBack();
-    if (storyData[sceneId].operationId === 1) {
+/** ディスプレイを表示する関数 */
+export const showDisplay = (displayId) => {
+    if (displayId === 1) {
+        $('#dragon-hunter').show();
+        $('#ransomware').hide();
+        $('#dragon-hunter').removeClass("flush-icon");
+        $('#ransomware').removeClass("flush-icon");
+    }
+    if (displayId === 2) {
         $('#dragon-hunter').show();
         $('#ransomware').hide();
         $('#dragon-hunter').addClass("flush-icon");
     }
+    if (displayId === 3) {
+        $('#dragon-hunter').show();
+        $('#ransomware').show();
+        $('#dragon-hunter').removeClass("flush-icon");
+        $('#ransomware').removeClass("flush-icon");
+    }
+    if (displayId === 4) {
+        $('#dragon-hunter').show();
+        $('#ransomware').show();
+        $('#dragon-hunter').removeClass("flush-icon");
+        $('#ransomware').addClass("flush-icon");
+
+    }
+}
+
+/** 説明を表示する関数 */
+export const showExplanation = () => {
+    changeHide("explanation");
+    changeBack();
+    $('#title').html(storyData[sceneId].title);
+    $('#text').html(storyData[sceneId].text);
+    $('#nyateracy').html(storyData[sceneId].nyateracy);
+    showDisplay(storyData[sceneId].displayId);
+    
+}
+
+/** パソコン操作を表示する関数 */
+export const showOperation = () => {
+    changeHide("operation");
+    changeBack();
+    showDisplay(storyData[sceneId].displayId);
+}
+
+/** ソフトを起動する関数 */
+export const activate = (softName) => {
+    if (storyData[sceneId].displayId === 2 && softName === "dragonHunter") {
+        sceneAdvance();
+        sceneShow();
+        // window.location.href = './WEB-INF/html/conversation1_1.html';
+        return;
+    }
+    if (storyData[sceneId].displayId === 4 && softName === "ransomware") {
+        sceneAdvance();
+        sceneShow();
+        // window.location.href = './WEB-INF/html/conversation1_1.html';
+        return;
+    }
+    changeHide("explanation");
+    $('#title').html(objectData.character.you.name);
+    $('#text').html("今はこのソフトをじゃないよね");
+    sceneId--;
 }
 
 /** 隠し要素を切り替える関数 */
-const changeHide = (scene) => {
+export const changeHide = (scene) => {
     if (scene === "opening") {
         $('#opening-wrapper').show();
         $('#people-wrapper').hide();
-        $('#nyateracy-wrapper').hide();
         $('#img-wrapper').hide();
         $('#selection-wrapper').hide();
         $('#conversation-wrapper').hide();
         $('#pc-wrapper').hide();
+        $('#nyateracy').hide();
+        $('#transparent-wrapper').hide();
         return;
     }
     if (scene === "conversation") {
         $('#opening-wrapper').hide();
         $('#people-wrapper').show();
-        $('#nyateracy-wrapper').show();
         $('#img-wrapper').show();
         $('#selection-wrapper').hide();
         $('#conversation-wrapper').show();
         $('.pointer').show();
         $('#pc-wrapper').hide();
+        $('#nyateracy').hide();
+        $('#transparent-wrapper').hide();
         return;
     }
     if (scene === "selection") {
         $('#opening-wrapper').hide();
         $('#people-wrapper').hide();
-        $('#nyateracy-wrapper').hide();
         $('#img-wrapper').hide();
         $('#selection-wrapper').show();
         $('#conversation-wrapper').show();
         $('.pointer').hide();
-        $('#pc-wrapper').hide();
+        $('#pc-wrapper').show();
+        $('#nyateracy').hide();
+        $('#transparent-wrapper').show();
+        return;
+    }
+    if (scene === "explanation") {
+        $('#opening-wrapper').hide();
+        $('#people-wrapper').hide();
+        $('#img-wrapper').hide();
+        $('#selection-wrapper').hide();
+        $('#conversation-wrapper').show();
+        $('.pointer').show();
+        $('#pc-wrapper').show();
+        $('#nyateracy').show();
+        $('#transparent-wrapper').show();
         return;
     }
     if (scene === "operation") {
         $('#opening-wrapper').hide();
         $('#people-wrapper').hide();
-        $('#nyateracy-wrapper').hide();
         $('#img-wrapper').hide();
         $('#selection-wrapper').hide();
         $('#conversation-wrapper').hide();
         $('.pointer').hide();
         $('#pc-wrapper').show();
+        $('#nyateracy').hide();
+        $('#transparent-wrapper').hide();
         return;
     }
 }
 
 /** シーンが進む際の処理をする関数 */
-const sceneShow = () => {
+export const sceneShow = () => {
     if (storyData[sceneId].mode === "opening") {
         showOpening();
         return;
@@ -166,6 +255,10 @@ const sceneShow = () => {
         showSelection();
         return;
     }
+    if (storyData[sceneId].mode === "explanation") {
+        showExplanation();
+        return;
+    }
     if (storyData[sceneId].mode === "operation") {
         showOperation();
         return;
@@ -173,7 +266,7 @@ const sceneShow = () => {
 }
 
 /** 背景画像やBGMを切り替える関数 */
-const changeBack = () => {
+export const changeBack = () => {
     if (storyData[sceneId].bgimg) {
         $('body').css('backgroundImage', storyData[sceneId].bgimg);
     }
@@ -189,7 +282,7 @@ const changeBack = () => {
 }
 
 /** 効果音を鳴らす関数 */
-const makeSound = (sound) => {
+export const makeSound = (sound) => {
     if (sound === "forward") {
         $('#sound-effect source').attr('src', objectData.soundEffect.forward);
     }
@@ -199,42 +292,3 @@ const makeSound = (sound) => {
     document.querySelector("#sound-effect").load();
     $('#sound-effect').get(0).play();
 }
-
-/** ページを読み込む */
-$(window).on('load', loading());
-
-/** オープニングを閉じる */
-$('#opening-wrapper').on("click", () => {
-    sceneId++;
-    sceneShow();
-});
-
-/** 会話を進める */
-$('#forward').on("click", () => {
-    makeSound("forward");
-    sceneId++;
-    sceneShow();
-});
-
-/** 選択肢1に答える */
-$('#selection1').on("click", () => {
-    showAnswer(1);
-});
-
-/** 選択肢2に答える */
-$('#selection2').on("click", () => {
-    showAnswer(2);
-});
-
-/** 選択肢3に答える */
-$('#selection3').on("click", () => {
-    showAnswer(3);
-});
-
-/** ドラゴンハンターを開く */
-$('#dragon-hunter').on("click", () => {
-    makeSound("click");
-    sceneId++;
-    sceneShow();
-    // location.replace("../html/mission.html");
-});

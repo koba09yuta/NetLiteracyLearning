@@ -33,14 +33,8 @@
     <!-- オープニングラッパー -->
     <div id="opening-wrapper">
         <div class="chapter-text">
-            <div class="container">
-                <div class="row">
-                    <div id="chapter-number" class="h1 col-10 offset-1"></div>
-                </div>
-                <div class="row">
-                    <div id="chapter-title" class="display-1 col-12 text-center"></div>
-                </div>
-            </div>
+            <div id="chapter-number" class="offset-1"></div>
+            <div id="chapter-title" class="text-center"></div>
         </div>
     </div>
     <!-- 人物ラッパー -->
@@ -54,14 +48,14 @@
             </div>
         </div>
     </div>
-    <!-- ニャテラシーラッパー -->
+    <!-- ニャテラシーラッパー
     <div id="nyateracy-wrapper">
         <div class="container">
             <div class="row">
                 <div id="nyateracy" class="col-6 offset-3"></div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- 画像ラッパー -->
     <div id="img-wrapper">
         <div class="container">
@@ -104,6 +98,8 @@
     </div>
     <!-- PCラッパー -->
     <div id="pc-wrapper">
+        <!-- ニャテラシー -->
+        <div id="nyateracy"></div>
         <div id="dragon-hunter" class="pc-soft">
             <div class="icon-img">
                 <img src="../../img/icon/dragonIcon.svg">
@@ -117,6 +113,8 @@
             <div class="icon-name text-center mt-2">チートツール</div>
         </div>
     </div>
+    <!-- 透明ラッパー -->
+    <div id="transparent-wrapper"></div>
     <!-- 暗転ラッパー -->
     <div id="darkness-wrapper"></div>
     <!-- ミュートボタン（非公開） -->
@@ -128,10 +126,10 @@
         <source type="audio/mp3">
     </audio>
     <audio preload="auto" id="sound-effect">
-        <source src="../../music/sound_effect/sample_sound_effect.mp3" type="audio/mp3">
+        <source type="audio/mp3">
     </audio>
     <!-- Javascript -->
-    <script src="../../js/conversation1_2.js" type="module"></script>
+    <script src="../../js/conversation.js" type="module"></script>
 </body>
 
 </html>

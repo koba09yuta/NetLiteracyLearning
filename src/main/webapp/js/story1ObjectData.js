@@ -20,6 +20,7 @@ const story1ObjectData = {
     },
     "bgimg": {
         "roadNoon": "url(../../img/background/residential_area_noon.jpg)",
+        "roomNoon": "url(../../img/background/パソコン部屋（日中）.jpg)",
         "roomEvening": "url(../../img/background/pc_room_evening.jpg)",
         "roomNight": "url(../../img/background/pc_room_night.jpg)"
     },
@@ -28,6 +29,7 @@ const story1ObjectData = {
         "home": "../../music/bgm/自宅にて.mp3"
     },
     "soundEffect": {
+        "opening": "../../music/sound_effect/アコギ　OP1 short.mp3",
         "forward": "../../music/sound_effect/システム決定音_3.mp3",
         "click": "../../music/sound_effect/マウスのクリック音.mp3",
         "correct": "../../music/sound_effect/正解音.mp3",
