@@ -55,7 +55,7 @@ body:hover{
 }
 /* あなたの書き込み */
 .anata{
-   
+    border: solid 0.1vh rgb(255, 230, 0);
     background-color: rgb(253, 248, 168);
     font-size: 3vh;
     font-weight: 900;
@@ -103,7 +103,7 @@ body:hover{
     font-size: 2vh;
 }
 .sho{
-
+    border: solid 0.1vh rgb(255, 110, 110);
     background-color: rgb(238, 185, 238);
     font-size: 2vh;
     font-weight: 900;
