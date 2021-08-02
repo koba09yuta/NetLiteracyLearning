@@ -23,37 +23,39 @@
 </head>
 
 <body>
-    
+
     <!-- PCラッパー -->
     <div id="pc-wrapper">
-         <div id="board">  <!-- ボード -->
+        <div id="board">
+            <!-- 木のボード -->
             <label id="board-title">フレンドぼしゅう</label> <!-- ボードタイトル -->
             <!-- あなたの書き込み -->
             <table class="anata">
                 <tr>
                     <td><img src="../../img/icon/anata.svg" style='height: 15vh'></td>
                     <td>&nbsp;</td>
-                    <td>LV 25 あなた<br>
-                        ID:ANATA1219<br>
-                        小学生です！<br>
-                      
+                    <td><u id="LV">LV 25 あなた</u><br>
+                        <label id="LV">ID : ANATA1219</label></br>
+                        <label id="com">小学生です！一緒にダマスを倒そう！<br></label>
                     </td>
                 </tr>
             </table>
+            <!-- あなたの書き込みここまで -->
             <!-- ショウの書き込み -->
-            <label class="New">New!! フレンドしんせいがきました</label> 
+            <label class="New">New!! フレンドしんせいがきました</label>
             <table class="sho">
+                <img class="maru" src="../../img/icon/maru.svg" style='height: 7vh'>
                 <tr>
-                    <td><img src="../../img/icon/sho.svg" style='height: 15vh'></td>
+                    <td><img src="../../img/icon/sho.svg" style='height: 10vh'></td>
                     <td>&nbsp;</td>
-                    <td>LV77 ショウ<br>
-                        ボクも小学生！<br>チーム戦やろう！
+                    <td><u id="LV-sho">LV 70 ショウ</u><br>
+                        <label id="com-sho">ボクも小学生！チーム戦やろう！</label>
                     </td>
                 </tr>
             </table>
+            <!-- ショウの書き込みここまで -->
         </div>
     </div>
-
 
 
     <!-- ミュートボタン（非公開） -->
