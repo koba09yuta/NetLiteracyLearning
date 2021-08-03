@@ -53,8 +53,63 @@ $('#ransomware').on("click", () => {
 });
 
 /** パソコン操作で進む */
-$('.forward').on("click", () => {
+$('.pc-forward').on("click", () => {
     makeSound("click");
     sceneAdvance();
     sceneShow();
+});
+
+/** ドラゴンハンターで進む */
+$('.dh-forward').on("click", () => {
+    makeSound("slash");
+    sceneAdvance();
+    sceneShow();
+});
+
+/** クエストに進む */
+$('#dh-quest-btn').on("click", () => {
+    makeSound("slash");
+    activate("quest");
+});
+
+/** フレンドに進む */
+$('#dh-friend-btn').on("click", () => {
+    makeSound("slash");
+    activate("friend");
+});
+
+/** ショップに進む */
+$('#dh-shop-btn').on("click", () => {
+    makeSound("slash");
+    activate();
+});
+
+/** セーブに進む */
+$('#dh-save-btn').on("click", () => {
+    makeSound("slash");
+    activate();
+});
+
+/** ソロクエストに進む */
+$('#dh-quest-solo').on("click", () => {
+    makeSound("slash");
+    activate("solo");
+});
+
+/** チームクエストに進む */
+$('#dh-quest-team').on("click", () => {
+    makeSound("slash");
+    activate("team");
+});
+
+/** チャットに進む */
+$('#dh-friend-chat').on("click", () => {
+    makeSound("slash");
+    activate("chat");
+});
+
+/** フレンド募集に進む */
+$('#dh-friend-recruit').on("click", () => {
+    makeSound("slash");
+    activate("recruit");
 });

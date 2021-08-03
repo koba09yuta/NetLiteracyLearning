@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../css/conversation.css">
     <link rel="stylesheet" href="../../css/missionChat.css">
     <link rel="stylesheet" href="../../css/download.css">
+    <link rel="stylesheet" href="../../css/reqruit.css">
     <!-- Bootstrap Javascript(jQuery) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -117,15 +118,75 @@
                 <img src="../../img/game/dh_title.svg">
             </div>
             <div class="button">
-                <button id="dh-login" class="forward">ログイン</button>
+                <button id="dh-login" class="dh-forward">ログイン</button>
             </div>
         </div>
         <!-- ドラゴンハンターメニュー画面 -->
         <div id="dh-menu" class="dragon-hunter">
-            <button id="dh-quest">クエスト</button>
-            <button id="dh-friend">フレンド</button>
-            <button id="dh-shop">ショップ</button>
-            <button id="dh-save">セーブ</button>
+            <button id="dh-quest-btn">クエスト</button>
+            <button id="dh-friend-btn">フレンド</button>
+            <button id="dh-shop-btn">ショップ</button>
+            <button id="dh-save-btn">セーブ</button>
+        </div>
+        <!-- ドラゴンハンタークエスト画面 -->
+        <div id="dh-quest" class="dragon-hunter">
+            <div class="dh-quest-title">クエスト</div>
+            <img src="../../img/icon/地図＆マーカーアイコン2.svg" class="dh-quest-logo">
+            <div id="dh-quest-solo">
+                <img src="../../img/icon/solo.svg">
+                <button>ひとりで</button>
+            </div>
+            <div id="dh-quest-team">
+                <img src="../../img/icon/team.svg">
+                <button>チームで</button>
+            </div>
+        </div>
+        <!-- ドラゴンハンターフレンド画面 -->
+        <div id="dh-friend" class="dragon-hunter">
+            <div class="dh-friend-title">フレンド</div>
+            <img src="../../img/icon/フリーの握手アイコン.svg" class="dh-quest-logo">
+            <div id="dh-friend-chat">
+                <img src="../../img/icon/chat.svg">
+                <button>チャットルーム</button>
+            </div>
+            <div id="dh-friend-recruit">
+                <img src="../../img/icon/recruit.svg">
+                <button>フレンド募集</button>
+            </div>
+        </div>
+        <!-- ドラゴンハンターフレンド募集画面 -->
+        <div id="board" class="dragon-hunter">
+            <!-- 木のボード -->
+            <label id="board-title">フレンドぼしゅう</label> <!-- ボードタイトル -->
+            <!-- あなたの書き込み -->
+            <div id="anata-container">
+                <table class="anata">
+                    <tr>
+                        <td><img src="../../img/icon/anata.svg" style='height: 15vh'></td>
+                        <td>&nbsp;</td>
+                        <td><u id="LV">LV 25 あなた</u><br>
+                            <label id="LV">ID : ANATA1219</label></br>
+                            <label id="com">小学生です！一緒にダマスを倒そう！<br></label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- あなたの書き込みここまで -->
+            <!-- ショウの書き込み -->
+            <div id="sho-container">
+                <label class="New">New!! フレンドしんせいがきました</label>
+                <table class="sho">
+                    <img class="maru" src="../../img/icon/maru.svg" style='height: 7vh'>
+                    <tr>
+                        <td><img src="../../img/icon/sho.svg" style='height: 10vh'></td>
+                        <td>&nbsp;</td>
+                        <td><u id="LV-sho">LV 70 ショウ</u><br>
+                            <label id="com-sho">ボクも小学生！チーム戦やろう！</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- ショウの書き込みここまで -->
         </div>
         <!-- ドラゴンハンターチャット画面 -->
         <div class="line__container" class="dragon-hunter">
@@ -192,7 +253,7 @@
                             わかったよ、強化ツールを使うんだ。
                             これを入れるとキャラクターが強くなるんだ。
                             下のURLからダウンロードできるぞ。
-                            <u id="url" class="forward">http://irerudakede-tuyokunaruyo.com</u>
+                            <u id="url" class="pc-forward">http://irerudakede-tuyokunaruyo.com</u>
                         </div>
                     </div>
                 </div>
@@ -211,7 +272,7 @@
             </div>
         </div>
         <!-- ダウンロード画面 -->
-        <div class="download_container">
+        <div class="download_container" class="dragon-hunter">
             <!-- ダウンロードゲージ -->
             <label id="thanks">【公式】DRAGON HUNTER 強化ソフト</label>
             <div>
@@ -221,7 +282,7 @@
             <input type="button" id="dlButton" onclick="func1()" value="">
             <label id="complete">ダウンロードが完了しました</label>
             <!-- 遷移先を入れる -->
-            <u id="exit" class="forward">ページを閉じる</u>
+            <u id="exit" class="pc-forward">ページを閉じる</u>
             <script language="javascript" type="text/javascript">
                 // プログレスバーの進捗値
                 let val;
