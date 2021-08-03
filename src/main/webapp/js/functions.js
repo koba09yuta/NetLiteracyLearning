@@ -118,18 +118,13 @@ export const showDisplay = (displayId) => {
     $('#board').hide();
     $('.line__container').hide();
     $('.download_container').hide();
+    $('#ransomware-container').hide();
     // デスクトップ画面
     if (displayId <= 4) {
+        $("#white-wrapper").css({opacity: "0"}); 
         $('#pc-wrapper').css('background-color','rgb(0,181,252)');
         $('#pc-wrapper').css('background-image', 'none');
         $('#desktop').show();
-        $('#dh-opening').hide();
-        $('#dh-menu').hide();
-        $('#dh-quest').hide();
-        $('#dh-friend').hide();
-        $('#board').hide();
-        $('.line__container').hide();
-        $('.download_container').hide();
         if (displayId === 1) {
             $('#dragon-hunter').show();
             $('#ransomware').hide();
@@ -160,58 +155,34 @@ export const showDisplay = (displayId) => {
     }
     // タイトル画面
     if (displayId === 5) {
+        $("#white-wrapper").css({opacity: "0"}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhOpening);
-        $('#desktop').hide();
         $('#dh-opening').show();
-        $('#dh-menu').hide();
-        $('#dh-quest').hide();
-        $('#dh-friend').hide();
-        $('#board').hide();
-        $('.line__container').hide();
-        $('.download_container').hide();
         return;
     }
     // メニュー画面
     if (displayId === 6 || displayId === 7) {
+        $("#white-wrapper").css({opacity: "0"}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhMenu);
-        $('#desktop').hide();
-        $('#dh-opening').hide();
         $('#dh-menu').show();
-        $('#dh-quest').hide();
-        $('#dh-friend').hide();
-        $('#board').hide();
-        $('.line__container').hide();
-        $('.download_container').hide();
         return;
     }
     // クエスト画面
     if (displayId === 8 || displayId === 9) {
+        $("#white-wrapper").css({opacity: "0"}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhQuest);
-        $('#desktop').hide();
-        $('#dh-opening').hide();
-        $('#dh-menu').hide();
         $('#dh-quest').show();
-        $('#dh-friend').hide();
-        $('#board').hide();
-        $('.line__container').hide();
-        $('.download_container').hide();
         return;
     }
     // フレンド画面
     if (displayId === 10 || displayId === 11) {
+        $("#white-wrapper").css({opacity: "0"}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
-        $('#desktop').hide();
-        $('#dh-opening').hide();
-        $('#dh-menu').hide();
-        $('#dh-quest').hide();
         $('#dh-friend').show();
-        $('#board').hide();
-        $('.line__container').hide();
-        $('.download_container').hide();
         return;
     }
     // チャットルーム（フレンド一覧）画面
@@ -220,18 +191,10 @@ export const showDisplay = (displayId) => {
     }
     // フレンド募集画面
     if (displayId === 13 || displayId === 14 || displayId === 15) {
+        $("#white-wrapper").css({opacity: "0"}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
-        // $('#desktop').hide();
-        // $('#dh-opening').hide();
-        // $('#dh-menu').hide();
-        // $('#dh-quest').hide();
-        // $('#dh-friend').hide();
         $('#board').show();
-        // $('.line__container').hide();
-        // $('.download_container').hide();
-        $('#anata-container').hide();
-        $('#sho-container').hide();
         if (displayId === 14) {
             $('#anata-container').show();
         }
@@ -241,16 +204,10 @@ export const showDisplay = (displayId) => {
         }
     }
     if (displayId === 16) {
+        $("#white-wrapper").css({opacity: "0"}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
-        $('#desktop').hide();
-        $('#dh-opening').hide();
-        $('#dh-menu').hide();
-        $('#dh-quest').hide();
-        $('#dh-friend').hide();
-        $('#board').hide();
         $('.line__container').show();
-        $('.download_container').hide();
         $('#transparent-wrapper').show();
         $('#text1').delay(1000).fadeIn(500);
         $('#text2').delay(3000).fadeIn(500);
@@ -264,30 +221,24 @@ export const showDisplay = (displayId) => {
         return;
     }
     if (displayId === 17) {
+        $("#white-wrapper").css({opacity: "0"}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
-        $('#desktop').hide();
-        $('#dh-opening').hide();
-        $('#dh-menu').hide();
-        $('#dh-quest').hide();
-        $('#dh-friend').hide();
-        $('#board').hide();
         $('.line__container').show();
-        $('.download_container').hide();
         return;
     }
     if (displayId === 18) {
+        $("#white-wrapper").css({opacity: "0"}); 
         $('#pc-wrapper').css('background-color', '#4EF7D0');
         $('#pc-wrapper').css('background-image', 'none');
-        $('#desktop').hide();
-        $('#dh-opening').hide();
-        $('#dh-menu').hide();
-        $('#dh-quest').hide();
-        $('#dh-friend').hide();
-        $('#board').hide();
-        $('.line__container').hide();
         $('.download_container').show();
         return;
+    }
+    if (displayId === 19) {
+        $("#white-wrapper").css({opacity: "0"}); 
+        $('#pc-wrapper').css('background-color', 'darkred');
+        $('#pc-wrapper').css('background-image', 'none');
+        $('#ransomware-container').show();
     }
 }
 
