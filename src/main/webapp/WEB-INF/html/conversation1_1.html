@@ -9,6 +9,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="../../css/conversation.css">
+    <link rel="stylesheet" href="../../css/missionChat.css">
+    <link rel="stylesheet" href="../../css/download.css">
     <!-- Bootstrap Javascript(jQuery) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -48,14 +50,6 @@
             </div>
         </div>
     </div>
-    <!-- ニャテラシーラッパー
-    <div id="nyateracy-wrapper">
-        <div class="container">
-            <div class="row">
-                <div id="nyateracy" class="col-6 offset-3"></div>
-            </div>
-        </div>
-    </div> -->
     <!-- 画像ラッパー -->
     <div id="img-wrapper">
         <div class="container">
@@ -98,19 +92,165 @@
     </div>
     <!-- PCラッパー -->
     <div id="pc-wrapper">
+        <!-- 白ラッパー -->
+        <div id="white-wrapper"></div>
         <!-- ニャテラシー -->
         <div id="nyateracy"></div>
-        <div id="dragon-hunter" class="pc-soft">
-            <div class="icon-img">
-                <img src="../../img/icon/dragonIcon.svg">
+        <!-- デスクトップ -->
+        <div id="desktop">
+            <div id="dragon-hunter" class="pc-soft">
+                <div class="icon-img">
+                    <img src="../../img/icon/dragonIcon.svg">
+                </div>
+                <div class="icon-name text-center">ドラゴンハンター</div>
             </div>
-            <div class="icon-name text-center">ドラゴンハンター</div>
+            <div id="ransomware" class="pc-soft">
+                <div class="icon-img">
+                    <img src="../../img/icon/configIcon.svg">
+                </div>
+                <div class="icon-name text-center mt-2">チートツール</div>
+            </div>
         </div>
-        <div id="ransomware" class="pc-soft">
-            <div class="icon-img">
-                <img src="../../img/icon/configIcon.svg">
+        <!-- ドラゴンハンターオープニング -->
+        <div id="dh-opening" class="dragon-hunter">
+            <div class="title">
+                <img src="../../img/game/dh_title.svg">
             </div>
-            <div class="icon-name text-center mt-2">チートツール</div>
+            <div class="button">
+                <button id="dh-login" class="forward">ログイン</button>
+            </div>
+        </div>
+        <!-- ドラゴンハンターメニュー画面 -->
+        <div id="dh-menu" class="dragon-hunter">
+            <button id="dh-quest">クエスト</button>
+            <button id="dh-friend">フレンド</button>
+            <button id="dh-shop">ショップ</button>
+            <button id="dh-save">セーブ</button>
+        </div>
+        <!-- ドラゴンハンターチャット画面 -->
+        <div class="line__container" class="dragon-hunter">
+            <!-- タイトル -->
+            <div class="line__title">
+                ショウのチャットルーム
+            </div>
+            <!-- ▼会話エリア scrollを外すと高さ固定解除 -->
+            <div class="line__contents scroll">
+                <!-- 相手の吹き出し1 -->
+                <div class="line__left chat-box" id="text1">
+                    <figure>
+                        <img src="../../img/icon/sho.svg" />
+                    </figure>
+                    <div class="line__left-text">
+                        <div class="text">
+                            やったな！<br>俺たちの勝ちだ！
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 自分の吹き出し1 -->
+                <div class="line__right chat-box" id="text2">
+                    <div class="line__right-text">
+                        <div class="text">
+                            やったねショウ！<br>どうしてそんなに強いの？
+                        </div>
+                    </div>
+                    <figure>
+                        <img src="../../img/icon/anata.svg" />
+                    </figure>
+                </div>
+
+                <!-- 相手の吹き出し2 -->
+                <div class="line__left chat-box" id="text3">
+                    <figure>
+                        <img src="../../img/icon/sho.svg" />
+                    </figure>
+                    <div class="line__left-text">
+                        <div class="text">
+                            それは教えられないな～
+                        </div>
+                    </div>
+                </div>
+                <!-- 自分の吹き出し2 -->
+                <div class="line__right chat-box" id="text4">
+                    <div class="line__right-text">
+                        <div class="text">
+                            えーー！！フレンドだろ！<br>だれにも言わないから教えてよ！
+                        </div>
+                    </div>
+                    <figure>
+                        <img src="../../img/icon/anata.svg" />
+                    </figure>
+                </div>
+                <!-- 相手の吹き出し3 -->
+                <div class="line__left chat-box" id="text5">
+                    <figure>
+                        <img src="../../img/icon/sho.svg" />
+                    </figure>
+                    <div class="line__left-text">
+                        <div class="text">
+
+                            わかったよ、強化ツールを使うんだ。
+                            これを入れるとキャラクターが強くなるんだ。
+                            下のURLからダウンロードできるぞ。
+                            <u id="url" class="forward">http://irerudakede-tuyokunaruyo.com</u>
+                        </div>
+                    </div>
+                </div>
+                <!-- 相手の吹き出し4 -->
+                <div class="line__left chat-box" id="text6">
+                    <figure>
+                        <img src="../../img/icon/sho.svg" />
+                    </figure>
+                    <div class="line__left-text">
+                        <div class="text">
+                            強い人は実はみんなこれを使っているんだ。
+                        </div>
+                    </div>
+                </div>
+                <!--　▲会話エリア ここまで -->
+            </div>
+        </div>
+        <!-- ダウンロード画面 -->
+        <div class="download_container">
+            <!-- ダウンロードゲージ -->
+            <label id="thanks">【公式】DRAGON HUNTER 強化ソフト</label>
+            <div>
+                <div id="dlProgressText"></div>
+                <progress id="dlProgress" value="0" max="100">0%</progress>
+            </div>
+            <input type="button" id="dlButton" onclick="func1()" value="">
+            <label id="complete">ダウンロードが完了しました</label>
+            <!-- 遷移先を入れる -->
+            <u id="exit" class="forward">ページを閉じる</u>
+            <script language="javascript" type="text/javascript">
+                // プログレスバーの進捗値
+                let val;
+                // 一定間隔で処理を行うintervalのIDを保持
+                let intervalID;
+                // ボタンを押した時に動く関数
+                function func1() {
+                    $('#dlProgress').fadeIn();
+                    val = 0;
+                    // ボタンを無効にする(何回も押せないように)
+                    document.getElementById("dlButton").disabled = true;
+                    // 50msおきにプログレスバーを更新する
+                    intervalID = setInterval("updateProgress()", 30);
+                }
+                // プログレスバーを更新する
+                function updateProgress() {
+                    // プログレスバーの進捗値を更新し、プログレスバーに反映させる
+                    val += 1;
+                    document.getElementById("dlProgress").value = val;
+                    document.getElementById("dlProgress").innerText = val + "%";
+                    // 最大値まで達したら終了＆文字を表示する
+                    if (val == 100) {
+                        clearInterval(intervalID);
+                        $('#complete').fadeIn(500);
+                        $('#exit').fadeIn(500);
+                    }
+                }
+            </script>
+            <!-- ダウンロードゲージここまで -->
         </div>
     </div>
     <!-- 透明ラッパー -->

@@ -18,12 +18,10 @@ body:hover{
     cursor: default;
 }
 
-
 /* PCラッパー */
 #pc-wrapper {
     width: 80vw;
     height: 90vh;
-    background: rgb(8, 218, 172);
     border: solid 2vh gray;
     border-radius: 5vh;
     position: absolute;
@@ -33,8 +31,13 @@ body:hover{
     background-size: cover;
 }
 
+/* ダウンロード */
+.download_container {
+    font-family: sans-serif;
+}
+
 /* 進捗ゲージ */
-#dlProgress{
+#dlProgress {
     width: 50vw;
     height: 5vh;
     position: absolute;
@@ -45,17 +48,19 @@ body:hover{
 }
 
 /* 上部の文字 */
-#thanks{
-    font-size: 4vh;
+#thanks {
+    width: 75vw;
+    font-size: 6vh;
     position: absolute;
-    top: 10vh;
-    left: 40vw;
+    top: 5vh;
+    left: 50vw;
     transform: translateX(-50%);
 }
 
 /* ダウンロードボタン */
-#dlButton{
+#dlButton {
     background-image: url(../img/icon/images.png);
+    background-size: cover;
     background-position: center;
     width: 35vh;
     height: 35vh;
@@ -67,24 +72,31 @@ body:hover{
     transform: translateX(-50%);
 }
 
+#dlButton:hover {
+    cursor: pointer;
+}
+
 /* ダウンロード完了の文字 */
-#complete{
-    font-size: 3vh;
+#complete {
+    font-size: 4vh;
     display: none;
     position: absolute;
-    top: 70vh;
+    top: 69vh;
     left: 40vw;
     transform: translateX(-50%);
 }
-
 
 /* ページを閉じるの文字 */
-#exit{
-    
+#exit {
+    font-size: 4vh;
+    color: blue;
     display: none;
     position: absolute;
-    top: 75vh;
+    top: 77vh;
     left: 40vw;
     transform: translateX(-50%);
 }
 
+#exit:hover {
+    cursor: pointer;
+}

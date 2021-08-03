@@ -14,7 +14,7 @@ export const sceneAdvance = () => {
     sceneId++
 }
 
-/** ローディングを見せる関数 */
+/** ローディングの関数 */
 export const loading = () => {
     const fileName = window.location.href.split('/').pop();
     if (fileName === "conversation1_1.html") {
@@ -110,29 +110,99 @@ export const showAnswer = (selectionNumber) => {
 
 /** ディスプレイを表示する関数 */
 export const showDisplay = (displayId) => {
-    if (displayId === 1) {
-        $('#dragon-hunter').show();
-        $('#ransomware').hide();
-        $('#dragon-hunter').removeClass("flush-icon");
-        $('#ransomware').removeClass("flush-icon");
+    if (displayId <= 4) {
+        $('#pc-wrapper').css('background-color','rgb(0,181,252)');
+        $('#pc-wrapper').css('background-image', 'none');
+        $('#desktop').show();
+        $('#dh-opening').hide();
+        $('#dh-menu').hide();
+        $('.line__container').hide();
+        $('.download_container').hide();
+        if (displayId === 1) {
+            $('#dragon-hunter').show();
+            $('#ransomware').hide();
+            $('#dragon-hunter').removeClass("flush-icon");
+            $('#ransomware').removeClass("flush-icon");
+            return;
+        }
+        if (displayId === 2) {
+            $('#dragon-hunter').show();
+            $('#ransomware').hide();
+            $('#dragon-hunter').addClass("flush-icon");
+            return;
+        }
+        if (displayId === 3) {
+            $('#dragon-hunter').show();
+            $('#ransomware').show();
+            $('#dragon-hunter').removeClass("flush-icon");
+            $('#ransomware').removeClass("flush-icon");
+            return;
+        }
+        if (displayId === 4) {
+            $('#dragon-hunter').show();
+            $('#ransomware').show();
+            $('#dragon-hunter').removeClass("flush-icon");
+            $('#ransomware').addClass("flush-icon");
+            return;
+        }
     }
-    if (displayId === 2) {
-        $('#dragon-hunter').show();
-        $('#ransomware').hide();
-        $('#dragon-hunter').addClass("flush-icon");
+    if (displayId === 5) {
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', objectData.bgimg.dhOpening);
+        $('#desktop').hide();
+        $('#dh-opening').show();
+        $('#dh-menu').hide();
+        $('.line__container').hide();
+        $('.download_container').hide();
+        return;
     }
-    if (displayId === 3) {
-        $('#dragon-hunter').show();
-        $('#ransomware').show();
-        $('#dragon-hunter').removeClass("flush-icon");
-        $('#ransomware').removeClass("flush-icon");
+    if (displayId === 6) {
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', objectData.bgimg.dhMenu);
+        $('#desktop').hide();
+        $('#dh-opening').hide();
+        $('#dh-menu').show();
+        $('.line__container').hide();
+        $('.download_container').hide();
+        return;
     }
-    if (displayId === 4) {
-        $('#dragon-hunter').show();
-        $('#ransomware').show();
-        $('#dragon-hunter').removeClass("flush-icon");
-        $('#ransomware').addClass("flush-icon");
-
+    if (displayId === 10) {
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
+        $('#desktop').hide();
+        $('#dh-opening').hide();
+        $('#dh-menu').hide();
+        $('.line__container').show();
+        $('.download_container').hide();
+        $('#transparent-wrapper').show();
+        $('#text1').delay(1000).fadeIn(500);
+        $('#text2').delay(3000).fadeIn(500);
+        $('#text3').delay(5000).fadeIn(500);
+        $('#text4').delay(7000).fadeIn(500);
+        $('#text5').delay(9000).fadeIn(500);
+        $('#text6').delay(11000).fadeIn(500);
+        $('.scroll').delay(11500).animate({scrollTop: 1000}, 'fast');
+        sceneAdvance();
+        setTimeout(sceneShow, 14000);
+        return;
+    }
+    if (displayId === 11) {
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
+        $('#desktop').hide();
+        $('#dh-opening').hide();
+        $('.line__container').show();
+        $('.download_container').hide();
+        return;
+    }
+    if (displayId === 12) {
+        $('#pc-wrapper').css('background-color', '#4EF7D0');
+        $('#pc-wrapper').css('background-image', 'none');
+        $('#desktop').hide();
+        $('#dh-opening').hide();
+        $('.line__container').hide();
+        $('.download_container').show();
+        return;
     }
 }
 
