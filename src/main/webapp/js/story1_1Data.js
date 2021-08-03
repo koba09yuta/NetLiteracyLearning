@@ -13,27 +13,157 @@ const story1_1Data = [
     },
 
 
+    
+
     {
-        "mode": "explanation",
-        "displayId": 13,
+        "mode": "conversation",
+        "bgm": objectData.bgm.roadNoon,
+        "bgimg": objectData.bgimg.roadNoon,
+        "title": "【通学路】",
+        "text": "（学校帰りに友達のアキラ君とゲームの話中）",
+        "mostLeft": objectData.character.you.pose1,
+        "centerLeft": objectData.character.akira.pose2,
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
         "bgm": "",
         "bgimg": "",
-        "title": "【操作の説明】",
-        "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
-        "nyateracy": ""
+        "title": objectData.character.akira.name,
+        "text": "最近さあ、「ドラゴンハンター」ってゲームやってんだよ！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.akira.pose1,
+        "nyateracy": "",
+        "img": objectData.img.dragonHunter
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "へえー、どんなゲームなの？",
+        "mostLeft": objectData.character.you.pose1,
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": objectData.img.dragonHunter
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "パソコンでやるゲームなんだけど、モンスターを倒していくんだよ！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.akira.pose1,
+        "nyateracy": "",
+        "img": objectData.img.dragonHunter
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "おもしろそう！僕もやってみようかな！",
+        "mostLeft": objectData.character.you.pose1,
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": objectData.img.dragonHunter
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "おっ！やろうぜ！強くなったらフレンドになろうぜ！！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.akira.pose1,
+        "nyateracy": "",
+        "img": objectData.img.dragonHunter
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "わかった！帰ったらやってみるよ！",
+        "mostLeft": objectData.character.you.pose1,
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "conversation",
+        "bgm": objectData.bgm.home,
+        "bgimg": objectData.bgimg.roomEvening,
+        "title": objectData.character.you.name,
+        "text": "ただいまー！！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "アキラに言われたゲーム、さっそくやってみよう！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "ドラゴンハンターだよな・・・、よしっ、インストールできた！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "さっそくやってみよう！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
     },
     {
         "mode": "explanation",
-        "displayId": 14,
-        "bgm": "",
-        "bgimg": "",
-        "title": "【操作の説明】",
-        "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
-        "nyateracy": ""
-    },
-    {
-        "mode": "explanation",
-        "displayId": 15,
+        "displayId": 2,
         "bgm": "",
         "bgimg": "",
         "title": "【操作の説明】",
@@ -47,777 +177,586 @@ const story1_1Data = [
         "displayId": 2
     },
     {
-        "mode": "darkness",
-    },
-    {
-        "mode": "operation",
-        "bgm": objectData.bgm.dhOpening,
-        "bgimg": "",
-        "displayId": 5
-    },
-    {
-        "mode": "darkness",
-    },
-    {
         "mode": "explanation",
-        "displayId": 6,
-        "bgm": objectData.bgm.dhMenu,
+        "displayId": 1,
+        "bgm": "",
         "bgimg": "",
-        "title": objectData.character.you.name,
-        "text": "よし、さっそくクエストをプレイしよう！",
+        "title": "【操作の説明】",
+        "text": "「冒険を始める」を選択してください。",
         "nyateracy": ""
     },
     {
         "mode": "operation",
         "bgm": "",
         "bgimg": "",
-        "displayId": 6
+        "displayId": 2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "今はフレンドいないなあ、一人でやってみるか！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "「一人で戦う」を選択してください。",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
     },
 
 
 
-    // {
-    //     "mode": "conversation",
-    //     "bgm": objectData.bgm.roadNoon,
-    //     "bgimg": objectData.bgimg.roadNoon,
-    //     "title": "【通学路】",
-    //     "text": "（学校帰りに友達のアキラ君とゲームの話中）",
-    //     "mostLeft": objectData.character.you.pose1,
-    //     "centerLeft": objectData.character.akira.pose2,
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.akira.name,
-    //     "text": "最近さあ、「ドラゴンハンター」ってゲームやってんだよ！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.akira.pose1,
-    //     "nyateracy": "",
-    //     "img": objectData.img.dragonHunter
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "へえー、どんなゲームなの？",
-    //     "mostLeft": objectData.character.you.pose1,
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": objectData.img.dragonHunter
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.akira.name,
-    //     "text": "パソコンでやるゲームなんだけど、モンスターを倒していくんだよ！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.akira.pose1,
-    //     "nyateracy": "",
-    //     "img": objectData.img.dragonHunter
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "おもしろそう！僕もやってみようかな！",
-    //     "mostLeft": objectData.character.you.pose1,
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": objectData.img.dragonHunter
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.akira.name,
-    //     "text": "おっ！やろうぜ！強くなったらフレンドになろうぜ！！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.akira.pose1,
-    //     "nyateracy": "",
-    //     "img": objectData.img.dragonHunter
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "わかった！帰ったらやってみるよ！",
-    //     "mostLeft": objectData.character.you.pose1,
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "darkness",
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": objectData.bgm.home,
-    //     "bgimg": objectData.bgimg.roomEvening,
-    //     "title": objectData.character.you.name,
-    //     "text": "ただいまー！！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "アキラに言われたゲーム、さっそくやってみよう！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "ドラゴンハンターだよな・・・、よしっ、インストールできた！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "さっそくやってみよう！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 2,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "「冒険を始める」を選択してください。",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "今はフレンドいないなあ、一人でやってみるか！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "「一人で戦う」を選択してください。",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
+
+
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "conversation",
+        "bgm": objectData.bgm.sample1,
+        "bgimg": objectData.bgimg.roomNight,
+        "title": objectData.character.you.name,
+        "text": "こんなの勝てないよ・・・、強すぎる・・・",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": objectData.bgm.sample1,
+        "bgimg": objectData.bgimg.roomNight,
+        "title": objectData.character.you.name,
+        "text": "明日アキラにフレンドを頼もうかな・・・",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "conversation",
+        "bgm": objectData.bgm.roadNoon,
+        "bgimg": objectData.bgimg.roadNoon,
+        "title": "",
+        "text": "次の日",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": "【通学路】",
+        "text": "（学校帰りに友達のアキラ君とゲームの話中）",
+        "mostLeft": objectData.character.you.pose1,
+        "centerLeft": objectData.character.akira.pose2,
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "えっ、お前ダマスに苦戦してんのか？",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.akira.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "そうなんだ！フレンドになってもらえないかな？",
+        "mostLeft": objectData.character.you.pose1,
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "俺今フレンドがいっぱいなんだよ！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.akira.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "お前がもっと強くなったらフレンドになってやるよ！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.akira.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "そっかあ・・・、もう少し自力でがんばってみるよ！",
+        "mostLeft": objectData.character.you.pose1,
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "conversation",
+        "bgm": objectData.bgm.home,
+        "bgimg": objectData.bgimg.roomEvening,
+        "title": objectData.character.you.name,
+        "text": "ただいまー！！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "今日こそダマス倒したいんだけど、今の僕じゃ倒せないなあ",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "アキラは強くならないとフレンドになってくれないのかあ。",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "そうだ！誰かほかの強い人に手伝ってもらおう！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.you.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 2,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "このフレンドとつながるっていうのを押せばいいのかな？",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "「フレンドとつながる」を選択してください。",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.you.name,
+        "text": "このフレンド募集に書き込めば強い人に手伝ってもらえそうだ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.you.name,
+        "text": "・・・「小学生です！チームを組んで戦える強い人を募集！」これでよし！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.you.name,
+        "text": "明日には強い人来てくれるといいなあ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "conversation",
+        "bgm": objectData.bgm.sample1,
+        "bgimg": objectData.bgimg.roomNoon,
+        "title": "",
+        "text": "次の日",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "今日もドラゴンハンターやるかあ",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "強い人来てるといいなあ",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "「フレンドとつながる」を選択してください。",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "やった！！フレンド申請来てる！レベルも高い！！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "しかも、僕と同じ小学生だ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "このショウって人と組んでみよう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "ショウにダマス倒すの手伝ってほしいなあ",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "チャットに書き込んでみよう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "「チャット」を選択してください。",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "「ダマスってやつ倒せないんだけど、手伝ってほしい！」っと、これでよし！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "ショウが手伝ってくれればダマスに勝てそうだ！楽しみだなあ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "おっ！さっそく返信が来てる！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "ショウ",
+        "text": "「もちろんいいぜ！一緒に強くなろう！」",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "ショウ",
+        "text": "フレンドと戦うに追加してくれればすぐに行くぜ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "やったあ！ショウいいやつだなあ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "さっそくフレンドと戦うをやってみよう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "「メニューに戻る」を選択してください。",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "「フレンドと戦う」を選択してください。",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "よし、ショウとダマスを倒そう！",
+        "nyateracy": ""
+    },
 
 
 
 
 
-    // {
-    //     "mode": "darkness",
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": objectData.bgm.sample1,
-    //     "bgimg": objectData.bgimg.roomNight,
-    //     "title": objectData.character.you.name,
-    //     "text": "こんなの勝てないよ・・・、強すぎる・・・",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": objectData.bgm.sample1,
-    //     "bgimg": objectData.bgimg.roomNight,
-    //     "title": objectData.character.you.name,
-    //     "text": "明日アキラにフレンドを頼もうかな・・・",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "darkness",
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": objectData.bgm.roadNoon,
-    //     "bgimg": objectData.bgimg.roadNoon,
-    //     "title": "",
-    //     "text": "次の日",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【通学路】",
-    //     "text": "（学校帰りに友達のアキラ君とゲームの話中）",
-    //     "mostLeft": objectData.character.you.pose1,
-    //     "centerLeft": objectData.character.akira.pose2,
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.akira.name,
-    //     "text": "えっ、お前ダマスに苦戦してんのか？",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.akira.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "そうなんだ！フレンドになってもらえないかな？",
-    //     "mostLeft": objectData.character.you.pose1,
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.akira.name,
-    //     "text": "俺今フレンドがいっぱいなんだよ！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.akira.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.akira.name,
-    //     "text": "お前がもっと強くなったらフレンドになってやるよ！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.akira.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "そっかあ・・・、もう少し自力でがんばってみるよ！",
-    //     "mostLeft": objectData.character.you.pose1,
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "darkness",
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": objectData.bgm.home,
-    //     "bgimg": objectData.bgimg.roomEvening,
-    //     "title": objectData.character.you.name,
-    //     "text": "ただいまー！！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "今日こそダマス倒したいんだけど、今の僕じゃ倒せないなあ",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "アキラは強くならないとフレンドになってくれないのかあ。",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "そうだ！誰かほかの強い人に手伝ってもらおう！",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": objectData.character.you.pose1,
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 2,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "このフレンドとつながるっていうのを押せばいいのかな？",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "「フレンドとつながる」を選択してください。",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title":  objectData.character.you.name,
-    //     "text": "このフレンド募集に書き込めば強い人に手伝ってもらえそうだ！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title":  objectData.character.you.name,
-    //     "text": "・・・「小学生です！チームを組んで戦える強い人を募集！」これでよし！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title":  objectData.character.you.name,
-    //     "text": "明日には強い人来てくれるといいなあ！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "darkness",
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": objectData.bgm.sample1,
-    //     "bgimg": objectData.bgimg.roomNoon,
-    //     "title": "",
-    //     "text": "次の日",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "今日もドラゴンハンターやるかあ",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "conversation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "強い人来てるといいなあ",
-    //     "mostLeft": "",
-    //     "centerLeft": "",
-    //     "centerRight": "",
-    //     "mostRight": "",
-    //     "nyateracy": "",
-    //     "img": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "「フレンドとつながる」を選択してください。",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "やった！！フレンド申請来てる！レベルも高い！！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "しかも、僕と同じ小学生だ！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "このショウって人と組んでみよう！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "darkness",
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "ショウにダマス倒すの手伝ってほしいなあ",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "チャットに書き込んでみよう！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "「チャット」を選択してください。",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "「ダマスってやつ倒せないんだけど、手伝ってほしい！」っと、これでよし！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "ショウが手伝ってくれればダマスに勝てそうだ！楽しみだなあ！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "darkness",
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "おっ！さっそく返信が来てる！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "ショウ",
-    //     "text": "「もちろんいいぜ！一緒に強くなろう！」",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "ショウ",
-    //     "text": "フレンドと戦うに追加してくれればすぐに行くぜ！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "やったあ！ショウいいやつだなあ！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "さっそくフレンドと戦うをやってみよう！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "「メニューに戻る」を選択してください。",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "「フレンドと戦う」を選択してください。",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "よし、ショウとダマスを倒そう！",
-    //     "nyateracy": ""
-    // },
-
-
-
-
-
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "やった、ダマスを倒せた！！！ショウ強すぎる！！！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": objectData.character.you.name,
-    //     "text": "うらやましいな、どうしたら強くなれるか聞いてみよう！",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "「フレンド一覧」を選択してください。",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
-    // {
-    //     "mode": "explanation",
-    //     "displayId": 1,
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "title": "【操作の説明】",
-    //     "text": "「チャット」を選択してください。",
-    //     "nyateracy": ""
-    // },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 2
-    // },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "やった、ダマスを倒せた！！！ショウ強すぎる！！！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "うらやましいな、どうしたら強くなれるか聞いてみよう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "「フレンド一覧」を選択してください。",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "「チャット」を選択してください。",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 2
+    },
 
 
 
