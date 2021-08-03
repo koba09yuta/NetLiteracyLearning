@@ -15,14 +15,17 @@ const story1ObjectData = {
         }
     },
     "img": {
-        "dragonHunter": "<img src='../../img/other/dragon_hunter.svg' style='height: 90vh;'>",
+        "dragonHunter": "<img src='../../img/other/dragon_hunter.svg' style='height: 50vh;'>",
         "phone": "<img src='../../img/other/phone.svg' style='height: 60vh;'>"
     },
     "bgimg": {
         "roadNoon": "url(../../img/background/residential_area_noon.jpg)",
         "roomNoon": "url(../../img/background/パソコン部屋（日中）.jpg)",
         "roomEvening": "url(../../img/background/pc_room_evening.jpg)",
-        "roomNight": "url(../../img/background/pc_room_night.jpg)"
+        "roomNight": "url(../../img/background/pc_room_night.jpg)",
+        "dhOpening": "url(../../img/game/dh_opening.jpg)",
+        "dhMenu": "url(../../img/game/dh_menu.jpg)",
+        "dhPortTown": "url(../../img/game/daejin-kim-2015.jpg)"
     },
     "bgm": {
         "roadNoon": "../../music/bgm/昼下がり気分.mp3",

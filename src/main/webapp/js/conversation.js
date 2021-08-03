@@ -51,3 +51,10 @@ $('#ransomware').on("click", () => {
     makeSound("click");
     activate("ransomware");
 });
+
+/** パソコン操作で進む */
+$('.forward').on("click", () => {
+    makeSound("click");
+    sceneAdvance();
+    sceneShow();
+});
