@@ -110,12 +110,24 @@ export const showAnswer = (selectionNumber) => {
 
 /** ディスプレイを表示する関数 */
 export const showDisplay = (displayId) => {
+    $('#desktop').hide();
+    $('#dh-opening').hide();
+    $('#dh-menu').hide();
+    $('#dh-quest').hide();
+    $('#dh-friend').hide();
+    $('#board').hide();
+    $('.line__container').hide();
+    $('.download_container').hide();
+    // デスクトップ画面
     if (displayId <= 4) {
         $('#pc-wrapper').css('background-color','rgb(0,181,252)');
         $('#pc-wrapper').css('background-image', 'none');
         $('#desktop').show();
         $('#dh-opening').hide();
         $('#dh-menu').hide();
+        $('#dh-quest').hide();
+        $('#dh-friend').hide();
+        $('#board').hide();
         $('.line__container').hide();
         $('.download_container').hide();
         if (displayId === 1) {
@@ -146,32 +158,97 @@ export const showDisplay = (displayId) => {
             return;
         }
     }
+    // タイトル画面
     if (displayId === 5) {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhOpening);
         $('#desktop').hide();
         $('#dh-opening').show();
         $('#dh-menu').hide();
+        $('#dh-quest').hide();
+        $('#dh-friend').hide();
+        $('#board').hide();
         $('.line__container').hide();
         $('.download_container').hide();
         return;
     }
-    if (displayId === 6) {
+    // メニュー画面
+    if (displayId === 6 || displayId === 7) {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhMenu);
         $('#desktop').hide();
         $('#dh-opening').hide();
         $('#dh-menu').show();
+        $('#dh-quest').hide();
+        $('#dh-friend').hide();
+        $('#board').hide();
         $('.line__container').hide();
         $('.download_container').hide();
         return;
     }
-    if (displayId === 10) {
+    // クエスト画面
+    if (displayId === 8 || displayId === 9) {
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', objectData.bgimg.dhQuest);
+        $('#desktop').hide();
+        $('#dh-opening').hide();
+        $('#dh-menu').hide();
+        $('#dh-quest').show();
+        $('#dh-friend').hide();
+        $('#board').hide();
+        $('.line__container').hide();
+        $('.download_container').hide();
+        return;
+    }
+    // フレンド画面
+    if (displayId === 10 || displayId === 11) {
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
+        $('#desktop').hide();
+        $('#dh-opening').hide();
+        $('#dh-menu').hide();
+        $('#dh-quest').hide();
+        $('#dh-friend').show();
+        $('#board').hide();
+        $('.line__container').hide();
+        $('.download_container').hide();
+        return;
+    }
+    // チャットルーム（フレンド一覧）画面
+    if (displayId === 12) {
+       return;
+    }
+    // フレンド募集画面
+    if (displayId === 13 || displayId === 14 || displayId === 15) {
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
+        // $('#desktop').hide();
+        // $('#dh-opening').hide();
+        // $('#dh-menu').hide();
+        // $('#dh-quest').hide();
+        // $('#dh-friend').hide();
+        $('#board').show();
+        // $('.line__container').hide();
+        // $('.download_container').hide();
+        $('#anata-container').hide();
+        $('#sho-container').hide();
+        if (displayId === 14) {
+            $('#anata-container').show();
+        }
+        if (displayId === 15) {
+            $('#anata-container').show();
+            $('#sho-container').show();
+        }
+    }
+    if (displayId === 16) {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
         $('#desktop').hide();
         $('#dh-opening').hide();
         $('#dh-menu').hide();
+        $('#dh-quest').hide();
+        $('#dh-friend').hide();
+        $('#board').hide();
         $('.line__container').show();
         $('.download_container').hide();
         $('#transparent-wrapper').show();
@@ -186,20 +263,28 @@ export const showDisplay = (displayId) => {
         setTimeout(sceneShow, 14000);
         return;
     }
-    if (displayId === 11) {
+    if (displayId === 17) {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
         $('#desktop').hide();
         $('#dh-opening').hide();
+        $('#dh-menu').hide();
+        $('#dh-quest').hide();
+        $('#dh-friend').hide();
+        $('#board').hide();
         $('.line__container').show();
         $('.download_container').hide();
         return;
     }
-    if (displayId === 12) {
+    if (displayId === 18) {
         $('#pc-wrapper').css('background-color', '#4EF7D0');
         $('#pc-wrapper').css('background-image', 'none');
         $('#desktop').hide();
         $('#dh-opening').hide();
+        $('#dh-menu').hide();
+        $('#dh-quest').hide();
+        $('#dh-friend').hide();
+        $('#board').hide();
         $('.line__container').hide();
         $('.download_container').show();
         return;
@@ -224,15 +309,51 @@ export const showOperation = () => {
     showDisplay(storyData[sceneId].displayId);
 }
 
-/** ソフトを起動する関数 */
-export const activate = (softName) => {
-    if (storyData[sceneId].displayId === 2 && softName === "dragonHunter") {
+/** 正しいボタンを選択する関数 */
+export const activate = (name) => {
+    if (storyData[sceneId].displayId === 2 && name === "dragonHunter") {
         sceneAdvance();
         sceneShow();
         // window.location.href = './WEB-INF/html/conversation1_1.html';
         return;
     }
-    if (storyData[sceneId].displayId === 4 && softName === "ransomware") {
+    if (storyData[sceneId].displayId === 4 && name === "ransomware") {
+        sceneAdvance();
+        sceneShow();
+        // window.location.href = './WEB-INF/html/conversation1_1.html';
+        return;
+    }
+    if (storyData[sceneId].displayId === 6 && name === "quest") {
+        sceneAdvance();
+        sceneShow();
+        // window.location.href = './WEB-INF/html/conversation1_1.html';
+        return;
+    }
+    if (storyData[sceneId].displayId === 7 && name === "friend") {
+        sceneAdvance();
+        sceneShow();
+        // window.location.href = './WEB-INF/html/conversation1_1.html';
+        return;
+    }
+    if (storyData[sceneId].displayId === 8 && name === "solo") {
+        sceneAdvance();
+        sceneShow();
+        // window.location.href = './WEB-INF/html/conversation1_1.html';
+        return;
+    }
+    if (storyData[sceneId].displayId === 9 && name === "team") {
+        sceneAdvance();
+        sceneShow();
+        // window.location.href = './WEB-INF/html/conversation1_1.html';
+        return;
+    }
+    if (storyData[sceneId].displayId === 10 && name === "chat") {
+        sceneAdvance();
+        sceneShow();
+        // window.location.href = './WEB-INF/html/conversation1_1.html';
+        return;
+    }
+    if (storyData[sceneId].displayId === 11 && name === "recruit") {
         sceneAdvance();
         sceneShow();
         // window.location.href = './WEB-INF/html/conversation1_1.html';
@@ -240,7 +361,7 @@ export const activate = (softName) => {
     }
     changeHide("explanation");
     $('#title').html(objectData.character.you.name);
-    $('#text').html("今はこのソフトをじゃないよね");
+    $('#text').html("今はこの操作じゃないな");
     sceneId--;
 }
 
@@ -358,6 +479,9 @@ export const makeSound = (sound) => {
     }
     if (sound === "click") {
         $('#sound-effect source').attr('src', objectData.soundEffect.click);
+    }
+    if (sound === "slash") {
+        $('#sound-effect source').attr('src', objectData.soundEffect.slash);
     }
     document.querySelector("#sound-effect").load();
     $('#sound-effect').get(0).play();

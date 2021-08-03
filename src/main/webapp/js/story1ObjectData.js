@@ -25,16 +25,21 @@ const story1ObjectData = {
         "roomNight": "url(../../img/background/pc_room_night.jpg)",
         "dhOpening": "url(../../img/game/dh_opening.jpg)",
         "dhMenu": "url(../../img/game/dh_menu.jpg)",
+        "dhQuest": "url(../../img/game/dh_quest.jpg)",
+        "dhFriend": "url(../../img/game/dh_friend.jpg)",
         "dhPortTown": "url(../../img/game/daejin-kim-2015.jpg)"
     },
     "bgm": {
         "roadNoon": "../../music/bgm/昼下がり気分.mp3",
-        "home": "../../music/bgm/自宅にて.mp3"
+        "home": "../../music/bgm/自宅にて.mp3",
+        "dhOpening": "../../music/bgm/dh_opening.mp3",
+        "dhMenu": "../../music/bgm/Village2.mp3"
     },
     "soundEffect": {
         "opening": "../../music/sound_effect/アコギ　OP1 short.mp3",
         "forward": "../../music/sound_effect/システム決定音_3.mp3",
         "click": "../../music/sound_effect/マウスのクリック音.mp3",
+        "slash": "../../music/sound_effect/剣で斬る2.mp3",
         "correct": "../../music/sound_effect/正解音.mp3",
         "incorrect": "../../music/sound_effect/不正解のブザー音_3種.mp3"
     }

@@ -13,10 +13,27 @@ const story1_1Data = [
     },
 
 
-
     {
         "mode": "explanation",
-        "displayId": 2,
+        "displayId": 13,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 14,
+        "bgm": "",
+        "bgimg": "",
+        "title": "【操作の説明】",
+        "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 15,
         "bgm": "",
         "bgimg": "",
         "title": "【操作の説明】",
@@ -34,16 +51,28 @@ const story1_1Data = [
     },
     {
         "mode": "operation",
-        "bgm": "",
+        "bgm": objectData.bgm.dhOpening,
         "bgimg": "",
         "displayId": 5
     },
-    // {
-    //     "mode": "operation",
-    //     "bgm": "",
-    //     "bgimg": "",
-    //     "displayId": 6
-    // },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 6,
+        "bgm": objectData.bgm.dhMenu,
+        "bgimg": "",
+        "title": objectData.character.you.name,
+        "text": "よし、さっそくクエストをプレイしよう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "bgm": "",
+        "bgimg": "",
+        "displayId": 6
+    },
 
 
 
