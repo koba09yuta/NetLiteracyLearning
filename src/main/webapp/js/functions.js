@@ -336,7 +336,7 @@ export const activate = (name) => {
         return;
     }
     changeHide("explanation");
-    $('#title').html(objectData.character.you.name);
+    $('#title').html(objectData.character.anata.name);
     $('#text').html("今はこの操作じゃないな");
     sceneId--;
 }
