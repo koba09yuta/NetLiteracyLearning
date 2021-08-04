@@ -23,6 +23,7 @@ body:hover{
 
 /* クイズのすべてを管理する親要素 */
 .quiz_area{
+    text-align: center;
     font-weight: 900;
     display: flex;
     position: absolute;
@@ -144,14 +145,10 @@ body:hover{
 .clear{
     font-size: 10vh;
     color: rgb(255, 255, 255);
-    width: 150vw;
-    top: 5vh;
-    
 }
 .star{
-    font-size: 16vh;
+    font-size: 20vh;
     color: rgb(197, 177, 0);
-    width: 100vw;
     top: 20vh;
     left: 10vw;
     position: absolute;

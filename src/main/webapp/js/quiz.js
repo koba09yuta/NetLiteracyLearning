@@ -1,39 +1,33 @@
 $('body').css('backgroundImage', "url(../../img/background/blackboard.png)");
 
 $(function(){
-    var quizArea = $('.quiz_area'); //クイズを管理するDOMを指定
-    var commentArea = $('.comment_area'); //解説を管理するDOMを指定
-    var quiz_html = quizArea.html(); //もう一度　を押した時に元に戻すため初期HTMLを変数で保管
-    var quiz_cnt = 0; //現在の問題数を管理
-    var quiz_fin_cnt = 3; //何問で終了か設定（クイズ数以下であること）
-    var quiz_success_cnt = 0; //問題の正解数
+    let quizArea = $('.quiz_area'); //クイズを管理するDOMを指定
+    let quiz_html = quizArea.html(); //もう一度　を押した時に元に戻すため初期HTMLを変数で保管
+    let quiz_cnt = 0; //現在の問題数を管理
+    let quiz_fin_cnt = 3; //何問で終了か設定
+    let quiz_success_cnt = 0; //問題の正解数
     
-    //クイズの配列を設定
-    //answerの選択肢の数はいくつでもOK　ただし先頭を正解とすること(出題時に選択肢はシャッフルされる)
-    var aryQuiz = [];
+    //クイズの配列を設定(正解は一番前に)
+    let aryQuiz = [];
     aryQuiz.push(
         {
-            question : '　　　　　　　大囿？　',
-            answer : ['　　　あおい　　', '　　　やおい　　', '　　　やおい　　']
+            question : '問題１が入ります',
+            answer : ['選択肢１が入ります', '選択肢２が入ります', '選択肢３が入ります']
         }
         ,{
-            question : '　　　　　　こばやし？　',
-            answer : ['　　ゆうた　', '　　かんた　', '　　もんた　']
+            question : '問題２が入ります',
+            answer : ['選択肢１が入ります', '選択肢２が入ります', '選択肢３が入ります']
         }
         ,{
-            question : '　発表は何日？　',
-            answer : ['８・１２', '８・１３', '８．１８']
+            question : '問題３が入ります',
+            answer : ['選択肢１が入ります', '選択肢２が入ります', '選択肢３が入ります']
         }
-        ,{
-            question : '知らない人から送られたURLはどうしたらよい？',
-            answer : ['選択肢１', '選択肢２', '選択肢3']
-        }
-        ,{
-            question : '知らない人から送られたURLはどうしたらよい？',
-            answer : ['選択肢１', '選択肢２', '選択肢3']
-        }
+        
     );
 
+
+    //解説の配列を設定
+    let aryComment = ["DRAGON.png","DRAGON.png","DRAGON.png"];
     
    
 
@@ -110,6 +104,8 @@ $(function(){
         quizArea.find('.quiz_no').text((quiz_cnt + 1));
         //問題文を表示
         quizArea.find('.quiz_question').text(aryQuiz[quiz_cnt]['question']);
+        //解説を表示
+       // quizArea.find('.comment_image').image(aryComment[quiz_cnt]);
         //正解の回答を取得する
         var success = aryQuiz[quiz_cnt]['answer'][0];
         //現在の選択肢表示を削除する
@@ -134,10 +130,12 @@ $(function(){
         if(quiz_success_cnt <= 1){
             text += '<br><p class="star">★☆☆</p>';
         }
-        if(quiz_success_cnt == 2){
+        if(quiz_success_cnt === 2){
             text += '<br><p class="star">★★☆</p>';
-        }else{
+        }
+        if(quiz_success_cnt === 3){
             text += '<br><p class="star">★★★</p>';
+            text += '<br><br><br>すごい！やったね！';
         }
         text += '<br><a href="../../index.html" id="menu">メニューに戻る</a>';
         quizArea.find('.quiz_result').html(text);
