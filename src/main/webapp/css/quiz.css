@@ -69,19 +69,7 @@ body:hover{
     -webkit-text-stroke: 4px #FFF;
     
 }
-
-/* 解説の背景を表示するための要素 */
-.comment_bg{
-    width: 100vw;
-    height: 100vh;
-    top: 0vh;
-    left: 0vw;
-    background-size: cover;
-    background-image: url(../img/background/blackboard.png);
-    position: absolute;
-    display: none;
    
-}
 /* 画面に解説を表示するための要素 */
 .comment_image{
     width: 75vw;
@@ -94,6 +82,27 @@ body:hover{
     display: none;
    
 }
+
+/* 画面に戻るボタンを表示するための要素 */
+.back_button{
+    border-radius: 100vh;
+    text-align: center;
+    width: 10vw;
+    position: absolute;
+    top: 60vh;
+    left: 50vw;
+    color: #000;
+    background-color: #fff100;
+    border-bottom: 1vh solid #ccc100;
+    display: none;
+}
+.back_button:hover {
+    margin-top: 3px;
+    color: #000;
+    background: #fff20a;
+    border-bottom: 1vh solid #ccc100;
+  }
+
 
 /* .trueまたは.falseのクラスが付与されたら表示するものとみなす */
 .quiz_area .quiz_area_icon.true, .quiz_area .quiz_area_icon.false{

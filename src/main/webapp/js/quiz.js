@@ -70,9 +70,8 @@ $(function(){
             quizArea.find('.quiz_ans_area ul li').removeClass('selected');
             quizArea.find('.quiz_area_icon').removeClass('true false');
             quizArea.find('.quiz_area_bg').hide();
-            commentArea.find('.comment_bg').show();
-            commentArea.find('.comment_image').show();
-            
+            quizArea.find('.comment_image').show();
+            quizArea.find('.back_button').show();
             //問題のカウントを進める
             quiz_cnt++;
             if(quiz_fin_cnt > quiz_cnt){
@@ -85,12 +84,11 @@ $(function(){
         }, 1500);
     });
     
-    //解説をクリックしたときの処理
-    commentArea.on('click', '.comment_image', function(){
-        
-        commentArea.find('.comment_bg').hide();
-        commentArea.find('.comment_image').hide();
-        commentArea.find('.btn btn-flat').hide();
+    //次へボタンをクリックしたときの処理
+    quizArea.on('click', '.back_button', function(){
+    
+        quizArea.find('.comment_image').hide();
+        quizArea.find('.back_button').hide();
     });
 
     //もう一度挑戦するを押した時の処理
