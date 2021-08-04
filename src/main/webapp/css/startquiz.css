@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* 全体 */
+body {
+    font-family: "UD Digi Kyokasho N-R";
+    background-size: cover;
+    
+    /*
+        スクロールしないように、
+        ・高さをビューポートに対して100%
+        ・はみ出し部分を表示しないように設定
+    */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background{
+    height: 100vh;
+    transform: scale(-1,1);
+    background-image: url(../img/background/blackboard.png);
+    background-repeat  : no-repeat;
+}
+.background2{
+    
+    position: absolute;
+    height: 150vh;
+    width: 100vw;
+    top:10vh;
+    left: 75vw;
+    transform: scale(1,1);
+    background-image: url(../img/nyateracy/quiz-nya01.svg);
+    background-repeat  : no-repeat;
+}
+.label1{
+    
+    color: rgb(255, 255, 255);
+    font-size: 9vh;
+    font-weight: 900;
+    top: 30vh;
+    left:60vw;
+    position: absolute;
+    transform: translateX(-50%);
+    
+}
+.label2{
+    color: rgb(255, 255, 255);
+    font-size: 4vh;
+    font-weight: 900;
+    top: 50vh;
+    left:60vw;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+#label3{ 
+    color: black;
+    position: absolute;
+    top: 60vh;
+    left: 75vw;
+    width: 16vw;
+    height: 7vh;
+    padding-top: 1.5vh;
+    padding-left: 2vh;
+    overflow: hidden;
+    box-shadow: 0.30rem 0.25rem hsla(0, 0%, 0%, .1);
+    background-image:
+      linear-gradient(90deg, rgba(22, 20, 20, 0.1) 2rem, rgba(27, 25, 25, 0) 2.5rem)
+    , linear-gradient(90deg, rgb(248, 248, 147), hsla(60, 100%, 85%, 1));
+    font-size: 3vh;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.label3:hover{
+    color: rgb(255, 0, 0);
+}
