@@ -1,3 +1,5 @@
+$('body').css('backgroundImage', "url(../../img/background/blackboard.png)");
+
 $(function(){
     var quizArea = $('.quiz_area'); //クイズを管理するDOMを指定
     var commentArea = $('.comment_area'); //解説を管理するDOMを指定
@@ -12,7 +14,7 @@ $(function(){
     aryQuiz.push(
         {
             question : '　　　　　　　大囿？　',
-            answer : ['　　　あおい　　', '　　　やおい　　']
+            answer : ['　　　あおい　　', '　　　やおい　　', '　　　やおい　　']
         }
         ,{
             question : '　　　　　　こばやし？　',
@@ -20,7 +22,7 @@ $(function(){
         }
         ,{
             question : '　発表は何日？　',
-            answer : ['８・１２', '８・１３', '８．１８','８．１０']
+            answer : ['８・１２', '８・１３', '８．１８']
         }
         ,{
             question : '知らない人から送られたURLはどうしたらよい？',
@@ -32,10 +34,7 @@ $(function(){
         }
     );
 
-    //解説の配列を設定
-    //画像を配列に入れて回す
-
-    var aryComment = [];
+    
    
 
 
@@ -160,3 +159,10 @@ $(function(){
         return arr;
     }
 });
+
+
+
+
+
+
+

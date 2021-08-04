@@ -4,32 +4,19 @@
 body {
     font-family: "UD Digi Kyokasho N-R";
     background-size: cover;
-    
-    /*
-        スクロールしないように、
-        ・高さをビューポートに対して100%
-        ・はみ出し部分を表示しないように設定
-    */
     height: 100vh;
     overflow: hidden;
 }
-.background{
-    height: 100vh;
-    transform: scale(-1,1);
-    background-image: url(../img/background/blackboard.png);
-    background-repeat  : no-repeat;
-}
-.background2{
+/* ニャテラシーラッパー */
+#nyateracy-wrapper {
     position: absolute;
-    height: 150vh;
-    width: 100vw;
-    top:10vh;
-    left: 75vw;
-    transform: scale(1,1);
-    background-image: url(../img/nyateracy/quiz-nya01.svg);
-    background-repeat  : no-repeat;
+    top: 40vh;
+    left: -5vw;
 }
 
+#nyateracy-img {
+    height: 70vh;
+}
 body:hover{
     cursor: default;
 }
