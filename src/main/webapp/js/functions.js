@@ -2,6 +2,7 @@
 import objectData from './story1ObjectData.js';
 import story1_1Data from './story1_1Data.js';
 import story1_2Data from './story1_2Data.js';
+import story1_3Data from './story1_3Data.js';
 
 /** ストーリーデータ */
 let storyData = {};
@@ -21,6 +22,8 @@ export const loading = () => {
         storyData = story1_1Data;
     } else if (fileName === "conversation1_2.html") {
         storyData = story1_2Data;
+    } else if (fileName === "conversation1_3.html") {
+        storyData = story1_3Data;
     }
     $('#darkness-wrapper').hide();
     $('#loading').delay(1000).fadeOut(1000, function () {
@@ -316,13 +319,11 @@ export const activate = (name) => {
         return;
     }
     if (storyData[sceneId].displayId === 8 && name === "solo") {
-        sceneAdvance();
-        sceneShow();
+        window.location.href = "./missionDamas1.html";
         return;
     }
     if (storyData[sceneId].displayId === 9 && name === "team") {
-        sceneAdvance();
-        sceneShow();
+        window.location.href = "./missionDamas1.html";
         return;
     }
     if (storyData[sceneId].displayId === 10 && name === "chat") {

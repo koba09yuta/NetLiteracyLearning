@@ -1,38 +1,13 @@
 import objectData from './story1ObjectData.js'
 
 const story1_2Data = [
+    // ダマス戦1回目~ダマス戦2回目
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.sample1,
+        "bgm": objectData.bgm.home,
         "bgimg": objectData.bgimg.roomNight,
-        "title": objectData.character.akira.name,
-        "text": "こんなん一人じゃ勝てないって！どうしたら勝てるかなあ？",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": objectData.character.anata.pose1,
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.akira.name,
-        "text": "さっそくフレンドぼしゅうに書きこも！",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": objectData.character.anata.pose1,
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.akira.name,
-        "text": "・・・えーと、「小学生です！チームを組んで戦える強い人ぼしゅう！」っと、これでよし！！",
+        "title": objectData.character.anata.name,
+        "text": "こんなの勝てないよ・・・、強すぎる・・・",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
@@ -45,7 +20,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "明日には人来てくれるといいな！",
+        "text": "明日アキラにフレンドを頼もうかな・・・",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
@@ -58,10 +33,104 @@ const story1_2Data = [
     },
     {
         "mode": "conversation",
+        "bgm": objectData.bgm.roadNoon,
+        "bgimg": objectData.bgimg.roadNoon,
+        "title": "",
+        "text": "次の日",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
         "bgm": "",
+        "bgimg": "",
+        "title": "【通学路】",
+        "text": "（学校帰りに友達のアキラ君とゲームの話中）",
+        "mostLeft": objectData.character.anata.pose1,
+        "centerLeft": objectData.character.akira.pose2,
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "えっ、お前ダマスに苦戦してんのか？",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.akira.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "そうなんだ！フレンドになってもらえないかな？",
+        "mostLeft": objectData.character.anata.pose1,
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "俺今フレンドがいっぱいなんだよ！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.akira.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "お前がもっと強くなったらフレンドになってやるよ！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": objectData.character.akira.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "そっかあ・・・、もう少し自力でがんばってみるよ！",
+        "mostLeft": objectData.character.anata.pose1,
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "conversation",
+        "bgm": objectData.bgm.home,
         "bgimg": objectData.bgimg.roomEvening,
         "title": objectData.character.anata.name,
-        "text": "アキラの言ってたゲーム、パソコンでやるんだよな",
+        "text": "ただいまー！！",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
@@ -72,9 +141,9 @@ const story1_2Data = [
     {
         "mode": "conversation",
         "bgm": "",
-        "bgimg": objectData.bgimg.roomEvening,
+        "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "パソコンにインストールできたし、さっそくやってみるか！",
+        "text": "今日もドラゴンハンターやるかあ。",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
@@ -84,110 +153,257 @@ const story1_2Data = [
     },
     {
         "mode": "operation",
-        "operationId": 1
+        "displayId": 2,
+        "bgm": "",
+        "bgimg": ""
     },
-    //1問目:問題の原因が理解できているか
     {
-        "mode": "selection",
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "operation",
+        "displayId": 5,
+        "bgm": objectData.bgm.dhOpening,
+        "bgimg": ""
+    },
+    {
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 7,
         "bgm": "",
         "bgimg": "",
-        "title": objectData.character.nyateracy.name,
-        "text": "どうしてこんなことになったかわかる？",
-        "selection1": {
-            "selection": "ゲームの敵を倒せなかった",
-            "answer": false,
-            "title": objectData.character.nyateracy.name,
-            "text": "うん、それもあるね。でももっと大事なところがあるよ。",
-            "nyateracy": objectData.character.nyateracy.pose1
-        },
-        "selection2": {
-            "selection": "チャット機能を利用した",
-            "answer": false,
-            "title": objectData.character.nyateracy.name,
-            "text": "うん、それもあるね。でももっと大事なところがあるよ。",
-            "nyateracy": objectData.character.nyateracy.pose1
-        },
-        "selection3": {
-            "selection": "フレンドを信用した",
-            "answer": true,
-            "title": objectData.character.nyateracy.name,
-            "text": "その通り！知らない人を信用して言われるがままにソフトをインストールしてしまったんだ。",
-            "nyateracy": objectData.character.nyateracy.pose1
-        },
+        "title": objectData.character.anata.name,
+        "text": "今日こそダマス倒したいんだけど、今の僕じゃ倒せないなあ",
+        "nyateracy": ""
     },
-    //２問目:顔の見えない人とやりとりについて
     {
-        "mode": "selection",
+        "mode": "explanation",
+        "displayId": 7,
         "bgm": "",
         "bgimg": "",
-        "title": objectData.character.nyateracy.name,
-        "text": "顔の見えない人とのやりとりについて、正しいのはどれ？",
-        "selection1": {
-            "selection": "知らない人とつながってしまうゲームをいっさいしない",
-            "answer": false,
-            "title": objectData.character.nyateracy.name,
-            "text": "うん、それもあるね。あぶないつかいかたをしないようにしようね",
-            "nyateracy": objectData.character.nyateracy.pose1
-        },
-        "selection2": {
-            "selection": "こじんじょうほうを伝えると自分のことを知ってもらえてよい",
-            "answer": false,
-            "title": objectData.character.nyateracy.name,
-            "text": "うん、それもあるね。でもこじんじょうほうは伝えちゃだめだよ",
-            "nyateracy": objectData.character.nyateracy.pose1
-        },
-        "selection3": {
-            "selection": "こじんじょうほうがわかる書きこみをすると、悪い人に利用されてしまうかもしれない",
-            "answer": true,
-            "title": objectData.character.nyateracy.name,
-            "text": "その通り！",
-            "nyateracy": objectData.character.nyateracy.pose1
-        },
+        "title": objectData.character.anata.name,
+        "text": "アキラは強くならないとフレンドになってくれないのかあ。",
+        "nyateracy": ""
     },
-    //３問目:オンライン機器の正しい使い方
     {
-        "mode": "selection",
+        "mode": "explanation",
+        "displayId": 7,
         "bgm": "",
         "bgimg": "",
-        "title": objectData.character.nyateracy.name,
-        "text": "正しいパソコンの使い方はどれ？",
-        "selection1": {
-            "selection": "たのしいことはどんどんする",
-            "answer": false,
-            "title": objectData.character.nyateracy.name,
-            "text": "",
-            "nyateracy": objectData.character.nyateracy.pose1
-        },
-        "selection2": {
-            "selection": "とくに問題がなさそうなので勝手に判断して行動した",
-            "answer": false,
-            "title": objectData.character.nyateracy.name,
-            "text": "うん、それもあるね。でももっと大事なところがあるよ。",
-            "nyateracy": objectData.character.nyateracy.pose1
-        },
-        "selection3": {
-            "selection": "勝手にソフトをダウンロードしたりしない",
-            "answer": true,
-            "title": objectData.character.nyateracy.name,
-            "text": "その通り！",
-            "nyateracy": objectData.character.nyateracy.pose1
-        },
+        "title": objectData.character.anata.name,
+        "text": "そうだ！誰かほかの強い人に手伝ってもらおう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 7,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "このフレンドっていうのを押せばよさそうだ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "displayId": 7,
+        "bgm": "",
+        "bgimg": ""
+    },
+    {
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 11,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "フレンドを募集してみよう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "displayId": 11,
+        "bgm": "",
+        "bgimg": ""
+    },
+    {
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 13,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.anata.name,
+        "text": "さっそくフレンド募集に書き込もう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 14,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.anata.name,
+        "text": "・・・「小学生です！チームを組んで戦える強い人を募集！」これでよし！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 14,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.anata.name,
+        "text": "明日には強い人来てくれるといいなあ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "conversation",
+        "bgm": objectData.bgm.home,
+        "bgimg": objectData.bgimg.roomNoon,
+        "title": "",
+        "text": "次の日",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
     },
     {
         "mode": "conversation",
         "bgm": "",
         "bgimg": "",
-        "title": objectData.character.nyateracy.name,
-        "text": "今回のような被害をランサムウェアというよ。ゲームのチートツールを装ってプレイヤーにダウンロードさせるんだ。",
+        "title": objectData.character.anata.name,
+        "text": "今日もドラゴンハンターやるかあ",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
         "mostRight": "",
-        "nyateracy": objectData.character.nyateracy.pose1,
+        "nyateracy": "",
         "img": ""
     },
     {
-        "mode": "operation"
+        "mode": "operation",
+        "displayId": 2,
+        "bgm": "",
+        "bgimg": ""
+    },
+    {
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "operation",
+        "displayId": 5,
+        "bgm": objectData.bgm.dhOpening,
+        "bgimg": ""
+    },
+    {
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 7,
+        "bgm": objectData.bgm.dhMenu,
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "昨日フレンド募集したけど、強い人来てるといいなあ",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 7,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "さっそく見てみよう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "displayId": 7,
+        "bgm": "",
+        "bgimg": ""
+    },
+    {
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 11,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "さっそくフレンド募集を見てみよう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "displayId": 11,
+        "bgm": "",
+        "bgimg": ""
+    },
+    {
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 15,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.anata.name,
+        "text": "やった！！フレンド申請来てる！レベルも高い！！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 15,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.anata.name,
+        "text": "しかも、僕と同じ小学生だ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 6,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "さっそくショウと一緒にクエストに行こう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "displayId": 6,
+        "bgm": "",
+        "bgimg": ""
+    },
+    {
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 9,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "「チームで」を押せばよさそうだ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "displayId": 9,
+        "bgm": "",
+        "bgimg": ""
     }
 ]
 
