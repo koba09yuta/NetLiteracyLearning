@@ -65,7 +65,28 @@ export const showDarkness = () => {
         $('#darkness-wrapper').animate({ 'opacity': 0 }, 500, 'swing', () => {
             $('#darkness-wrapper').hide();
         });
-    })
+    });
+}
+
+/** ゲームローディングを見せる関数 */
+export const showGameLoading = () => {
+    $('#black-wrapper').show().animate({opacity: 1}, 500, 'swing', () => {
+        // 暗転中に場面を切り替える
+        sceneId++;
+        sceneShow();
+        $('#conversation-wrapper').hide();
+        $('#black-wrapper').hide();
+        $('#game-loading').show();
+        // 明転
+        $('#game-loading').delay(1000).animate({opacity: 0}, 500, 'swing', () => {
+            $('#game-loading').hide();
+            $('#game-loading').css({opacity: 1});
+            $('#black-wrapper').css({opacity: 0});
+            if (storyData[sceneId].mode === "explanation") {
+                $('#conversation-wrapper').delay(500).fadeIn(200);
+            }
+        });
+    });
 }
 
 /** 選択肢を見せる関数 */
@@ -110,6 +131,8 @@ export const showAnswer = (selectionNumber) => {
 
 /** ディスプレイを表示する関数 */
 export const showDisplay = (displayId) => {
+    $('#black-wrapper').hide();
+    $('#game-loading').hide();
     $('#desktop').hide();
     $('#dh-opening').hide();
     $('#dh-menu').hide();
@@ -121,13 +144,13 @@ export const showDisplay = (displayId) => {
     $('#ransomware-container').hide();
     // デスクトップ画面
     if (displayId <= 4) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0}); 
         $('#pc-wrapper').css('background-color','rgb(0,181,252)');
         $('#pc-wrapper').css('background-image', 'none');
         $('#desktop').show();
         if (displayId === 1) {
             $('#dragon-hunter').show();
-            $('#ransomware').hide();
+            $('#ransomware').show();
             $('#dragon-hunter').removeClass("flush-icon");
             $('#ransomware').removeClass("flush-icon");
             return;
@@ -141,7 +164,7 @@ export const showDisplay = (displayId) => {
         if (displayId === 3) {
             $('#dragon-hunter').show();
             $('#ransomware').show();
-            $('#dragon-hunter').removeClass("flush-icon");
+            $('#dragon-hunter').addClass("flush-icon");
             $('#ransomware').removeClass("flush-icon");
             return;
         }
@@ -155,7 +178,7 @@ export const showDisplay = (displayId) => {
     }
     // タイトル画面
     if (displayId === 5) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhOpening);
         $('#dh-opening').show();
@@ -163,7 +186,7 @@ export const showDisplay = (displayId) => {
     }
     // メニュー画面
     if (displayId === 6 || displayId === 7) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0.2});
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhMenu);
         $('#dh-menu').show();
@@ -171,7 +194,7 @@ export const showDisplay = (displayId) => {
     }
     // クエスト画面
     if (displayId === 8 || displayId === 9) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0.2});
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhQuest);
         $('#dh-quest').show();
@@ -179,7 +202,7 @@ export const showDisplay = (displayId) => {
     }
     // フレンド画面
     if (displayId === 10 || displayId === 11) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
         $('#dh-friend').show();
@@ -191,10 +214,12 @@ export const showDisplay = (displayId) => {
     }
     // フレンド募集画面
     if (displayId === 13 || displayId === 14 || displayId === 15) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
         $('#board').show();
+        $('#anata-container').hide();
+        $('#sho-container').hide();
         if (displayId === 14) {
             $('#anata-container').show();
         }
@@ -203,8 +228,9 @@ export const showDisplay = (displayId) => {
             $('#sho-container').show();
         }
     }
+    // チャット画面（自動遷移）
     if (displayId === 16) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
         $('.line__container').show();
@@ -214,28 +240,30 @@ export const showDisplay = (displayId) => {
         $('#text3').delay(5000).fadeIn(500);
         $('#text4').delay(7000).fadeIn(500);
         $('#text5').delay(9000).fadeIn(500);
-        $('#text6').delay(11000).fadeIn(500);
-        $('.scroll').delay(11500).animate({scrollTop: 1000}, 'fast');
+        $('.scroll').delay(9500).animate({scrollTop: 1000}, 'fast');
         sceneAdvance();
-        setTimeout(sceneShow, 14000);
+        setTimeout(sceneShow, 12000);
         return;
     }
+    // チャット画面（遷移なし）
     if (displayId === 17) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
         $('.line__container').show();
         return;
     }
+    // ダウンロード画面
     if (displayId === 18) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0}); 
         $('#pc-wrapper').css('background-color', '#4EF7D0');
         $('#pc-wrapper').css('background-image', 'none');
         $('.download_container').show();
         return;
     }
+    // ランサムウェア疑似サイト画面
     if (displayId === 19) {
-        $("#white-wrapper").css({opacity: "0"}); 
+        $("#white-wrapper").css({opacity: 0}); 
         $('#pc-wrapper').css('background-color', 'darkred');
         $('#pc-wrapper').css('background-image', 'none');
         $('#ransomware-container').show();
@@ -265,49 +293,46 @@ export const activate = (name) => {
     if (storyData[sceneId].displayId === 2 && name === "dragonHunter") {
         sceneAdvance();
         sceneShow();
-        // window.location.href = './WEB-INF/html/conversation1_1.html';
+        return;
+    }
+    if (storyData[sceneId].displayId === 3 && name === "dragonHunter") {
+        sceneAdvance();
+        sceneShow();
         return;
     }
     if (storyData[sceneId].displayId === 4 && name === "ransomware") {
         sceneAdvance();
         sceneShow();
-        // window.location.href = './WEB-INF/html/conversation1_1.html';
         return;
     }
     if (storyData[sceneId].displayId === 6 && name === "quest") {
         sceneAdvance();
         sceneShow();
-        // window.location.href = './WEB-INF/html/conversation1_1.html';
         return;
     }
     if (storyData[sceneId].displayId === 7 && name === "friend") {
         sceneAdvance();
         sceneShow();
-        // window.location.href = './WEB-INF/html/conversation1_1.html';
         return;
     }
     if (storyData[sceneId].displayId === 8 && name === "solo") {
         sceneAdvance();
         sceneShow();
-        // window.location.href = './WEB-INF/html/conversation1_1.html';
         return;
     }
     if (storyData[sceneId].displayId === 9 && name === "team") {
         sceneAdvance();
         sceneShow();
-        // window.location.href = './WEB-INF/html/conversation1_1.html';
         return;
     }
     if (storyData[sceneId].displayId === 10 && name === "chat") {
         sceneAdvance();
         sceneShow();
-        // window.location.href = './WEB-INF/html/conversation1_1.html';
         return;
     }
     if (storyData[sceneId].displayId === 11 && name === "recruit") {
         sceneAdvance();
         sceneShow();
-        // window.location.href = './WEB-INF/html/conversation1_1.html';
         return;
     }
     changeHide("explanation");
@@ -318,46 +343,34 @@ export const activate = (name) => {
 
 /** 隠し要素を切り替える関数 */
 export const changeHide = (scene) => {
+    $('#opening-wrapper').hide();
+    $('#people-wrapper').hide();
+    $('#img-wrapper').hide();
+    $('#selection-wrapper').hide();
+    $('#conversation-wrapper').hide();
+    $('.pointer').hide();
+    $('#pc-wrapper').hide();
+    $('#nyateracy').hide();
+    $('#transparent-wrapper').hide();
     if (scene === "opening") {
         $('#opening-wrapper').show();
-        $('#people-wrapper').hide();
-        $('#img-wrapper').hide();
-        $('#selection-wrapper').hide();
-        $('#conversation-wrapper').hide();
-        $('#pc-wrapper').hide();
-        $('#nyateracy').hide();
-        $('#transparent-wrapper').hide();
         return;
     }
     if (scene === "conversation") {
-        $('#opening-wrapper').hide();
         $('#people-wrapper').show();
         $('#img-wrapper').show();
-        $('#selection-wrapper').hide();
         $('#conversation-wrapper').show();
         $('.pointer').show();
-        $('#pc-wrapper').hide();
-        $('#nyateracy').hide();
-        $('#transparent-wrapper').hide();
         return;
     }
     if (scene === "selection") {
-        $('#opening-wrapper').hide();
-        $('#people-wrapper').hide();
-        $('#img-wrapper').hide();
         $('#selection-wrapper').show();
         $('#conversation-wrapper').show();
-        $('.pointer').hide();
         $('#pc-wrapper').show();
-        $('#nyateracy').hide();
         $('#transparent-wrapper').show();
         return;
     }
     if (scene === "explanation") {
-        $('#opening-wrapper').hide();
-        $('#people-wrapper').hide();
-        $('#img-wrapper').hide();
-        $('#selection-wrapper').hide();
         $('#conversation-wrapper').show();
         $('.pointer').show();
         $('#pc-wrapper').show();
@@ -366,15 +379,7 @@ export const changeHide = (scene) => {
         return;
     }
     if (scene === "operation") {
-        $('#opening-wrapper').hide();
-        $('#people-wrapper').hide();
-        $('#img-wrapper').hide();
-        $('#selection-wrapper').hide();
-        $('#conversation-wrapper').hide();
-        $('.pointer').hide();
         $('#pc-wrapper').show();
-        $('#nyateracy').hide();
-        $('#transparent-wrapper').hide();
         return;
     }
 }
@@ -391,6 +396,10 @@ export const sceneShow = () => {
     }
     if (storyData[sceneId].mode === "darkness") {
         showDarkness();
+        return;
+    }
+    if (storyData[sceneId].mode === "gameLoading") {
+        showGameLoading();
         return;
     }
     if (storyData[sceneId].mode === "selection") {

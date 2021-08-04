@@ -9,6 +9,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="../../css/conversation.css">
+    <link rel="stylesheet" href="../../css/dragonHunter.css">
     <link rel="stylesheet" href="../../css/missionChat.css">
     <link rel="stylesheet" href="../../css/download.css">
     <link rel="stylesheet" href="../../css/reqruit.css">
@@ -78,7 +79,7 @@
     <div id="conversation-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-10 offset-1">
+                <div class="col-8 offset-2">
                     <div class="title-box text-light px-3 d-flex align-items-center">
                         <div id="title"></div>
                     </div>
@@ -96,6 +97,16 @@
     <div id="pc-wrapper">
         <!-- 白ラッパー -->
         <div id="white-wrapper"></div>
+        <!-- 黒ラッパー -->
+        <div id="black-wrapper"></div>
+        <!-- ゲームローディング -->
+        <div id="game-loading" class="dragon-hunter">
+            <div id="game-animation">
+                <img src="../../img/icon/剣のアイコン素材.svg" class="sword-spin">
+                <p class="game-loading-text">Now Loading...</p>
+                <img src="../../img/icon/剣のアイコン素材.svg" class="sword-spin">
+            </div>
+        </div>
         <!-- ニャテラシー -->
         <div id="nyateracy"></div>
         <!-- デスクトップ -->
@@ -110,7 +121,7 @@
                 <div class="icon-img">
                     <img src="../../img/icon/configIcon.svg">
                 </div>
-                <div class="icon-name text-center mt-2">チートツール</div>
+                <div class="icon-name text-center mt-2">強化ツール</div>
             </div>
         </div>
         <!-- ドラゴンハンターオープニング -->
@@ -197,20 +208,8 @@
             </div>
             <!-- ▼会話エリア scrollを外すと高さ固定解除 -->
             <div class="line__contents scroll">
-                <!-- 相手の吹き出し1 -->
-                <div class="line__left chat-box" id="text1">
-                    <figure>
-                        <img src="../../img/icon/sho.svg" />
-                    </figure>
-                    <div class="line__left-text">
-                        <div class="text">
-                            やったな！<br>俺たちの勝ちだ！
-                        </div>
-                    </div>
-                </div>
-
                 <!-- 自分の吹き出し1 -->
-                <div class="line__right chat-box" id="text2">
+                <div class="line__right chat-box" id="text1">
                     <div class="line__right-text">
                         <div class="text">
                             やったねショウ！<br>どうしてそんなに強いの？
@@ -221,8 +220,8 @@
                     </figure>
                 </div>
 
-                <!-- 相手の吹き出し2 -->
-                <div class="line__left chat-box" id="text3">
+                <!-- 相手の吹き出し1 -->
+                <div class="line__left chat-box" id="text2">
                     <figure>
                         <img src="../../img/icon/sho.svg" />
                     </figure>
@@ -233,7 +232,7 @@
                     </div>
                 </div>
                 <!-- 自分の吹き出し2 -->
-                <div class="line__right chat-box" id="text4">
+                <div class="line__right chat-box" id="text3">
                     <div class="line__right-text">
                         <div class="text">
                             えーー！！フレンドだろ！<br>だれにも言わないから教えてよ！
@@ -243,8 +242,8 @@
                         <img src="../../img/icon/anata.svg" />
                     </figure>
                 </div>
-                <!-- 相手の吹き出し3 -->
-                <div class="line__left chat-box" id="text5">
+                <!-- 相手の吹き出し2 -->
+                <div class="line__left chat-box" id="text4">
                     <figure>
                         <img src="../../img/icon/sho.svg" />
                     </figure>
@@ -258,8 +257,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- 相手の吹き出し4 -->
-                <div class="line__left chat-box" id="text6">
+                <!-- 相手の吹き出し3 -->
+                <div class="line__left chat-box" id="text5">
                     <figure>
                         <img src="../../img/icon/sho.svg" />
                     </figure>
@@ -280,7 +279,7 @@
                 <div id="dlProgressText"></div>
                 <progress id="dlProgress" value="0" max="100">0%</progress>
             </div>
-            <input type="button" id="dlButton" onclick="func1()" value="">
+            <input type="button" id="dlButton" class="flush-icon" onclick="func1()" value="">
             <label id="complete">ダウンロードが完了しました</label>
             <!-- 遷移先を入れる -->
             <u id="exit" class="pc-forward">ページを閉じる</u>
@@ -291,6 +290,7 @@
                 let intervalID;
                 // ボタンを押した時に動く関数
                 function func1() {
+                    $('#dlButton').removeClass("flush-icon");
                     $('#dlProgress').fadeIn();
                     val = 0;
                     // ボタンを無効にする(何回も押せないように)
@@ -323,7 +323,7 @@
             </div>
             <div class="money">解除するには<span>20万円</span>お支払いください</div>
             <div class="delete">
-                <div class="delete-title">データ消去残り時間</div>
+                <div class="delete-title">データ消去まで残り時間</div>
                 <div id="days"></div>
                 <script>
                     var firstDay = new Date();
@@ -351,6 +351,7 @@
                     端末のすべてのデータを消去します。
                 </div>
             </div>
+        </div>
     </div>
     <!-- 透明ラッパー -->
     <div id="transparent-wrapper"></div>
