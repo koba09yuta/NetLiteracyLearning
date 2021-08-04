@@ -2,12 +2,14 @@
 
 /** ローディングを見せる関数 */
 const loading = () => {
+    $('#huki-wrapper').hide();
     $('#title-wrapper').hide();
     $('#button-wrapper').hide();
     $('#nyateracy-wrapper').hide();
     $('#logo-wrapper').show();
     $('#loading').delay(800).fadeOut(300, () => {
         $('#darkness-wrapper').hide();
+        $('#huki-wrapper').show();
         $('#title-wrapper').show();
         $('#button-wrapper').show();
         $('#nyateracy-wrapper').show();
