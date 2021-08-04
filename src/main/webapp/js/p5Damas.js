@@ -2,17 +2,11 @@ let damas;
 let mes1;
 let scaleAll;
 let canvas;
-let enemyHP = 200;
-let damage = 0;
-//let damageSp = 0;
-let damageTotal = 0;
-//let damageTotalSp = 0;
 let pressFlag = false;
 let count = 0;
 let changeW;
 let changeH;
 let sp;
-let spHP;
 let song;
 let cmd = 0;
 let dBar;
@@ -102,7 +96,7 @@ function setup() {
     healSe = volumeSetUp(healSe);
 }
 
-/*function keyPressed() {
+function keyPressed() {
     if (key == "t") {
         mode = "team";
         //ダメージバー
@@ -131,7 +125,7 @@ function setup() {
 
         team.addImage(soloIcon);
     }
-}*/
+}
 
 function volumeSetUp(bgm) {
     bgm.setVolume(0.1);
@@ -238,8 +232,10 @@ function cmdPlay() {
         cmd = 8;
     }
     else {
-        if (adh = "re") cmd = 0;
-        else if (adh = "st") cmd = 0;
+        console.log(adh);
+        if (adh == "re") cmd = 0;
+        else if (adh == "st1")window.location.href = "./conversation1_2.html";
+        else if (adh == "st2") window.location.href = "./conversation1_3.html";
         anata.damageTotal = 0;
         damas.damageTotal = 0;
         sho.damageTotal = 0;
@@ -358,7 +354,6 @@ function battleMenu(cmdSp, img, posY) {
         textSize(scaleAll * 20);
     }
     else {
-        console.log(width / 3);
         cmdSp.scale = scaleAll * width / 750 * 0.20;
         textSize(scaleAll * width / 918 * 20);
     }
@@ -396,7 +391,10 @@ function damyWrapp(cmd) {
         else text('ダマスの　こうげき！\nあなたに　' + anata.damage + '　のダメージ\nショウに　' + sho.damage + '　のダメージ　▼', width / 2, height * 6 / 8);
     }
     else if (cmd == 5) text('ショウの　こうげき！\nダマスに　' + damas.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
-    else if (cmd == 6) text('ダマスを　たおした！！　▼', width / 2, height * 7 / 9);
+    else if (cmd == 6) {
+        text('ダマスを　たおした！！　▼', width / 2, height * 7 / 9);
+        adh = "st2";
+    }
     else text('あなたは　たおれた・・・　▼', width / 2, height * 7 / 9);
 
     if (cmd == 8) {
@@ -408,14 +406,14 @@ function damyWrapp(cmd) {
         terop1.position.y = height * 4 / 9;
         terop1.shapeColor = color(0, 0, 0, 0);
         fill(250, 250, 0);
-        text("フレンドをふやす", width / 2, height * 5 / 9);
+        text("あきらめる", width / 2, height * 5 / 9);
         terop2.position.x = width / 2;
         terop2.position.y = height * 5 / 9;
         terop2.shapeColor = color(0, 0, 0, 0);
         drawSprite(terop1);
         drawSprite(terop2);
         let bool1 = sp.overlap(terop1, () => adh = "re");
-        let bool2 = sp.overlap(terop2, () => adh = "st");
+        let bool2 = sp.overlap(terop2, () => adh = "st1");
         if (bool1 || bool2) pressFlag = true;
         else pressFlag = false;
     }
