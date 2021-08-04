@@ -72,6 +72,28 @@ body:hover{
     transform: translateX(-50%);
 }
 
+.flush-icon {
+    animation: flushIcon 1s linear 0s infinite;
+}
+
+@keyframes flushIcon{
+    0%{
+        opacity: 0.5;
+    }
+    25%{
+        opacity: 0.75;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+
 #dlButton:hover {
     cursor: pointer;
 }
