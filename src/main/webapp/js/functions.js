@@ -323,7 +323,7 @@ export const activate = (name) => {
         return;
     }
     if (storyData[sceneId].displayId === 9 && name === "team") {
-        window.location.href = "./missionDamas1.html";
+        window.location.href = "./missionDamas2.html";
         return;
     }
     if (storyData[sceneId].displayId === 10 && name === "chat") {
