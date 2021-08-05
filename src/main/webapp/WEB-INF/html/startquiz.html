@@ -19,32 +19,49 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <title>クイズスタート画面</title>
+    <title>黒猫ニャテラシーのネットリテラシー</title>
 </head>
 
 <body>
-   
-
-    <div class="background"><div class="background2"></div></div>
+    <!-- ローディング -->
+    <div id="loading">
+        <div id="animation">
+            <div class="loading-circle"></div>
+            <p class="loading-text">Now Loading...</p>
+        </div>
+    </div>
     
-    
-    <div class="label1">今回のおさらい</div>
-    <div class="label2">こたえられるかニャ？</div>
-    <a href="../html/quiz.html" id="label3">スタート</a>
-    
-    
-
+    <!-- タイトルラッパー -->
+    <div id="title-wrapper">
+        <div class="text-center">今回のおさらい</div>
+    </div>
+     <!-- 吹き出しラッパー -->
+     <div id="huki-wrapper">
+        <div class="text-center">全問とけるかニャ？</div>
+    </div>
+    <!-- ボタンラッパー -->
+    <div id="button-wrapper">
+        <div class="text-center">
+            <button id="start-button">START!</button>
+        </div>
+    </div>
+    <!-- ニャテラシーラッパー -->
+    <div id="nyateracy-wrapper">
+        <img src="../../img/nyateracy/nyateracy_2.svg" style='transform: scale(-1, 1);' id="nyateracy-img">
+    </div>
     <!-- 暗転ラッパー -->
     <div id="darkness-wrapper"></div>
     <!-- 音楽 -->
-    <audio loop id="bgm">
-        <source src="./music/bgm/so_sweet.mp3" type="audio/mp3">
+    <audio id="bgm" autoplay>
+        <source src="../../music/bgm/Japanese_School_Bell02-05.mp3" type="audio/mp3">
     </audio>
+    <iframe src="../../music/bgm/Japanese_School_Bell02-05.mp3" allow="autoplay" style="display:none" id="bgm">
+    </iframe> 
     <audio preload="auto" id="sound-effect">
-        <source src="" type="audio/mp3">
+        <source src="./music/sound_effect/「ピロリ」決定のボタン音・アクセント音.mp3" type="audio/mp3">
     </audio>
     <!-- Javascript -->
-    <script src="../../js/startquiz.js"></script>
+    <script src="../../js/startquiz.js" type="module"></script>
 </body>
 
 </html>
