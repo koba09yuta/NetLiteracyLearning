@@ -41,3 +41,5 @@ $('#start-button').on("click", () => {
     });
 });
 
+const music = document.getElementById('bgm');
+music.volume = 0.5

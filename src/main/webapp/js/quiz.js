@@ -1,3 +1,5 @@
+const music = document.getElementById('bgm');
+music.volume = 0.1;
 $('body').css('backgroundImage', "url(../../img/background/blackboard.png)");
 
 $(function(){
