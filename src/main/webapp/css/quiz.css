@@ -14,21 +14,19 @@ body {
     top: 25vh;
     left: -5vw;
 }
-
 #nyateracy-img {
     height: 100vh;
 }
 body:hover{
     cursor: default;
 }
-
 /* クイズのすべてを管理する親要素 */
 .quiz_area{
     text-align: center;
     font-weight: 900;
     display: flex;
     position: absolute;
-    left: 35vw;
+    left: 28vw;
     top: 8vh;
     font-size: 4vh;
     color: rgb(0, 0, 0);
@@ -40,7 +38,6 @@ body:hover{
     left: 30vw;
     top: 5vh;
 }
-
 /* 回答後に上に被せてタップできなくするための要素（デフォルト非表示、回答後に一時的に表示） */
 .quiz_area .quiz_area_bg{
     position: absolute;
@@ -71,7 +68,6 @@ body:hover{
     -webkit-text-stroke: 4px #FFF;
     
 }
-   
 /* 画面に解説を表示するための要素 */
 #comment_image{
     width: 75vw;
@@ -81,7 +77,6 @@ body:hover{
     position: absolute;
     background-size: cover;
     display: none;
-   
 }
 /* 画面に解説を表示するための要素 */
 #last_image{
@@ -94,7 +89,6 @@ body:hover{
     display: none;
    
 }
-
 /* 画面に戻るボタンを表示するための要素 */
 .back_button{
     border-radius: 100vh;
@@ -149,28 +143,21 @@ body:hover{
     content: '×';
     color: blue;
 }
-
-
 /* 現在の問題数を表示 */
 .quiz_area .quiz_no{
     font-weight: 900;
     color: rgb(165, 26, 7);
 }
-
 /* 問題文 */
 .quiz_area .quiz_question{
-    padding-right: 5vw;
+    padding-right: 10vw;
     font-size: 4vh;
     color: rgb(255, 255, 255);
-    font-weight: bold;
-    
+    font-weight: bold; 
 }
-
-
 /* 回答後の結果 */
 .quiz_area .quiz_result{
     display: none;
-    
 }
 .clear{
     font-size: 10vh;
@@ -202,15 +189,13 @@ body:hover{
     text-overflow: ellipsis;
     text-align: center;
 }
-
-
 /* 以下クイズの選択肢のデザイン */
 
 /* 選択肢エリア全体 */
 .quiz_area .quiz_ans_area ul{
-    
     margin: 10px 0 0 0;
-    padding: 5vh;
+    padding-top: 3vh;
+    padding-right: 10vw;
     display: block;
     text-align: center;
 }
