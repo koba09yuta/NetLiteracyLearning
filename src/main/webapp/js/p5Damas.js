@@ -52,7 +52,7 @@ function setup() {
     rectMode(CENTER);
     
     //フォント
-    textFont("游ゴシック Medium");    
+    textFont("游ゴシック Medium");
 
     //モード選択
     const fileName = window.location.href.split('/').pop();
@@ -348,8 +348,8 @@ function iconPosition(sp) {
     sp.position.y = height * 8 / 11;
 
     //スケール変換
-    if (width / 15 > 500) sp.scale = scaleAll * 0.4;
-    else sp.scale = scaleAll * width / 750 * 0.20;
+    if (width / 15 > 500) sp.scale = scaleAll;
+    else sp.scale = scaleAll * width / 750 * 0.22;
     drawSprite(sp);
 }
 
@@ -361,21 +361,21 @@ function battleMenu(cmdSp, img, posY) {
     //スケール変換
     if (width / 3 > 310) {
         cmdSp.scale = scaleAll * 0.25;
-        textSize(scaleAll * 20);
+        textSize(scaleAll * 26);
     }
     else {
         cmdSp.scale = scaleAll * width / 750 * 0.20;
-        textSize(scaleAll * width / 918 * 20);
+        textSize(scaleAll * width / 918 * 26);
     }
 }
 
 function damyWrapp(cmd) {
     //damyのサイズ調整
     if (width / 3 > 310) {
-        textSize(scaleAll * 25);
+        textSize(scaleAll * 30);
     }
     else {
-        textSize(scaleAll * width / 918 * 20);
+        textSize(scaleAll * width / 918 * 30);
     }
 
     //テキスト進行のため、ダミースクリプトを張りクリックを許可
@@ -419,18 +419,19 @@ function damyWrapp(cmd) {
     if (cmd == 8) {
         endWindowSp.position.x = width / 2;
         endWindowSp.position.y = height / 2;
-        endWindowSp.scale = scaleAll * width / 1500 * 0.8;
+        endWindowSp.scale = scaleAll * width / 1500 * 1.2;
+        textSize(scaleAll*width/1000*30);
         drawSprite(endWindowSp);
         fill(250, 250, 250);
         text("再挑戦", width / 2, height * 4 / 9);
         terop1.position.x = width / 2;
         terop1.position.y = height * 4 / 9;
-        terop1.shapeColor = color(0, 0, 0, 0);
+        terop1.shapeColor = color(100, 0, 0, 0);
         fill(250, 250, 0);
         text("あきらめる", width / 2, height * 5 / 9);
         terop2.position.x = width / 2;
         terop2.position.y = height * 5 / 9;
-        terop2.shapeColor = color(0, 0, 0, 0);
+        terop2.shapeColor = color(100, 0, 0, 0);
         drawSprite(terop1);
         drawSprite(terop2);
         let bool1 = sp.overlap(terop1, () => adh = "re");
