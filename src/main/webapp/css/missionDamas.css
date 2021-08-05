@@ -2,18 +2,16 @@
 
 /* 全体 */
 body {
-    font-family: "UD Digi Kyokasho N-R";
+    font-family: "UD Digi Kyokasho N-R", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
     background-image: url("../img/background/pc_room_evening.jpg");
-    /*
-        スクロールしないように、
-        ・高さをビューポートに対して100%
-        ・はみ出し部分を表示しないように設定
-    */
     height: 100vh;
     overflow: hidden;
 }
 
-body :hover{
+body:hover{
     cursor: default;
 }
 

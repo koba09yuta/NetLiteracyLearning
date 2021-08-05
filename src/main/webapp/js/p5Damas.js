@@ -1,42 +1,43 @@
-let damas;
-let mes1;
+//フレキシブル対応倍率格納変数
 let scaleAll;
-let canvas;
+//ウインドウクリック判定
 let pressFlag = false;
-let count = 0;
-let changeW;
-let changeH;
-let sp;
-let song;
+//ウインドウ遷移用コマンド格納変数
 let cmd = 0;
-let dBar;
-let dBarSp;
+//アタック・ディフェンス・ヒール判定
 let adh;
-let at;
-let df;
-let hl;
+//エフェクト終了までのスプライトの寿命を格納
 let lifeAll = 0;
-let nowPlayer;
-let mode;
+//チーム戦ぼうぎょコマンドでループ時に
 let tmpCmd;
 //素材呼び出し
 function preload() {
-    enemy = loadImage('../../img/game/damas.svg');
+    //選択肢（at:こうげき、df:ぼうぎょ、hl:回復）
+    //N・・・ホバー前の画像、H・・・ホバー後の画像
     atN = loadImage('../../img/game/at.png');
     dfN = loadImage('../../img/game/df.png');
     hlN = loadImage('../../img/game/hl.png');
     atH = loadImage('../../img/game/atH.png');
     dfH = loadImage('../../img/game/dfH.png');
     hlH = loadImage('../../img/game/hlH.png');
+    //ダマス
+    enemy = loadImage('../../img/game/damas.svg');
+    //終了画面
+    endWindow = loadImage('../../img/game/re_window.svg');
+    //チームアイコン各種
     soloIcon = loadImage('../../img/game/solo.svg');
     teamIcon = loadImage('../../img/game/team.svg');
+    //攻撃エフェクトアニメーション
     slash = loadAnimation('../../img/game/slashAnime/z001.png', '../../img/game/slashAnime/z002.png', '../../img/game/slashAnime/z003.png', '../../img/game/slashAnime/z004.png', '../../img/game/slashAnime/z005.png', '../../img/game/slashAnime/z006.png', '../../img/game/slashAnime/z007.png', '../../img/game/slashAnime/z008.png', '../../img/game/slashAnime/z009.png');
+    slash2 = loadAnimation('../../img/game/slashAnime2/1.png', '../../img/game/slashAnime2/2.png', '../../img/game/slashAnime2/3.png', '../../img/game/slashAnime2/4.png', '../../img/game/slashAnime2/5.png', '../../img/game/slashAnime2/6.png', '../../img/game/slashAnime2/7.png', '../../img/game/slashAnime2/8.png', '../../img/game/slashAnime2/9.png', '../../img/game/slashAnime2/10.png');
     atack = loadAnimation('../../img/game/enemyAtack/2.png', '../../img/game/enemyAtack/3.png', '../../img/game/enemyAtack/4.png', '../../img/game/enemyAtack/5.png', '../../img/game/enemyAtack/6.png', '../../img/game/enemyAtack/7.png', '../../img/game/enemyAtack/8.png', '../../img/game/enemyAtack/9.png', '../../img/game/enemyAtack/10.png');
-    atack2 = loadAnimation('../../img/game/enemyAtack2/1.png', '../../img/game/enemyAtack2/2.png', '../../img/game/enemyAtack2/3.png', '../../img/game/enemyAtack2/4.png', '../../img/game/enemyAtack2/5.png', '../../img/game/enemyAtack2/6.png', '../../img/game/enemyAtack2/7.png', '../../img/game/enemyAtack2/8.png', '../../img/game/enemyAtack2/9.png', '../../img/game/enemyAtack2/10.png');
     heal = loadAnimation('../../img/game/hlAnime/1.png', '../../img/game/hlAnime/2.png', '../../img/game/hlAnime/3.png', '../../img/game/hlAnime/4.png', '../../img/game/hlAnime/5.png', '../../img/game/hlAnime/6.png', '../../img/game/hlAnime/7.png', '../../img/game/hlAnime/8.png', '../../img/game/hlAnime/9.png', '../../img/game/hlAnime/10.png', '../../img/game/hlAnime/11.png', '../../img/game/hlAnime/12.png', '../../img/game/hlAnime/13.png', '../../img/game/hlAnime/14.png', '../../img/game/hlAnime/15.png');
     defence = loadAnimation('../../img/game/dfAnime/1.png', '../../img/game/dfAnime/2.png', '../../img/game/dfAnime/3.png', '../../img/game/dfAnime/4.png', '../../img/game/dfAnime/5.png', '../../img/game/dfAnime/6.png', '../../img/game/dfAnime/7.png', '../../img/game/dfAnime/8.png');
+    //BGM
     song = loadSound('../../music/bgm/battle.mp3');
+    ////効果音各種
     slashSe = loadSound('../../music/bgm/slash.mp3');
+    slashSe2 = loadSound('../../music/bgm/slash2.mp3');
     punchSe = loadSound('../../music/bgm/punch.mp3');
     defenceSe = loadSound('../../music/bgm/df.mp3');
     healSe = loadSound('../../music/bgm/hl.mp3');
@@ -46,8 +47,14 @@ function setup() {
     //キャンバスを作成
     canvas = createCanvas(windowWidth * 0.783, windowHeight * 0.86);
     canvas.parent('pc-wrapper');
-    rectMode(CENTER);
 
+    //配置基準をオブジェクトのセンターに
+    rectMode(CENTER);
+    
+    //フォント
+    textFont("游ゴシック Medium");    
+
+    //モード選択
     const fileName = window.location.href.split('/').pop();
     if (fileName === "missionDamas1.html") {
         mode = "solo";
@@ -55,28 +62,33 @@ function setup() {
         mode = "team";
     }
 
+    //アイコンスプライト
     team = createSprite();
     if (mode == "team") team.addImage(teamIcon);
     else team.addImage(soloIcon);
 
-    //ダマス作成
+    //ダマススプライト
     damasSp = createSprite();
     damasSp.addImage(enemy);
 
+    //ゲーム終了画面と選択のスプライト
+    endWindowSp = createSprite();
+    endWindowSp.addImage(endWindow);
     terop1 = createSprite(0, 0, 300, 50);
     terop2 = createSprite(0, 0, 300, 50);
 
-    //エフェクト
+    //エフェクトスプライト
     slashSp = effectSetUp();
+    slashSp2 = effectSetUp();
     atackSp = effectSetUp();
     defenceSp = effectSetUp();
     healSp = effectSetUp();
 
-    //見えないスプライト
+    //衝突用透明スプライト（マウス追従）
     sp = createSprite(0, 0, 1, 1);
     sp.shapeColor = color(0, 0, 0, 100);
 
-    //選択肢のホバーリセット
+    //選択肢のホバーの初期化
     at = atN; df = dfN; hl = hlN;
 
     //ダメージバー
@@ -85,60 +97,56 @@ function setup() {
     dBarShoSp = new damageBar();
 
     //キャラパラメータ
-    anata = new player(100, 2, 0);
-    sho = new player(999, 10, 5);
-    damas = new player(200, 6, 0);
+    anata = new player(100, 2, 0.8);
+    sho = new player(999, 12, 3);
+    damas = new player(200, 6, 6);
 
+    //各種音源ボリューム初期化
     song = volumeSetUp(song);
     slashSe = volumeSetUp(slashSe);
+    slashSe2 = volumeSetUp(slashSe2);
     punchSe = volumeSetUp(punchSe);
     defenceSe = volumeSetUp(defenceSe);
     healSe = volumeSetUp(healSe);
 }
+//クラス初期化
+function reset() {
+    //ダメージバー
+    dBar = new damageBar();
+    dBarSp = new damageBar();
+    dBarShoSp = new damageBar();
 
-function keyPressed() {
+    //キャラパラメータ
+    anata = new player(100, 2, 0.8);
+    sho = new player(999, 12, 3);
+    damas = new player(200, 6, 6);
+}
+//モード切り替え（開発者確認コマンド）
+/*function keyPressed() {
     if (key == "t") {
         mode = "team";
-        //ダメージバー
-        dBar = new damageBar();
-        dBarSp = new damageBar();
-        dBarShoSp = new damageBar();
-
-        //キャラパラメータ
-        anata = new player(100, 2, 0);
-        sho = new player(999, 10, 5);
-        damas = new player(200, 6, 0);
-
+        reset();
         team.addImage(teamIcon);
     }
     if (key == "s") {
         mode = "solo";
-        //ダメージバー
-        dBar = new damageBar();
-        dBarSp = new damageBar();
-        dBarShoSp = new damageBar();
-
-        //キャラパラメータ
-        anata = new player(100, 2, 0);
-        sho = new player(999, 10, 5);
-        damas = new player(200, 6, 0);
-
+        reset();
         team.addImage(soloIcon);
     }
-}
-
+}*/
+//ボリュームコントロール
 function volumeSetUp(bgm) {
-    bgm.setVolume(0.1);
+    bgm.setVolume(0.15);
     return bgm;
 }
-
+//エフェクト初期化
 function effectSetUp() {
     effectSp = createSprite();
     effectSp.shapeColor = color(0, 0, 0, 0);
     effectSp.life = 0;
     return effectSp;
 }
-
+//エフェクト描画
 function effectDraw(type, life, posY, scale) {
     effectSp = createSprite();
     effectSp.addAnimation("" + type + "", type);
@@ -149,45 +157,53 @@ function effectDraw(type, life, posY, scale) {
     effectSp.scale = scaleAll * scale;
     return effectSp;
 }
-
+//斬撃
 function createSlash() {
     slashSp = effectDraw(slash, 36, 3, 0.6);
     slashSe.play();
 }
-
+//強斬撃
+function createSlash2() {
+    slashSp2 = effectDraw(slash2, 36, 3, 0.6);
+    slashSe2.play();
+}
+//殴打
 function createAtack() {
     atackSp = effectDraw(atack, 36, 3, 1.4);
     punchSe.play();
 }
-
+//防御
 function createDefence() {
     defenceSp = effectDraw(defence, 32, 5, 2.5);
     defenceSe.play();
 }
-
+//回復
 function createHeal() {
     healSp = effectDraw(heal, 60, 4, 2.5);
     healSe.play();
 }
-
+//クリックイベントでウインドウ遷移
 function mousePressed() {
+    //lifeAllによりエフェクト終了してからつぎのウインドウへ
     if (pressFlag && lifeAll < 0) {
         pressFlag = false;
-        console.log("press");
         cmdPlay();
     }
 }
-
+//ウインドウ遷移コマンド
 function cmdPlay() {
-    console.log(cmd);
+    //メニュー選択画面
     if (cmd == 0) {
+        //攻撃
         if (adh == "at") {
             cmd = 1;
             damas.damage = damas.receive(anata.atack());
             damas.damageTotal += damas.damage;
             createSlash();
         }
+        //防御
         if (adh == "df") cmd = 2;
+        //回復
         if (adh == "hl") {
             cmd = 3;
             if (anata.damageTotal != 0) {
@@ -196,9 +212,9 @@ function cmdPlay() {
             }
         }
     }
+    //主人公の行動後
     else if (cmd == 1 || cmd == 2 || cmd == 3 || cmd == 5) {
         at = atN; df = dfN; hl = hlN;
-        console.log(mode);
         if (damas.hp - damas.damageTotal < 1) cmd = 6;
         else if (mode == "solo" || cmd == 5) {
             anata.damage = anata.receive(damas.atack());
@@ -219,7 +235,7 @@ function cmdPlay() {
         else {
             damas.damage = damas.receive(sho.atack());
             damas.damageTotal += damas.damage;
-            createSlash();
+            createSlash2();
             tmpCmd = cmd;
             cmd = 5;
         }
@@ -232,16 +248,10 @@ function cmdPlay() {
         cmd = 8;
     }
     else {
-        console.log(adh);
         if (adh == "re") cmd = 0;
-        else if (adh == "st1")window.location.href = "./conversation1_2.html";
+        else if (adh == "st1") window.location.href = "./conversation1_2.html";
         else if (adh == "st2") window.location.href = "./conversation1_3.html";
-        anata.damageTotal = 0;
-        damas.damageTotal = 0;
-        sho.damageTotal = 0;
-        dBar = new damageBar();
-        dBarSp = new damageBar();
-        dBarShoSp = new damageBar();
+        reset();
     }
 }
 
@@ -255,13 +265,13 @@ function draw() {
     damasSp.position.x = width / 2;
     damasSp.position.y = height / 2;
     damasSp.scale = scaleAll * 0.6;
-    if (slashSp.life % 15 != 13) drawSprite(damasSp);
+    if (slashSp.life % 15 != 13 && slashSp2.life == 0) drawSprite(damasSp);
+    if (slashSp2.life % 15 != 1 && slashSp.life == 0) drawSprite(damasSp);
 
-    if (slashSp != null) {
-        drawSprite(slashSp);
-    }
+    if (slashSp != null) drawSprite(slashSp);
+    if (slashSp2 != null) drawSprite(slashSp2);
 
-    //ウインドウ1
+    //ウインドウ
     rectMode(CENTER);
     if (atackSp.life > 0 && atackSp.life < 30 && anata.damage != 0) fill(100, 0, 0, 200);
     else if (defenceSp.life > 0 && defenceSp.life < 29 && anata.damage == 0) fill(0, 0, 100, 200);
@@ -365,14 +375,13 @@ function damyWrapp(cmd) {
         textSize(scaleAll * 25);
     }
     else {
-        console.log(width / 3);
         textSize(scaleAll * width / 918 * 20);
     }
 
     //テキスト進行のため、ダミースクリプトを張りクリックを許可
     let clickDamy = createSprite(width / 2, height * 4 / 5, windowWidth * 0.5, windowHeight * 0.3);
     clickDamy.shapeColor = color(0, 0, 0, 0);
-    let bool = sp.overlap(clickDamy, () => console.log("hit"));
+    let bool = sp.overlap(clickDamy,);
     if (bool) pressFlag = true;
     else pressFlag = false;
     drawSprite(clickDamy);
@@ -380,17 +389,27 @@ function damyWrapp(cmd) {
     //セリフ
     textAlign(CENTER, BASELINE);
     fill(255, 255, 255);
-    if (cmd == 1) text('あなたの　こうげき！\nダマスに　' + damas.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
-    else if (cmd == 2) text('あなたの　まもる！\nまもりの　たいせいに　なった！　▼', width / 2, height * 7 / 9);
+    if (cmd == 1) {
+        text('あなたの　こうげき！\nダマスに　' + damas.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
+    }
+    else if (cmd == 2) {
+        text('あなたの　まもる！\nまもりの　たいせいに　なった！　▼', width / 2, height * 7 / 9);
+    }
     else if (cmd == 3) {
-        if (anata.damageTotal == 0) text("あなたの　かいふく！\nHPは　まんたんだった！　▼", width / 2, height * 7 / 9);
+        if (anata.damageTotal == 0) {
+            text("あなたの　かいふく！\nHPは　まんたんだった！　▼", width / 2, height * 7 / 9);
+        }
         else text('あなたの　かいふく！\nHPが　' + anata.hp / 2 + '　かいふくした！　▼', width / 2, height * 7 / 9);
     }
     else if (cmd == 4) {
-        if (mode == "solo") text('ダマスの　こうげき！\nあなたに　' + anata.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
+        if (mode == "solo") {
+            text('ダマスの　こうげき！\nあなたに　' + anata.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
+        }
         else text('ダマスの　こうげき！\nあなたに　' + anata.damage + '　のダメージ\nショウに　' + sho.damage + '　のダメージ　▼', width / 2, height * 6 / 8);
     }
-    else if (cmd == 5) text('ショウの　こうげき！\nダマスに　' + damas.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
+    else if (cmd == 5) {
+        text('ショウの　こうげき！\nダマスに　' + damas.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
+    }
     else if (cmd == 6) {
         text('ダマスを　たおした！！　▼', width / 2, height * 7 / 9);
         adh = "st2";
@@ -398,8 +417,10 @@ function damyWrapp(cmd) {
     else text('あなたは　たおれた・・・　▼', width / 2, height * 7 / 9);
 
     if (cmd == 8) {
-        fill(100, 100, 200, 250);
-        rect(width / 2, height / 2, windowWidth * 0.3, windowHeight * 0.3);
+        endWindowSp.position.x = width / 2;
+        endWindowSp.position.y = height / 2;
+        endWindowSp.scale = scaleAll * width / 1500 * 0.8;
+        drawSprite(endWindowSp);
         fill(250, 250, 250);
         text("再挑戦", width / 2, height * 4 / 9);
         terop1.position.x = width / 2;
@@ -417,7 +438,6 @@ function damyWrapp(cmd) {
         if (bool1 || bool2) pressFlag = true;
         else pressFlag = false;
     }
-
     clickDamy.remove();
 }
 
