@@ -238,10 +238,10 @@ export const showDisplay = (displayId) => {
         $('#dh-friend').show();
         $('#dh-friend-chat').removeClass("flush-button");
         $('#dh-friend-recruit').removeClass("flush-button");
-        if (displayId === 8 && storyData[sceneId].mode === "operation") {
+        if (displayId === 10 && storyData[sceneId].mode === "operation") {
             $('#dh-friend-chat').addClass("flush-button");
         }
-        if (displayId === 9 && storyData[sceneId].mode === "operation") {
+        if (displayId === 11 && storyData[sceneId].mode === "operation") {
             $('#dh-friend-recruit').addClass("flush-button");
         }
         return;
