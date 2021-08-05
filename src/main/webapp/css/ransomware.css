@@ -1,31 +1,5 @@
 @charset "UTF-8";
 
-/* 全体 */
-body {
-    font-family: "UD Digi Kyokasho N-R";
-    background-size: cover;
-    height: 100vh;
-    overflow: hidden;
-}
-
-body:hover{
-    cursor: default;
-}
-
-/* PCラッパー */
-#pc-wrapper{
-    width: 80vw;
-    height: 90vh;
-    border: solid 2vh gray;
-    border-radius: 5vh;
-    position: absolute;
-    top: 5vh;
-    left: 50vw;
-    transform: translateX(-50%);
-    background-size: cover;
-    overflow: hidden;
-}
-
 #ransomware-container {
     font-family: sans-serif;
     text-align: center;

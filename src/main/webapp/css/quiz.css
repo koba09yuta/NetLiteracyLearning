@@ -6,6 +6,7 @@ body {
     background-size: cover;
     height: 100vh;
     overflow: hidden;
+    user-select: none;
 }
 /* ニャテラシーラッパー */
 #nyateracy-wrapper {
@@ -158,9 +159,9 @@ body:hover{
 
 /* 問題文 */
 .quiz_area .quiz_question{
-    font-size: 7vh;
+    padding-right: 5vw;
+    font-size: 4vh;
     color: rgb(255, 255, 255);
-    
     font-weight: bold;
     
 }
