@@ -66,7 +66,7 @@ $(function(){
             quizArea.find('.quiz_ans_area ul li').removeClass('selected');
             quizArea.find('.quiz_area_icon').removeClass('true false');
             quizArea.find('.quiz_area_bg').hide();
-            quizArea.find('.comment_image').show();
+            quizArea.find('#comment_image').show();
             quizArea.find('.back_button').show();
             //問題のカウントを進める
             quiz_cnt++;
@@ -82,9 +82,16 @@ $(function(){
     
     //次へボタンをクリックしたときの処理
     quizArea.on('click', '.back_button', function(){
-    
-        quizArea.find('.comment_image').hide();
+        quizArea.find('#comment_image').hide();
         quizArea.find('.back_button').hide();
+        changeIMG();
+    });
+
+    //おわるボタンをクリックしたときの処理
+    quizArea.on('click', '.last_button', function(){
+        quizArea.find('#last_image').hide();
+        quizArea.find('.last_button').hide();
+        changeIMG();
     });
 
     //もう一度挑戦するを押した時の処理
@@ -127,6 +134,7 @@ $(function(){
     
     //結果を表示する関数
     function quizResult(){
+
         quizArea.find('.quiz_set').hide();
         var text = '<p class="clear">ストーリークリア！！</p>';
         if(quiz_success_cnt <= 1){
@@ -142,7 +150,8 @@ $(function(){
         text += '<br><a href="../../index.html" id="menu">メニューに戻る</a>';
         quizArea.find('.quiz_result').html(text);
         quizArea.find('.quiz_result').show();
-        quizArea.find('.quiz_result').show();
+        quizArea.find('#last_image').show();
+        quizArea.find('.last_button').show();
     }
 
     

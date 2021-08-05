@@ -38,13 +38,41 @@
             </div>
             <div class="quiz_area_bg"></div>
             <div class="quiz_area_icon"></div>
-            <div class="comment_image"></div>
+            <img id="comment_image" src="../../img/background/comment_image.png"></img>
             <div class="back_button">次へ ⇨</div>
         </div>
 
         <div class="quiz_result"> </div>
+        <img id="last_image" src="../../img/background/comment_image.png"></img>
+        <div class="last_button">おわる</div>
     </div>
 
+    <script>
+        //画像を配列に格納する
+        var img = new Array();
+        
+        img[0] = new Image();
+        img[0].src = "../../img/background/comment_image.png";
+        img[1] = new Image();
+        img[1].src = "../../img/background/DRAGON.png";
+        img[2] = new Image();
+        img[2].src=  "../../img/background/comment_image.png";
+        img[3] = new Image();
+        img[3].src=  "../../img/background/DRAGON.png";
+        //画像番号用のグローバル変数
+        var cnt=0;
+        //画像切り替え関数
+        function changeIMG(){
+
+          //画像番号を進める
+          if (cnt == 2)
+          { cnt=0; }
+          else
+          { cnt++; }
+          //画像を切り替える
+          document.getElementById("comment_image").src=img[cnt].src;
+        }
+        </script>
     
    
    
