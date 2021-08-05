@@ -344,12 +344,12 @@ function draw() {
 }
 
 function iconPosition(sp) {
-    sp.position.x = width / 15;
-    sp.position.y = height * 8 / 11;
+    sp.position.x = width / 11;
+    sp.position.y = height * 7 / 11;
 
     //スケール変換
     if (width / 15 > 500) sp.scale = scaleAll;
-    else sp.scale = scaleAll * width / 750 * 0.22;
+    else sp.scale = scaleAll * width / 750 * 0.3;
     drawSprite(sp);
 }
 
