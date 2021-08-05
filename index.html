@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- Bootstrap Javascript(jQuery) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <title>黒猫ニャテラシーのネットリテラシー</title>
+</head>
+
+<body>
+    <!-- ローディング -->
+    <div id="loading">
+        <div id="animation">
+            <div class="loading-circle"></div>
+            <p class="loading-text">Now Loading...</p>
+        </div>
+    </div>
+    <!-- ロゴラッパー -->
+    <div id="logo-wrapper">
+        <img src="./img/icon/tri_logo.svg" class="logo">
+    </div>
+    <!-- タイトルラッパー -->
+    <div id="title-wrapper">
+        <div class="text-center">黒猫ニャテラシーの<br>ネットリテラシー</div>
+    </div>
+    <!-- ボタンラッパー -->
+    <div id="button-wrapper">
+        <div class="text-center">
+            <button id="start-button">スタート</button>
+        </div>
+    </div>
+    <!-- ニャテラシーラッパー -->
+    <div id="nyateracy-wrapper">
+        <img src="./img/nyateracy/k0131_0.svg" style='transform: scale(-1, 1);' id="nyateracy-img">
+    </div>
+    <!-- 暗転ラッパー -->
+    <div id="darkness-wrapper"></div>
+    <!-- 音楽 -->
+    <audio loop id="bgm">
+        <source src="./music/bgm/so_sweet.mp3" type="audio/mp3">
+    </audio>
+    <audio preload="auto" id="sound-effect">
+        <source src="./music/sound_effect/「ピロリ」決定のボタン音・アクセント音.mp3" type="audio/mp3">
+    </audio>
+    <!-- Javascript -->
+    <script src="./js/index.js" type="module"></script>
+</body>
+</html>
