@@ -320,7 +320,7 @@ function draw() {
     if (cmd == 7) damyWrapp(cmd);
     if (cmd == 8) damyWrapp(cmd);
 
-    //敵の攻撃
+    //<ruby><rb>敵</rb><rp>（</rp><rt>てき</rt><rp>）</rp></ruby>の攻撃
     if (atackSp != null && anata.damage != 0) drawSprite(atackSp);
     if (defenceSp != null && anata.damage == 0) drawSprite(defenceSp);
     if (healSp != null) drawSprite(healSp);

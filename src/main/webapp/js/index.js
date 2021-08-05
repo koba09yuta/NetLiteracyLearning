@@ -11,6 +11,7 @@ const showDarkness = () => {
         // 明転
         $('#darkness-wrapper').animate({'opacity': 0}, 500, 'swing', () => {
             $('#darkness-wrapper').hide();
+            $('#bgm').get(0).volume = 0.2;
             $('#bgm').get(0).play();
         });
     })
@@ -44,6 +45,7 @@ $(window).on('load', loading());
 
 /** スタートボタンを押す */
 $('#start-button').on("click", () => {
+    $('#sound-effect').get(0).volume = 0.4;
     $('#sound-effect').get(0).play();
     $('#darkness-wrapper').show().animate({'opacity': 1}, 1000, 'swing', () => {
         window.location.href = './WEB-INF/html/conversation1_1.html';

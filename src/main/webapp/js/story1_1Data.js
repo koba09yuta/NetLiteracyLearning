@@ -14,10 +14,10 @@ const story1_1Data = [
     // オープニング~ダマス戦1回目
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.roadNoon,
+        "bgm": "roadNoon",
         "bgimg": objectData.bgimg.roadNoon,
         "title": "【通学路】",
-        "text": "（学校帰りに友達のアキラ君とゲームの話中）",
+        "text": "（学校帰りに<ruby><rb>友達</rb><rp>（</rp><rt>ともだち</rt><rp>）</rp></ruby>のアキラとゲームの<ruby><rb>話</rb><rp>（</rp><rt>はなし</rt><rp>）</rp></ruby>中）",
         "mostLeft": objectData.character.anata.pose1,
         "centerLeft": objectData.character.akira.pose2,
         "centerRight": "",
@@ -30,7 +30,7 @@ const story1_1Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.akira.name,
-        "text": "最近さあ、「ドラゴンハンター」ってゲームやってんだよ！",
+        "text": "<ruby><rb>最近</rb><rp>（</rp><rt>さいきん</rt><rp>）</rp></ruby>さあ、「ドラゴンハンター」ってゲームやってんだよ！",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
@@ -57,7 +57,7 @@ const story1_1Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.akira.name,
-        "text": "パソコンでやるゲームなんだけど、モンスターを倒していくんだよ！",
+        "text": "パソコンでやるゲームなんだけど、モンスターをたおしていくんだよ！",
         "nyateracy": ""
     },
     {
@@ -65,7 +65,7 @@ const story1_1Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "おもしろそう！僕もやってみようかな！",
+        "text": "おもしろそう！ボクもやってみようかな！",
         "mostLeft": objectData.character.anata.pose1,
         "centerLeft": "",
         "centerRight": "",
@@ -104,7 +104,7 @@ const story1_1Data = [
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "home",
         "bgimg": objectData.bgimg.roomEvening,
         "title": objectData.character.anata.name,
         "text": "ただいまー！！",
@@ -159,7 +159,7 @@ const story1_1Data = [
         "displayId": 2,
         "bgm": "",
         "bgimg": "",
-        "title": "【操作の説明】",
+        "title": "【<ruby><rb>操作</rb><rp>（</rp><rt>そうさ</rt><rp>）</rp></ruby>の<ruby><rb>説明</rb><rp>（</rp><rt>せつめい</rt><rp>）</rp></ruby>】",
         "text": "パソコンの画面の「ドラゴンハンター」をクリックし、起動してください",
         "nyateracy": ""
     },
@@ -175,7 +175,7 @@ const story1_1Data = [
     {
         "mode": "operation",
         "displayId": 5,
-        "bgm": objectData.bgm.dhOpening,
+        "bgm": "dhOpening",
         "bgimg": ""
     },
     {
@@ -184,7 +184,7 @@ const story1_1Data = [
     {
         "mode": "explanation",
         "displayId": 6,
-        "bgm": objectData.bgm.dhMenu,
+        "bgm": "dhMenu",
         "bgimg": "",
         "title": objectData.character.anata.name,
         "text": "「クエスト」をさっそくやってみよう！",

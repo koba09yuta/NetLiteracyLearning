@@ -291,3 +291,25 @@
 #dh-friend img:hover + button {
     background-position: right center;
 }
+
+.flush-button {
+    animation: flushButton 1s linear 0s infinite;
+}
+
+@keyframes flushButton{
+    0%{
+        opacity: 0.7;
+    }
+    20%{
+        opacity: 0.9;
+    }
+    50%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 0.7;
+    }
+}

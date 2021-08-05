@@ -10,9 +10,18 @@ let storyData = {};
 /** シーン番号 */
 let sceneId = 0;
 
+/** シーンの長さ */
+let sceneLength = 0;
+
 /** シーンを進める関数 */
 export const sceneAdvance = () => {
-    sceneId++
+    sceneId++;
+    if (sceneId === sceneLength) {
+        $('#darkness-wrapper').show().animate({ 'opacity': 1 }, 500, 'swing', () => {
+            window.location.href = "./startquiz.html";
+        }); 
+        return;
+    }
 }
 
 /** ローディングの関数 */
@@ -25,11 +34,13 @@ export const loading = () => {
     } else if (fileName === "conversation1_3.html") {
         storyData = story1_3Data;
     }
+    sceneLength = storyData.length;
     $('#darkness-wrapper').hide();
     $('#loading').delay(1000).fadeOut(1000, function () {
         if (storyData[sceneId].mode === "opening") {
             $('#sound-effect source').attr('src', objectData.soundEffect.opening);
             document.querySelector("#sound-effect").load();
+            $('#sound-effect').get(0).volume = 0.4;
             $('#sound-effect').get(0).play();
         }
     });
@@ -193,6 +204,14 @@ export const showDisplay = (displayId) => {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhMenu);
         $('#dh-menu').show();
+        $('#dh-quest-btn').removeClass("flush-button");
+        $('#dh-friend-btn').removeClass("flush-button");
+        if (displayId === 6 && storyData[sceneId].mode === "operation") {
+            $('#dh-quest-btn').addClass("flush-button");
+        }
+        if (displayId === 7 && storyData[sceneId].mode === "operation") {
+            $('#dh-friend-btn').addClass("flush-button");
+        }
         return;
     }
     // クエスト画面
@@ -201,6 +220,14 @@ export const showDisplay = (displayId) => {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhQuest);
         $('#dh-quest').show();
+        $('#dh-quest-solo').removeClass("flush-button");
+        $('#dh-quest-team').removeClass("flush-button");
+        if (displayId === 8 && storyData[sceneId].mode === "operation") {
+            $('#dh-quest-solo').addClass("flush-button");
+        }
+        if (displayId === 9 && storyData[sceneId].mode === "operation") {
+            $('#dh-quest-team').addClass("flush-button");
+        }
         return;
     }
     // フレンド画面
@@ -209,6 +236,14 @@ export const showDisplay = (displayId) => {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
         $('#dh-friend').show();
+        $('#dh-friend-chat').removeClass("flush-button");
+        $('#dh-friend-recruit').removeClass("flush-button");
+        if (displayId === 8 && storyData[sceneId].mode === "operation") {
+            $('#dh-friend-chat').addClass("flush-button");
+        }
+        if (displayId === 9 && storyData[sceneId].mode === "operation") {
+            $('#dh-friend-recruit').addClass("flush-button");
+        }
         return;
     }
     // チャットルーム（フレンド一覧）画面
@@ -423,13 +458,37 @@ export const changeBack = () => {
         $('body').css('backgroundImage', storyData[sceneId].bgimg);
     }
     if (storyData[sceneId].bgm) {
-        $('#bgm source').attr('src', storyData[sceneId].bgm);
-        document.querySelector("#bgm").load();
-        $('#bgm').get(0).play();
         if (storyData[sceneId].bgm === "stop") {
             $('#bgm').get(0).pause();
             $('#bgm').get(0).currentTime = 0;
+            return;
         }
+        if (storyData[sceneId].bgm === "roadNoon") {
+            $('#bgm source').attr('src', objectData.bgm.roadNoon);
+            $('#bgm').get(0).volume = 0.2;
+        }
+        if (storyData[sceneId].bgm === "home") {
+            $('#bgm source').attr('src', objectData.bgm.home);
+            $('#bgm').get(0).volume = 0.2;
+        }
+        if (storyData[sceneId].bgm === "nyateracy") {
+            $('#bgm source').attr('src', objectData.bgm.nyateracy);
+            $('#bgm').get(0).volume = 0.2;
+        }
+        if (storyData[sceneId].bgm === "truth") {
+            $('#bgm source').attr('src', objectData.bgm.truth);
+            $('#bgm').get(0).volume = 0.2;
+        }
+        if (storyData[sceneId].bgm === "dhOpening") {
+            $('#bgm source').attr('src', objectData.bgm.dhOpening);
+            $('#bgm').get(0).volume = 0.2;
+        }
+        if (storyData[sceneId].bgm === "dhMenu") {
+            $('#bgm source').attr('src', objectData.bgm.dhMenu);
+            $('#bgm').get(0).volume = 0.1;
+        }
+        document.querySelector("#bgm").load();
+        $('#bgm').get(0).play();
     }
 }
 
@@ -437,12 +496,15 @@ export const changeBack = () => {
 export const makeSound = (sound) => {
     if (sound === "forward") {
         $('#sound-effect source').attr('src', objectData.soundEffect.forward);
+        $('#sound-effect').get(0).volume = 0.4;
     }
     if (sound === "click") {
         $('#sound-effect source').attr('src', objectData.soundEffect.click);
+        $('#sound-effect').get(0).volume = 0.4;
     }
     if (sound === "slash") {
         $('#sound-effect source').attr('src', objectData.soundEffect.slash);
+        $('#sound-effect').get(0).volume = 0.2;
     }
     document.querySelector("#sound-effect").load();
     $('#sound-effect').get(0).play();

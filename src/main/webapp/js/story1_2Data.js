@@ -4,7 +4,7 @@ const story1_2Data = [
     // ダマス戦1回目~ダマス戦2回目
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "home",
         "bgimg": objectData.bgimg.roomNight,
         "title": objectData.character.anata.name,
         "text": "こんなの勝てないよ・・・、強すぎる・・・",
@@ -20,7 +20,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "明日アキラにフレンドを頼もうかな・・・",
+        "text": "明日アキラにフレンドをたのもうかな・・・",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
@@ -33,7 +33,7 @@ const story1_2Data = [
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.roadNoon,
+        "bgm": "roadNoon",
         "bgimg": objectData.bgimg.roadNoon,
         "title": "",
         "text": "次の日",
@@ -49,7 +49,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": "【通学路】",
-        "text": "（学校帰りに友達のアキラ君とゲームの話中）",
+        "text": "（学校帰りに友達のアキラキミとゲームの<ruby><rb>話</rb><rp>（</rp><rt>はなし</rt><rp>）</rp></ruby>中）",
         "mostLeft": objectData.character.anata.pose1,
         "centerLeft": objectData.character.akira.pose2,
         "centerRight": "",
@@ -62,7 +62,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.akira.name,
-        "text": "えっ、お前ダマスに苦戦してんのか？",
+        "text": "えっ、お前ダマスに<ruby><rb>苦戦</rb><rp>（</rp><rt>くせん</rt><rp>）</rp></ruby>してんのか？",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
@@ -88,7 +88,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.akira.name,
-        "text": "俺今フレンドがいっぱいなんだよ！",
+        "text": "オレ今フレンドがいっぱいなんだよ！",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
@@ -127,7 +127,7 @@ const story1_2Data = [
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "home",
         "bgimg": objectData.bgimg.roomEvening,
         "title": objectData.character.anata.name,
         "text": "ただいまー！！",
@@ -163,7 +163,7 @@ const story1_2Data = [
     {
         "mode": "operation",
         "displayId": 5,
-        "bgm": objectData.bgm.dhOpening,
+        "bgm": "dhOpening",
         "bgimg": ""
     },
     {
@@ -175,7 +175,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "今日こそダマス倒したいんだけど、今の僕じゃ倒せないなあ",
+        "text": "今日こそダマスたおしたいんだけど、今のボクじゃたおせないなあ",
         "nyateracy": ""
     },
     {
@@ -193,7 +193,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "そうだ！誰かほかの強い人に手伝ってもらおう！",
+        "text": "そうだ！誰かほかの強い人に<ruby><rb>手伝</rb><rp>（</rp><rt>てつだ</rt><rp>）</rp></ruby>ってもらおう！",
         "nyateracy": ""
     },
     {
@@ -202,7 +202,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "このフレンドっていうのを押せばよさそうだ！",
+        "text": "この「フレンド」っていうのをおせばよさそうだ！",
         "nyateracy": ""
     },
     {
@@ -220,7 +220,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "フレンドを募集してみよう！",
+        "text": "フレンドをぼしゅうしてみよう！",
         "nyateracy": ""
     },
     {
@@ -238,7 +238,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title":  objectData.character.anata.name,
-        "text": "さっそくフレンド募集に書き込もう！",
+        "text": "さっそくフレンドぼしゅうに書きこもう！",
         "nyateracy": ""
     },
     {
@@ -247,7 +247,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title":  objectData.character.anata.name,
-        "text": "・・・「小学生です！チームを組んで戦える強い人を募集！」これでよし！",
+        "text": "・・・「小学生です！チームを組んで<ruby><rb>戦</rb><rp>（</rp><rt>たたか</rt><rp>）</rp></ruby>える強い人をぼしゅう！」これでよし！",
         "nyateracy": ""
     },
     {
@@ -264,7 +264,7 @@ const story1_2Data = [
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "home",
         "bgimg": objectData.bgimg.roomNoon,
         "title": "",
         "text": "次の日",
@@ -300,7 +300,7 @@ const story1_2Data = [
     {
         "mode": "operation",
         "displayId": 5,
-        "bgm": objectData.bgm.dhOpening,
+        "bgm": "dhOpening",
         "bgimg": ""
     },
     {
@@ -309,10 +309,10 @@ const story1_2Data = [
     {
         "mode": "explanation",
         "displayId": 7,
-        "bgm": objectData.bgm.dhMenu,
+        "bgm": "dhMenu",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "昨日フレンド募集したけど、強い人来てるといいなあ",
+        "text": "<ruby><rb>昨日</rb><rp>（</rp><rt>きのう</rt><rp>）</rp></ruby>フレンドぼしゅうしたけど、強い人来てるといいなあ",
         "nyateracy": ""
     },
     {
@@ -339,7 +339,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "さっそくフレンド募集を見てみよう！",
+        "text": "さっそくフレンドぼしゅうを見てみよう！",
         "nyateracy": ""
     },
     {
@@ -357,7 +357,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title":  objectData.character.anata.name,
-        "text": "やった！！フレンド申請来てる！レベルも高い！！",
+        "text": "やった！！フレンドしんせい来てる！レベルも高い！！",
         "nyateracy": ""
     },
     {
@@ -366,7 +366,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title":  objectData.character.anata.name,
-        "text": "しかも、僕と同じ小学生だ！",
+        "text": "しかも、ボクと同じ小学生だ！",
         "nyateracy": ""
     },
     {
@@ -378,7 +378,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "さっそくショウと一緒にクエストに行こう！",
+        "text": "さっそくショウといっしょにクエストに行こう！",
         "nyateracy": ""
     },
     {
@@ -396,7 +396,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "「チームで」を押せばよさそうだ！",
+        "text": "「チームで」をおせばよさそうだ！",
         "nyateracy": ""
     },
     {

@@ -86,7 +86,7 @@ $('.shop table, .current-jewel').on("click", () => {
 });
 
 /**
- * 送信をクリックしたときのイベントハンドラ
+ * 送<ruby><rb>信</rb><rp>（</rp><rt>しん</rt><rp>）</rp></ruby>をクリックしたときのイベントハンドラ
  */
 $('#submit').on("click", () => {
     $('.pc-display').css('backgroundImage', 'none').css('background-color', 'rgb(192, 192, 192)');
