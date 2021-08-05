@@ -4,7 +4,7 @@ const story1_2Data = [
     // ダマス戦1回目~ダマス戦2回目
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "home",
         "bgimg": objectData.bgimg.roomNight,
         "title": objectData.character.anata.name,
         "text": "こんなの勝てないよ・・・、強すぎる・・・",
@@ -33,7 +33,7 @@ const story1_2Data = [
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.roadNoon,
+        "bgm": "roadNoon",
         "bgimg": objectData.bgimg.roadNoon,
         "title": "",
         "text": "次の日",
@@ -127,7 +127,7 @@ const story1_2Data = [
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "home",
         "bgimg": objectData.bgimg.roomEvening,
         "title": objectData.character.anata.name,
         "text": "ただいまー！！",
@@ -163,7 +163,7 @@ const story1_2Data = [
     {
         "mode": "operation",
         "displayId": 5,
-        "bgm": objectData.bgm.dhOpening,
+        "bgm": "dhOpening",
         "bgimg": ""
     },
     {
@@ -264,7 +264,7 @@ const story1_2Data = [
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "home",
         "bgimg": objectData.bgimg.roomNoon,
         "title": "",
         "text": "次の日",
@@ -300,7 +300,7 @@ const story1_2Data = [
     {
         "mode": "operation",
         "displayId": 5,
-        "bgm": objectData.bgm.dhOpening,
+        "bgm": "dhOpening",
         "bgimg": ""
     },
     {
@@ -309,7 +309,7 @@ const story1_2Data = [
     {
         "mode": "explanation",
         "displayId": 7,
-        "bgm": objectData.bgm.dhMenu,
+        "bgm": "dhMenu",
         "bgimg": "",
         "title": objectData.character.anata.name,
         "text": "昨日フレンド募集したけど、強い人来てるといいなあ",

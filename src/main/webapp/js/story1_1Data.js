@@ -14,7 +14,7 @@ const story1_1Data = [
     // オープニング~ダマス戦1回目
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.roadNoon,
+        "bgm": "roadNoon",
         "bgimg": objectData.bgimg.roadNoon,
         "title": "【通学路】",
         "text": "（学校帰りに友達のアキラ君とゲームの話中）",
@@ -104,7 +104,7 @@ const story1_1Data = [
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "home",
         "bgimg": objectData.bgimg.roomEvening,
         "title": objectData.character.anata.name,
         "text": "ただいまー！！",
@@ -175,7 +175,7 @@ const story1_1Data = [
     {
         "mode": "operation",
         "displayId": 5,
-        "bgm": objectData.bgm.dhOpening,
+        "bgm": "dhOpening",
         "bgimg": ""
     },
     {
@@ -184,7 +184,7 @@ const story1_1Data = [
     {
         "mode": "explanation",
         "displayId": 6,
-        "bgm": objectData.bgm.dhMenu,
+        "bgm": "dhMenu",
         "bgimg": "",
         "title": objectData.character.anata.name,
         "text": "「クエスト」をさっそくやってみよう！",

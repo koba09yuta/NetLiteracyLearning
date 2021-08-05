@@ -5,12 +5,13 @@ const story1_3Data = [
     {
         "mode": "explanation",
         "displayId": 7,
-        "bgm": objectData.bgm.dhMenu,
-        "bgimg": "",
+        "bgm": "dhMenu",
+        "bgimg": objectData.bgimg.roomEvening,
         "title": objectData.character.anata.name,
         "text": "やった、ダマスを倒せた！！！ショウ強すぎる！！！",
         "nyateracy": ""
     },
+    /*
     {
         "mode": "explanation",
         "displayId": 7,
@@ -195,7 +196,7 @@ const story1_3Data = [
     {
         "mode": "explanation",
         "displayId": 1,
-        "bgm": objectData.bgm.nyateracy,
+        "bgm": "nyateracy",
         "bgimg": "",
         "title": "？？？",
         "text": "あーあ・・・。大変なことになっちゃったね・・・。",
@@ -281,7 +282,7 @@ const story1_3Data = [
     {
         "mode": "explanation",
         "displayId": 13,
-        "bgm": objectData.bgm.truth,
+        "bgm": "truth",
         "bgimg": objectData.bgimg.roomNight,
         "title":  objectData.character.anata.name,
         "text": "さっそくフレンド募集に書き込もう！",
@@ -418,13 +419,14 @@ const story1_3Data = [
         "text": "押しただけで、ウイルスをパソコンに入れられてしまうこともあるので、気をつけよう！",
         "nyateracy": ""
     },
+     */
     {
         "mode": "darkness",
     },
     {
         "mode": "explanation",
         "displayId": 1,
-        "bgm": objectData.bgm.nyateracy,
+        "bgm": "nyateracy",
         "bgimg": objectData.bgimg.roomEvening,
         "title": objectData.character.nyateracy.name,
         "text": "これが今回起こったことの真実だったんだ。",
