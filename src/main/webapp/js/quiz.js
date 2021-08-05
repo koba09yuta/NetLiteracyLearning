@@ -87,6 +87,13 @@ $(function(){
         changeIMG();
     });
 
+    //おわるボタンをクリックしたときの処理
+    quizArea.on('click', '.last_button', function(){
+        quizArea.find('#last_image').hide();
+        quizArea.find('.last_button').hide();
+        changeIMG();
+    });
+
     //もう一度挑戦するを押した時の処理
     quizArea.on('click', '.quiz_restart', function(){
         quizReset();
@@ -127,6 +134,7 @@ $(function(){
     
     //結果を表示する関数
     function quizResult(){
+
         quizArea.find('.quiz_set').hide();
         var text = '<p class="clear">ストーリークリア！！</p>';
         if(quiz_success_cnt <= 1){
@@ -142,7 +150,8 @@ $(function(){
         text += '<br><a href="../../index.html" id="menu">メニューに戻る</a>';
         quizArea.find('.quiz_result').html(text);
         quizArea.find('.quiz_result').show();
-        quizArea.find('.quiz_result').show();
+        quizArea.find('#last_image').show();
+        quizArea.find('.last_button').show();
     }
 
     
