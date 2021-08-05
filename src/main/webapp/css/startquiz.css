@@ -2,75 +2,176 @@
 
 /* 全体 */
 body {
-    font-family: "UD Digi Kyokasho N-R";
+    font-family: "UD Digi Kyokasho N-B";
     background-size: cover;
-    
-    /*
-        スクロールしないように、
-        ・高さをビューポートに対して100%
-        ・はみ出し部分を表示しないように設定
-    */
+    background-attachment: fixed;
     height: 100vh;
     overflow: hidden;
 }
 
-.background{
-    height: 100vh;
-    transform: scale(-1,1);
-    background-image: url(../img/background/blackboard.png);
-    background-repeat  : no-repeat;
-}
-.background2{
-    
-    position: absolute;
-    height: 150vh;
+/* ローディング */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
-    top:10vh;
-    left: 75vw;
-    transform: scale(1,1);
-    background-image: url(../img/nyateracy/quiz-nya01.svg);
-    background-repeat  : no-repeat;
-}
-.label1{
-    
-    color: rgb(255, 255, 255);
-    font-size: 9vh;
-    font-weight: 900;
-    top: 30vh;
-    left:60vw;
-    position: absolute;
-    transform: translateX(-50%);
-    
-}
-.label2{
-    color: rgb(255, 255, 255);
-    font-size: 4vh;
-    font-weight: 900;
-    top: 50vh;
-    left:60vw;
-    position: absolute;
-    transform: translateX(-50%);
+    height: 100vh;
+    background-color: #000;
+    z-index: 250;
 }
 
-#label3{ 
-    color: black;
+#animation {
+    margin: 0;
     position: absolute;
-    top: 60vh;
-    left: 75vw;
-    width: 16vw;
-    height: 7vh;
-    padding-top: 1.5vh;
-    padding-left: 2vh;
-    overflow: hidden;
-    box-shadow: 0.30rem 0.25rem hsla(0, 0%, 0%, .1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: flush 1s linear 0s infinite;
+}
+
+.loading-text {
+    color: white;
+    font-size: 5vh;
+}
+
+.loading-circle{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-top: 10px solid #fff;
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear 0s infinite;
+}
+
+@keyframes flush{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+/* タイトルラッパー */
+#title-wrapper {
+    color: rgb(255, 255, 255);
+    width: 100vw;
+    font-size: 10vh;
+    position: absolute;
+    top: 25vh;
+    left: 10vw;
+}
+
+/* 吹き出しラッパー */
+#huki-wrapper {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 18vw;
+    height: 10vh;
+    font-size: 3vh;
+    text-align: center;
+    padding-top: 3vh;
+    top: 42vh;
+    left: 1.5vw;
+    background-color: #f3a383;
+    border-radius: 1vh;
+  
+}
+#huki-wrapper:before {
+    content: '';
+     position: absolute;
+     display: block;
+     z-index: 1;
+     border-style: solid;
+     border-color: transparent #f3a383;
+     border-width: 10px 0 10px 10px;
+     top: 50%;
+     right: -10px;
+     margin-top: -10px;
+  }
+
+/* ボタンラッパー */
+#button-wrapper {
+    width: 100vw;
+    position: absolute;
+    top: 50vh;
+    left: 10vw;
+    position: relative;
+  
+}
+
+
+#start-button {
+    height: 10vh;
+    width: 20vw;
+    box-shadow: 0.5rem 0.5rem hsla(0, 0%, 0%, .1);
     background-image:
       linear-gradient(90deg, rgba(22, 20, 20, 0.1) 2rem, rgba(27, 25, 25, 0) 2.5rem)
-    , linear-gradient(90deg, rgb(248, 248, 147), hsla(60, 100%, 85%, 1));
-    font-size: 3vh;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-align: center;
+    , linear-gradient(90deg, #ceb855, #fcf82a);
+    color: rgb(150, 46, 46);
+    font-size: 5vh;
+    border: none;
+    
 }
-.label3:hover{
+
+#start-button:hover {
     color: rgb(255, 0, 0);
+}
+
+#start-button:focus {
+	outline: none;
+}
+
+/* ニャテラシーラッパー */
+#nyateracy-wrapper {
+    position: absolute;
+    top: 40vh;
+    left: -5vw;
+}
+
+#nyateracy-img {
+    height: 70vh;
+}
+
+/* 暗転ラッパー */
+#darkness-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0;
+    z-index: 1000;
 }

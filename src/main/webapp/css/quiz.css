@@ -4,38 +4,26 @@
 body {
     font-family: "UD Digi Kyokasho N-R";
     background-size: cover;
-    
-    /*
-        スクロールしないように、
-        ・高さをビューポートに対して100%
-        ・はみ出し部分を表示しないように設定
-    */
     height: 100vh;
     overflow: hidden;
 }
-.background{
-    height: 100vh;
-    transform: scale(-1,1);
-    background-image: url(../img/background/blackboard.png);
-    background-repeat  : no-repeat;
-}
-.background2{
+/* ニャテラシーラッパー */
+#nyateracy-wrapper {
     position: absolute;
-    height: 150vh;
-    width: 100vw;
-    top:10vh;
-    left: 75vw;
-    transform: scale(1,1);
-    background-image: url(../img/nyateracy/quiz-nya01.svg);
-    background-repeat  : no-repeat;
+    top: 25vh;
+    left: -5vw;
 }
 
+#nyateracy-img {
+    height: 100vh;
+}
 body:hover{
     cursor: default;
 }
 
 /* クイズのすべてを管理する親要素 */
 .quiz_area{
+    text-align: center;
     font-weight: 900;
     display: flex;
     position: absolute;
@@ -82,19 +70,7 @@ body:hover{
     -webkit-text-stroke: 4px #FFF;
     
 }
-
-/* 解説の背景を表示するための要素 */
-.comment_bg{
-    width: 100vw;
-    height: 100vh;
-    top: 0vh;
-    left: 0vw;
-    background-size: cover;
-    background-image: url(../img/background/blackboard.png);
-    position: absolute;
-    display: none;
    
-}
 /* 画面に解説を表示するための要素 */
 .comment_image{
     width: 75vw;
@@ -107,6 +83,27 @@ body:hover{
     display: none;
    
 }
+
+/* 画面に戻るボタンを表示するための要素 */
+.back_button{
+    border-radius: 100vh;
+    text-align: center;
+    width: 10vw;
+    position: absolute;
+    top: 60vh;
+    left: 50vw;
+    color: #000;
+    background-color: #fff100;
+    border-bottom: 1vh solid #ccc100;
+    display: none;
+}
+.back_button:hover {
+    margin-top: 3px;
+    color: #000;
+    background: #fff20a;
+    border-bottom: 1vh solid #ccc100;
+  }
+
 
 /* .trueまたは.falseのクラスが付与されたら表示するものとみなす */
 .quiz_area .quiz_area_icon.true, .quiz_area .quiz_area_icon.false{
@@ -133,10 +130,11 @@ body:hover{
 
 /* 問題文 */
 .quiz_area .quiz_question{
+    font-size: 7vh;
     color: rgb(255, 255, 255);
-    padding: 0.5em 1em;
+    
     font-weight: bold;
-    border: solid 3px #000000;
+    
 }
 
 
@@ -148,14 +146,10 @@ body:hover{
 .clear{
     font-size: 10vh;
     color: rgb(255, 255, 255);
-    width: 150vw;
-    top: 5vh;
-    
 }
 .star{
-    font-size: 16vh;
+    font-size: 20vh;
     color: rgb(197, 177, 0);
-    width: 100vw;
     top: 20vh;
     left: 10vw;
     position: absolute;
