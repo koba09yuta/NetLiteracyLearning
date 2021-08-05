@@ -18,6 +18,11 @@ const loading = () => {
     });
 }
 
+/** ページを読み込む */
+$('#bgm').get(0).play();
+$(window).on('load', loading());
+
+
 /** 効果音を鳴らす関数 */
 const makeSound = (sound) => {
     if (sound === "") {
@@ -30,8 +35,8 @@ const makeSound = (sound) => {
     $('#sound-effect').get(0).play();
 }
 
-/** ページを読み込む */
-$(window).on('load', loading());
+
+
 
 /** スタートボタンを押す */
 $('#start-button').on("click", () => {

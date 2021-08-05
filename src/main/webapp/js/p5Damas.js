@@ -128,7 +128,7 @@ function keyPressed() {
 }
 
 function volumeSetUp(bgm) {
-    bgm.setVolume(0.1);
+    bgm.setVolume(0.15);
     return bgm;
 }
 
