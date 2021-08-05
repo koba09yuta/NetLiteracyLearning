@@ -102,6 +102,26 @@ body:hover{
     background: #fff20a;
     border-bottom: 1vh solid #ccc100;
   }
+  
+  /* 画面に戻るボタンを表示するための要素 */
+.last_button{
+    border-radius: 100vh;
+    text-align: center;
+    width: 10vw;
+    position: absolute;
+    top: 60vh;
+    left: 50vw;
+    color: #000;
+    background-color: #fff100;
+    border-bottom: 1vh solid #ccc100;
+    
+}
+.last_button:hover {
+    margin-top: 3px;
+    color: #000;
+    background: #fff20a;
+    border-bottom: 1vh solid #ccc100;
+  }
 
 
 /* .trueまたは.falseのクラスが付与されたら表示するものとみなす */
@@ -213,3 +233,12 @@ body:hover{
 
 
 
+#last-image{
+    width: 75vw;
+    height: 75vh;
+    top: 0vh;
+    left: -15vw;
+    position: absolute;
+    background-size: cover;
+    display: none;
+}

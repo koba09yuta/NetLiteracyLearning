@@ -28,17 +28,6 @@ $(function(){
     );
 
 
-    //解説の配列を設定
-    let aryComment = ["DRAGON.png","DRAGON.png","DRAGON.png"];
-    
-   
-
-
-
-
-    
-    quizReset();
-    
      //回答を選択した後の処理
      quizArea.on('click', '.quiz_ans_area ul li', function(){
         //画面を暗くするボックスを表示（上から重ねて、結果表示中は選択肢のクリックやタップを封じる
@@ -82,9 +71,18 @@ $(function(){
     
     //次へボタンをクリックしたときの処理
     quizArea.on('click', '.back_button', function(){
+        
         quizArea.find('#comment_image').hide();
         quizArea.find('.back_button').hide();
         changeIMG();
+
+    });
+
+     //おわるボタンをクリックしたときの処理
+     quizArea.on('click', '.last_button', function(){
+        
+        quizArea.find('#last_image').hide();
+        quizArea.find('.last_button').hide();
     });
 
     //もう一度挑戦するを押した時の処理
@@ -106,8 +104,6 @@ $(function(){
         quizArea.find('.quiz_no').text((quiz_cnt + 1));
         //問題文を表示
         quizArea.find('.quiz_question').text(aryQuiz[quiz_cnt]['question']);
-        //解説を表示
-       // quizArea.find('.comment_image').image(aryComment[quiz_cnt]);
         //正解の回答を取得する
         var success = aryQuiz[quiz_cnt]['answer'][0];
         //現在の選択肢表示を削除する
@@ -127,6 +123,7 @@ $(function(){
     
     //結果を表示する関数
     function quizResult(){
+        
         quizArea.find('.quiz_set').hide();
         var text = '<p class="clear">ストーリークリア！！</p>';
         if(quiz_success_cnt <= 1){
@@ -142,7 +139,9 @@ $(function(){
         text += '<br><a href="../../index.html" id="menu">メニューに戻る</a>';
         quizArea.find('.quiz_result').html(text);
         quizArea.find('.quiz_result').show();
-        quizArea.find('.quiz_result').show();
+        quizArea.find('#last-image').show();
+        quizArea.find('.last_button').show();
+
     }
 
     
