@@ -195,12 +195,13 @@ button:focus {
 }
 
 .title-box {
-    height: 8vh;
+    height: 10vh;
     background-color: rgba(0, 61, 131, 0.9);
 }
 
 #text {
     font-size: 5vh;
+    line-height: 10vh;
 }
 
 .text-box {

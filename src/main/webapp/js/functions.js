@@ -204,6 +204,14 @@ export const showDisplay = (displayId) => {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhMenu);
         $('#dh-menu').show();
+        $('#dh-quest-btn').removeClass("flush-button");
+        $('#dh-friend-btn').removeClass("flush-button");
+        if (displayId === 6 && storyData[sceneId].mode === "operation") {
+            $('#dh-quest-btn').addClass("flush-button");
+        }
+        if (displayId === 7 && storyData[sceneId].mode === "operation") {
+            $('#dh-friend-btn').addClass("flush-button");
+        }
         return;
     }
     // クエスト画面
@@ -212,6 +220,14 @@ export const showDisplay = (displayId) => {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhQuest);
         $('#dh-quest').show();
+        $('#dh-quest-solo').removeClass("flush-button");
+        $('#dh-quest-team').removeClass("flush-button");
+        if (displayId === 8 && storyData[sceneId].mode === "operation") {
+            $('#dh-quest-solo').addClass("flush-button");
+        }
+        if (displayId === 9 && storyData[sceneId].mode === "operation") {
+            $('#dh-quest-team').addClass("flush-button");
+        }
         return;
     }
     // フレンド画面
@@ -220,6 +236,14 @@ export const showDisplay = (displayId) => {
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
         $('#dh-friend').show();
+        $('#dh-friend-chat').removeClass("flush-button");
+        $('#dh-friend-recruit').removeClass("flush-button");
+        if (displayId === 8 && storyData[sceneId].mode === "operation") {
+            $('#dh-friend-chat').addClass("flush-button");
+        }
+        if (displayId === 9 && storyData[sceneId].mode === "operation") {
+            $('#dh-friend-recruit').addClass("flush-button");
+        }
         return;
     }
     // チャットルーム（フレンド一覧）画面
