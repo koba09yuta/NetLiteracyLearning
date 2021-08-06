@@ -20,6 +20,9 @@ function preload() {
     atH = loadImage('../../img/game/atH.png');
     dfH = loadImage('../../img/game/dfH.png');
     hlH = loadImage('../../img/game/hlH.png');
+
+    label1=loadImage('../../img/game/label1.svg');
+    label2=loadImage('../../img/game/label2.svg');
     //ダマス
     enemy = loadImage('../../img/game/damas.svg');
     //終了画面
@@ -74,8 +77,10 @@ function setup() {
     //ゲーム終了画面と選択のスプライト
     endWindowSp = createSprite();
     endWindowSp.addImage(endWindow);
-    terop1 = createSprite(0, 0, 300, 50);
-    terop2 = createSprite(0, 0, 300, 50);
+    labelSp1 = createSprite(0, 0, 300, 50);
+    labelSp1.addImage(label1);
+    labelSp2 = createSprite(0, 0, 300, 50);
+    labelSp2.addImage(label2);
 
     //エフェクトスプライト
     slashSp = effectSetUp();
@@ -290,11 +295,7 @@ function draw() {
         let bool1 = sp.overlap(atSp, () => { adh = "at"; at = atH; });
         let bool2 = sp.overlap(dfSp, () => { adh = "df"; df = dfH; });
         let bool3 = sp.overlap(hlSp, () => { adh = "hl"; hl = hlH; });
-        if (bool1 || bool2 || bool3) pressFlag = true;
-        else {
-            pressFlag = false;
-            at = atN; df = dfN; hl = hlN;
-        }
+        press(bool1||bool2||bool3);
 
         //描画とスプライト削除
         drawSprite(atSp); drawSprite(dfSp); drawSprite(hlSp);
@@ -344,12 +345,12 @@ function draw() {
 }
 
 function iconPosition(sp) {
-    sp.position.x = width / 11;
+    sp.position.x = width / 10.5;
     sp.position.y = height * 7 / 11;
 
     //スケール変換
     if (width / 15 > 500) sp.scale = scaleAll;
-    else sp.scale = scaleAll * width / 750 * 0.3;
+    else sp.scale = scaleAll * width / 750 * 0.25;
     drawSprite(sp);
 }
 
@@ -382,8 +383,8 @@ function damyWrapp(cmd) {
     let clickDamy = createSprite(width / 2, height * 4 / 5, windowWidth * 0.5, windowHeight * 0.3);
     clickDamy.shapeColor = color(0, 0, 0, 0);
     let bool = sp.overlap(clickDamy,);
-    if (bool) pressFlag = true;
-    else pressFlag = false;
+    press(bool);
+    
     drawSprite(clickDamy);
 
     //セリフ
@@ -393,7 +394,7 @@ function damyWrapp(cmd) {
         text('あなたの　こうげき！\nダマスに　' + damas.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
     }
     else if (cmd == 2) {
-        text('あなたの　まもる！\nまもりの　たいせいに　なった！　▼', width / 2, height * 7 / 9);
+        text('あなたの　まもる！\nたてを　かまえた！　▼', width / 2, height * 7 / 9);
     }
     else if (cmd == 3) {
         if (anata.damageTotal == 0) {
@@ -420,26 +421,36 @@ function damyWrapp(cmd) {
         endWindowSp.position.x = width / 2;
         endWindowSp.position.y = height / 2;
         endWindowSp.scale = scaleAll * width / 1500 * 1.2;
-        textSize(scaleAll*width/1000*30);
         drawSprite(endWindowSp);
-        fill(250, 250, 250);
-        text("再挑戦", width / 2, height * 4 / 9);
-        terop1.position.x = width / 2;
-        terop1.position.y = height * 4 / 9;
-        terop1.shapeColor = color(100, 0, 0, 0);
-        fill(250, 250, 0);
-        text("あきらめる", width / 2, height * 5 / 9);
-        terop2.position.x = width / 2;
-        terop2.position.y = height * 5 / 9;
-        terop2.shapeColor = color(100, 0, 0, 0);
-        drawSprite(terop1);
-        drawSprite(terop2);
-        let bool1 = sp.overlap(terop1, () => adh = "re");
-        let bool2 = sp.overlap(terop2, () => adh = "st1");
-        if (bool1 || bool2) pressFlag = true;
-        else pressFlag = false;
+        labelSp1.position.x = width / 2;
+        labelSp1.position.y = height * 3.8 / 9;
+        labelSp1.shapeColor = color(100, 0, 0, 0);
+        labelSp2.position.x = width / 2;
+        labelSp2.position.y = height * 5.2 / 9;
+        labelSp2.shapeColor = color(100, 0, 0, 0);
+        labelSp1.scale = scaleAll * width / 750 * 0.30;
+        labelSp2.scale = scaleAll * width / 750 * 0.30;
+        
+
+        drawSprite(labelSp1);
+        drawSprite(labelSp2);
+        let bool1 = sp.overlap(labelSp1, () => adh = "re");
+        let bool2 = sp.overlap(labelSp2, () => adh = "st1");
+        press(bool1||bool2);
     }
     clickDamy.remove();
+}
+
+function press(bool){
+    if (bool) {
+        pressFlag = true;
+        cursor(HAND);
+    }
+    else {
+        pressFlag = false;
+        cursor(ARROW);
+        at = atN; df = dfN; hl = hlN;
+    }
 }
 
 class player {
