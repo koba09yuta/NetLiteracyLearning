@@ -14,36 +14,36 @@ let tmpCmd;
 function preload() {
     //選択肢（at:こうげき、df:ぼうぎょ、hl:回復）
     //N・・・ホバー前の画像、H・・・ホバー後の画像
-    atN = loadImage('../../img/game/at.png');
-    dfN = loadImage('../../img/game/df.png');
-    hlN = loadImage('../../img/game/hl.png');
-    atH = loadImage('../../img/game/atH.png');
-    dfH = loadImage('../../img/game/dfH.png');
-    hlH = loadImage('../../img/game/hlH.png');
+    atN = loadImage('../img/game/at.png');
+    dfN = loadImage('../img/game/df.png');
+    hlN = loadImage('../img/game/hl.png');
+    atH = loadImage('../img/game/atH.png');
+    dfH = loadImage('../img/game/dfH.png');
+    hlH = loadImage('../img/game/hlH.png');
 
-    label1=loadImage('../../img/game/label1.svg');
-    label2=loadImage('../../img/game/label2.svg');
+    label1=loadImage('../img/game/label1.svg');
+    label2=loadImage('../img/game/label2.svg');
     //ダマス
-    enemy = loadImage('../../img/game/damas.svg');
+    enemy = loadImage('../img/game/damas.svg');
     //終了画面
-    endWindow = loadImage('../../img/game/re_window.svg');
+    endWindow = loadImage('../img/game/re_window.svg');
     //チームアイコン各種
-    soloIcon = loadImage('../../img/game/solo.svg');
-    teamIcon = loadImage('../../img/game/team.svg');
+    soloIcon = loadImage('../img/game/solo.svg');
+    teamIcon = loadImage('../img/game/team.svg');
     //攻撃エフェクトアニメーション
-    slash = loadAnimation('../../img/game/slashAnime/z001.png', '../../img/game/slashAnime/z002.png', '../../img/game/slashAnime/z003.png', '../../img/game/slashAnime/z004.png', '../../img/game/slashAnime/z005.png', '../../img/game/slashAnime/z006.png', '../../img/game/slashAnime/z007.png', '../../img/game/slashAnime/z008.png', '../../img/game/slashAnime/z009.png');
-    slash2 = loadAnimation('../../img/game/slashAnime2/1.png', '../../img/game/slashAnime2/2.png', '../../img/game/slashAnime2/3.png', '../../img/game/slashAnime2/4.png', '../../img/game/slashAnime2/5.png', '../../img/game/slashAnime2/6.png', '../../img/game/slashAnime2/7.png', '../../img/game/slashAnime2/8.png', '../../img/game/slashAnime2/9.png', '../../img/game/slashAnime2/10.png');
-    atack = loadAnimation('../../img/game/enemyAtack/2.png', '../../img/game/enemyAtack/3.png', '../../img/game/enemyAtack/4.png', '../../img/game/enemyAtack/5.png', '../../img/game/enemyAtack/6.png', '../../img/game/enemyAtack/7.png', '../../img/game/enemyAtack/8.png', '../../img/game/enemyAtack/9.png', '../../img/game/enemyAtack/10.png');
-    heal = loadAnimation('../../img/game/hlAnime/1.png', '../../img/game/hlAnime/2.png', '../../img/game/hlAnime/3.png', '../../img/game/hlAnime/4.png', '../../img/game/hlAnime/5.png', '../../img/game/hlAnime/6.png', '../../img/game/hlAnime/7.png', '../../img/game/hlAnime/8.png', '../../img/game/hlAnime/9.png', '../../img/game/hlAnime/10.png', '../../img/game/hlAnime/11.png', '../../img/game/hlAnime/12.png', '../../img/game/hlAnime/13.png', '../../img/game/hlAnime/14.png', '../../img/game/hlAnime/15.png');
-    defence = loadAnimation('../../img/game/dfAnime/1.png', '../../img/game/dfAnime/2.png', '../../img/game/dfAnime/3.png', '../../img/game/dfAnime/4.png', '../../img/game/dfAnime/5.png', '../../img/game/dfAnime/6.png', '../../img/game/dfAnime/7.png', '../../img/game/dfAnime/8.png');
+    slash = loadAnimation('../img/game/slashAnime/z001.png', '../img/game/slashAnime/z002.png', '../img/game/slashAnime/z003.png', '../img/game/slashAnime/z004.png', '../img/game/slashAnime/z005.png', '../img/game/slashAnime/z006.png', '../img/game/slashAnime/z007.png', '../img/game/slashAnime/z008.png', '../img/game/slashAnime/z009.png');
+    slash2 = loadAnimation('../img/game/slashAnime2/1.png', '../img/game/slashAnime2/2.png', '../img/game/slashAnime2/3.png', '../img/game/slashAnime2/4.png', '../img/game/slashAnime2/5.png', '../img/game/slashAnime2/6.png', '../img/game/slashAnime2/7.png', '../img/game/slashAnime2/8.png', '../img/game/slashAnime2/9.png', '../img/game/slashAnime2/10.png');
+    atack = loadAnimation('../img/game/enemyAtack/2.png', '../img/game/enemyAtack/3.png', '../img/game/enemyAtack/4.png', '../img/game/enemyAtack/5.png', '../img/game/enemyAtack/6.png', '../img/game/enemyAtack/7.png', '../img/game/enemyAtack/8.png', '../img/game/enemyAtack/9.png', '../img/game/enemyAtack/10.png');
+    heal = loadAnimation('../img/game/hlAnime/1.png', '../img/game/hlAnime/2.png', '../img/game/hlAnime/3.png', '../img/game/hlAnime/4.png', '../img/game/hlAnime/5.png', '../img/game/hlAnime/6.png', '../img/game/hlAnime/7.png', '../img/game/hlAnime/8.png', '../img/game/hlAnime/9.png', '../img/game/hlAnime/10.png', '../img/game/hlAnime/11.png', '../img/game/hlAnime/12.png', '../img/game/hlAnime/13.png', '../img/game/hlAnime/14.png', '../img/game/hlAnime/15.png');
+    defence = loadAnimation('../img/game/dfAnime/1.png', '../img/game/dfAnime/2.png', '../img/game/dfAnime/3.png', '../img/game/dfAnime/4.png', '../img/game/dfAnime/5.png', '../img/game/dfAnime/6.png', '../img/game/dfAnime/7.png', '../img/game/dfAnime/8.png');
     //BGM
-    song = loadSound('../../music/bgm/battle.mp3');
+    song = loadSound('../music/bgm/battle.mp3');
     ////効果音各種
-    slashSe = loadSound('../../music/bgm/slash.mp3');
-    slashSe2 = loadSound('../../music/bgm/slash2.mp3');
-    punchSe = loadSound('../../music/bgm/punch.mp3');
-    defenceSe = loadSound('../../music/bgm/df.mp3');
-    healSe = loadSound('../../music/bgm/hl.mp3');
+    slashSe = loadSound('../music/sound_effect/slash.mp3');
+    slashSe2 = loadSound('../music/sound_effect/slash2.mp3');
+    punchSe = loadSound('../music/sound_effect/punch.mp3');
+    defenceSe = loadSound('../music/sound_effect/df.mp3');
+    healSe = loadSound('../music/sound_effect/hl.mp3');
 }
 //初期化
 function setup() {

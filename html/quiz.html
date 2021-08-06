@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="../../css/quiz.css">
+    <link rel="stylesheet" href="../css/quiz.css">
     <!-- Bootstrap Javascript(jQuery) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -38,12 +38,12 @@
             </div>
             <div class="quiz_area_bg"></div>
             <div class="quiz_area_icon"></div>
-            <img id="comment_image" src="../../img/background/comment_image.png"></img>
+            <img id="comment_image" src="../img/quiz/comment_image.png"></img>
             <div class="back_button">次へ ⇨</div>
         </div>
 
         <div class="quiz_result"> </div>
-        <img id="last_image" src="../../img/background/comment_image.png"></img>
+        <img id="last_image" src="../img/quiz/comment_image.png"></img>
         <div class="last_button">おわる</div>
     </div>
 
@@ -52,13 +52,13 @@
         var img = new Array();
         
         img[0] = new Image();
-        img[0].src = "../../img/background/comment_image.png";
+        img[0].src = "../img/quiz/comment_image.png";
         img[1] = new Image();
-        img[1].src = "../../img/background/DRAGON.png";
+        img[1].src = "../img/quiz/comment_image.png";
         img[2] = new Image();
-        img[2].src=  "../../img/background/comment_image.png";
+        img[2].src=  "../img/quiz/comment_image.png";
         img[3] = new Image();
-        img[3].src=  "../../img/background/DRAGON.png";
+        img[3].src=  "../img/background/DRAGON.png";
         //画像番号用のグローバル変数
         var cnt=0;
         //画像切り替え関数
@@ -82,17 +82,17 @@
 
     <!-- ニャテラシーラッパー -->
     <div id="nyateracy-wrapper">
-    <img src="../../img/nyateracy/nyateracy_3.svg" style='transform: scale(-1, 1);' id="nyateracy-img">
+    <img src="../img/nyateracy/nyateracy_3.svg" style='transform: scale(-1, 1);' id="nyateracy-img">
     </div>
     <!-- 音楽 -->
     <audio autoplay loop id="bgm">
-        <source src="../../music/bgm/学校がはじまる感じ.mp3" type="audio/mp3">
+        <source src="../music/bgm/学校がはじまる感じ.mp3" type="audio/mp3">
     </audio>
     <audio preload="auto" id="sound-effect">
         <source type="audio/mp3">
     </audio>
     <!-- Javascript -->
-    <script src="../../js/quiz.js"></script>
+    <script src="../js/quiz.js"></script>
 </body>
 
 </html>

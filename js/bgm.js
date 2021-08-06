@@ -4,10 +4,10 @@ const muteButton = document.getElementById('mute');
 const mute = () => {
     if (bgm.muted) {
         bgm.muted = false;
-        muteButton.src = "../../img/icon/volume_off.svg";
+        muteButton.src = "../img/icon/volume_off.svg";
     } else {
         bgm.muted = true;
-        muteButton.src = "../../img/icon/volume_on.svg";
+        muteButton.src = "../img/icon/volume_on.svg";
     }
 }
 

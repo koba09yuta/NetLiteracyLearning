@@ -1,6 +1,6 @@
 const music = document.getElementById('bgm');
 music.volume = 0.09;
-$('body').css('backgroundImage', "url(../../img/background/blackboard.png)");
+$('body').css('backgroundImage', "url(../img/background/blackboard.png)");
 
 $(function(){
     let quizArea = $('.quiz_area'); //クイズを管理するDOMを指定
@@ -51,7 +51,7 @@ $(function(){
         if($(this).data('true')){
             //正解の処理 〇を表示
             quizArea.find('.quiz_area_icon').addClass('true');
-            $('#sound-effect source').attr('src',"../../music/sound_effect/正解音.mp3");
+            $('#sound-effect source').attr('src',"../music/sound_effect/正解音.mp3");
             document.querySelector("#sound-effect").load();
             $('#sound-effect').get(0).play();
 
@@ -60,7 +60,7 @@ $(function(){
         }else{
             //不正解の処理
             quizArea.find('.quiz_area_icon').addClass('false');
-            $('#sound-effect source').attr('src',"../../music/sound_effect/不正解のブザー音_3種.mp3");
+            $('#sound-effect source').attr('src',"../music/sound_effect/不正解のブザー音_3種.mp3");
             document.querySelector("#sound-effect").load();
             $('#sound-effect').get(0).play();
         }

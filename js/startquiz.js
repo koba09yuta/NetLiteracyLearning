@@ -13,7 +13,7 @@ const loading = () => {
         $('#title-wrapper').show();
         $('#button-wrapper').show();
         $('#nyateracy-wrapper').show();
-        $('body').css('backgroundImage', "url(../../img/background/blackboard.png)");
+        $('body').css('backgroundImage', "url(../img/background/blackboard.png)");
         $('#bgm').get(0).play();
     });
 }
