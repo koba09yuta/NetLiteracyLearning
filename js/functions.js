@@ -1,4 +1,5 @@
 /** ローディングを見せる関数 */
+import { preload } from './preload.js';
 import objectData from './story1ObjectData.js';
 import story1_1Data from './story1_1Data.js';
 import story1_2Data from './story1_2Data.js';
@@ -27,6 +28,7 @@ export const sceneAdvance = () => {
 /** ローディングの関数 */
 export const loading = () => {
     const fileName = window.location.href.split('/').pop();
+    preload(fileName);
     if (fileName === "conversation1_1.html") {
         storyData = story1_1Data;
     } else if (fileName === "conversation1_2.html") {
@@ -194,7 +196,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 5) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhOpening);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhOpening + ")");
         $('#dh-opening').show();
         return;
     }
@@ -202,7 +204,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 6 || displayId === 7) {
         $("#white-wrapper").css({opacity: 0.2});
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhMenu);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhMenu + ")");
         $('#dh-menu').show();
         $('#dh-quest-btn').removeClass("flush-button");
         $('#dh-friend-btn').removeClass("flush-button");
@@ -218,7 +220,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 8 || displayId === 9) {
         $("#white-wrapper").css({opacity: 0.2});
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhQuest);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhQuest + ")");
         $('#dh-quest').show();
         $('#dh-quest-solo').removeClass("flush-button");
         $('#dh-quest-team').removeClass("flush-button");
@@ -234,7 +236,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 10 || displayId === 11) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhFriend + ")");
         $('#dh-friend').show();
         $('#dh-friend-chat').removeClass("flush-button");
         $('#dh-friend-recruit').removeClass("flush-button");
@@ -254,7 +256,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 13 || displayId === 14 || displayId === 15) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhFriend + ")");
         $('#board').show();
         $('#anata-container').hide();
         $('#sho-container').hide();
@@ -270,7 +272,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 16) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhPortTown + ")");
         $('.line__container').show();
         $('#transparent-wrapper').show();
         $('#text1').delay(1000).fadeIn(500);
@@ -287,7 +289,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 17) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhPortTown + ")");
         $('.line__container').show();
         return;
     }
@@ -455,7 +457,7 @@ export const sceneShow = () => {
 /** 背景画像やBGMを切り替える関数 */
 export const changeBack = () => {
     if (storyData[sceneId].bgimg) {
-        $('body').css('backgroundImage', storyData[sceneId].bgimg);
+        $('body').css('backgroundImage', "url(" + storyData[sceneId].bgimg + ")");
     }
     if (storyData[sceneId].bgm) {
         if (storyData[sceneId].bgm === "stop") {
