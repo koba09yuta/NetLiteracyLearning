@@ -1,3 +1,6 @@
+/** BGM */
+let bgm = new Audio();
+
 /** 暗転を見せる関数 */
 const showDarkness = () => {
     // 暗転
@@ -11,8 +14,10 @@ const showDarkness = () => {
         // 明転
         $('#darkness-wrapper').animate({'opacity': 0}, 500, 'swing', () => {
             $('#darkness-wrapper').hide();
-            $('#bgm').get(0).volume = 0.2;
-            $('#bgm').get(0).play();
+            // $('#bgm').get(0).volume = 0.2;
+            // $('#bgm').get(0).play();
+            bgm.volume = 0.2;
+            bgm.play();
         });
     })
 }
@@ -23,6 +28,7 @@ const loading = () => {
     $('#button-wrapper').hide();
     $('#nyateracy-wrapper').hide();
     $('#logo-wrapper').show();
+    bgm.src = "./music/bgm/so_sweet.mp3";
     $('#loading').delay(800).fadeOut(1000, () => {
         showDarkness();
     });
