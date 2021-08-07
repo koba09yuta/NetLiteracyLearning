@@ -15,7 +15,7 @@ const story1_1Data = [
     {
         "mode": "conversation",
         "bgm": "roadNoon",
-        "bgimg": objectData.bgimg.roadNoon,
+        "bgimg": "",
         "title": "【通学路】",
         "text": "（学校帰りに<ruby><rb>友達</rb><rp>（</rp><rt>ともだち</rt><rp>）</rp></ruby>のアキラとゲームの<ruby><rb>話</rb><rp>（</rp><rt>はなし</rt><rp>）</rp></ruby>中）",
         "mostLeft": objectData.character.anata.pose1,

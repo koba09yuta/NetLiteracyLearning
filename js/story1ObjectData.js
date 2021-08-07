@@ -26,16 +26,16 @@ const story1ObjectData = {
         "phone": "<img src='../img/other/phone.svg' style='height: 60vh;'>"
     },
     "bgimg": {
-        "roadNoon": "url(../img/background/residential_area_noon.jpg)",
-        "roomNoon": "url(../img/background/pc_room_noon.jpg)",
-        "roomEvening": "url(../img/background/pc_room_evening.jpg)",
-        "roomNight": "url(../img/background/pc_room_night.jpg)",
-        "hackerRoom": "url(../img/background/hacker_room.jpg)",
-        "dhOpening": "url(../img/game/dh_background/dh_opening.jpg)",
-        "dhMenu": "url(../img/game/dh_background/dh_menu.jpg)",
-        "dhQuest": "url(../img/game/dh_background/dh_quest.jpg)",
-        "dhFriend": "url(../img/game/dh_background/dh_friend.jpg)",
-        "dhPortTown": "url(../img/game/dh_background/dh_port_town.jpg)"
+        "roadNoon": "../img/background/residential_area_noon.jpg",
+        "roomNoon": "../img/background/pc_room_noon.jpg",
+        "roomEvening": "../img/background/pc_room_evening.jpg",
+        "roomNight": "../img/background/pc_room_night.jpg",
+        "hackerRoom": "../img/background/hacker_room.jpg",
+        "dhOpening": "../img/game/dh_background/dh_opening.jpg",
+        "dhMenu": "../img/game/dh_background/dh_menu.jpg",
+        "dhQuest": "../img/game/dh_background/dh_quest.jpg",
+        "dhFriend": "../img/game/dh_background/dh_friend.jpg",
+        "dhPortTown": "../img/game/dh_background/dh_port_town.jpg"
     },
     "bgm": {
         "roadNoon": "../music/bgm/昼下がり気分.mp3",
