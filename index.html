@@ -34,6 +34,16 @@
     <div id="logo-wrapper">
         <img src="./img/icon/tri_logo.svg" class="logo">
     </div>
+    <!-- 警告ラッパー -->
+    <div id="caution-wrapper">
+        <div class="caution-message">
+            <img src="./img/icon/musical_note.svg">
+            <p>
+                このサイトでは音楽が流れます。<br>
+                スピーカーの<ruby><rb>音量</rb><rp>（</rp><rt>おんりょう</rt><rp>）</rp></ruby>にご注意ください。
+            </p>
+        </div>
+    </div>
     <!-- タイトルラッパー -->
     <div id="title-wrapper">
         <div class="text-center">黒猫ニャテラシーの<br>ネットリテラシー</div>
@@ -41,6 +51,7 @@
     <!-- ボタンラッパー -->
     <div id="button-wrapper">
         <div class="text-center">
+            <button id="ok-button">ＯＫ</button>
             <button id="start-button">スタート</button>
         </div>
     </div>
@@ -51,9 +62,6 @@
     <!-- 暗転ラッパー -->
     <div id="darkness-wrapper"></div>
     <!-- 音楽 -->
-    <audio preload="auto" loop id="bgm">
-        <source src="./music/bgm/so_sweet.mp3" type="audio/mp3">
-    </audio>
     <audio preload="auto" id="sound-effect">
         <source src="./music/sound_effect/「ピロリ」決定のボタン音・アクセント音.mp3" type="audio/mp3">
     </audio>
