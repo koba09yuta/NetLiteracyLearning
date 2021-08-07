@@ -38,14 +38,20 @@ const showCaution = () => {
 
 /** ローディングを見せる関数 */
 const loading = () => {
+    // ロゴを表示
     $('#title-wrapper').hide();
     $('#nyateracy-wrapper').hide();
     $('#logo-wrapper').show();
     $('#caution-wrapper').hide();
     $('#ok-button').hide();
     $('#start-button').hide();
+    
+    // プリロード
+    $("<img>").attr("src", "./img/background/top_title.png");
     bgm.src = "./music/bgm/so_sweet.mp3";
     soundEffect.src = "./music/sound_effect/「ピロリ」決定のボタン音・アクセント音.mp3";
+    
+    // 警告を表示
     $('#loading').delay(800).fadeOut(1000, () => {
         showCaution();
     });
@@ -54,8 +60,10 @@ const loading = () => {
 /** ページを読み込む */
 $(window).on('load', loading());
 
-/** スタートボタンを押す */
+/** OKボタンを押す */
 $('#ok-button').on("click", () => {
+    soundEffect.volume = 0.4;
+    soundEffect.play();
     showDarkness();
 });
 
