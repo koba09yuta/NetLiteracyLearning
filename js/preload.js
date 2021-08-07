@@ -3,10 +3,9 @@ import objectData from './story1ObjectData.js';
 /** プリロードする関数 */
 export const preload = (fileName) => {
     const imgURL = selectImg(fileName);
-    for(i = 0; i < imgURL.length; i++) {
+    for(let i = 0; i < imgURL.length; i++) {
         $("<img>").attr("src", imgURL[i]);
     }
-    console.log("preload done.");
 }
 
 /** プリロードする画像を選択する関数 */
