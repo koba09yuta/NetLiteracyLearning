@@ -28,7 +28,6 @@ export const sceneAdvance = () => {
 /** ローディングの関数 */
 export const loading = () => {
     const fileName = window.location.href.split('/').pop();
-    preload(fileName);
     if (fileName === "conversation1_1.html") {
         storyData = story1_1Data;
     } else if (fileName === "conversation1_2.html") {
@@ -37,16 +36,18 @@ export const loading = () => {
         storyData = story1_3Data;
     }
     sceneLength = storyData.length;
-    $('#darkness-wrapper').hide();
-    $('#loading').delay(1000).fadeOut(1000, function () {
-        if (storyData[sceneId].mode === "opening") {
-            $('#sound-effect source').attr('src', objectData.soundEffect.opening);
-            document.querySelector("#sound-effect").load();
-            $('#sound-effect').get(0).volume = 0.4;
-            $('#sound-effect').get(0).play();
-        }
+    preload(fileName, () => {
+        $('#darkness-wrapper').hide();
+        $('#loading').delay(1000).fadeOut(1000, function () {
+            if (storyData[sceneId].mode === "opening") {
+                $('#sound-effect source').attr('src', objectData.soundEffect.opening);
+                document.querySelector("#sound-effect").load();
+                $('#sound-effect').get(0).volume = 0.4;
+                $('#sound-effect').get(0).play();
+            }
+        });
+        sceneShow();
     });
-    sceneShow();
 }
 
 /** オープニングを見せる関数 */
