@@ -1,7 +1,7 @@
 import objectData from './story1ObjectData.js';
 
 /** プリロードする関数 */
-export const preload = (fileName) => {
+export const preload = (fileName, callback) => {
     const imgURL = selectImg(fileName);
     const musicURL = selectMusic(fileName);
     for(let i = 0; i < imgURL.length; i++) {
@@ -10,6 +10,7 @@ export const preload = (fileName) => {
     for(let i = 0; i < musicURL.length; i++) {
         $("<audio>").attr("src", imgURL[i]);
     }
+    callback();
 }
 
 /** プリロードする画像を選択する関数 */
