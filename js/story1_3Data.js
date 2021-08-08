@@ -92,7 +92,7 @@ const story1_3Data = [
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
         "text": "さて、これで強くなったかなー？",
@@ -109,7 +109,7 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "さっそくゲームを起動してみよう！",
+        "text": "さっそくドラゴンハンターを起動してみよう！",
         "nyateracy": ""
     },
     {
