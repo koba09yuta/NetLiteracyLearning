@@ -2,7 +2,7 @@
 
 /* 全体 */
 body {
-    font-family: "UD Digi Kyokasho N-B";
+    font-family:"たぬき油性マジック";
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
@@ -88,81 +88,67 @@ body {
 #title-wrapper {
     color: rgb(255, 255, 255);
     width: 100vw;
-    font-size: 10vh;
+    font-size: 14vh;
     position: absolute;
     top: 25vh;
-    left: 10vw;
+    left: 5vw;
 }
 
 /* 吹き出しラッパー */
 #huki-wrapper {
+    width: 100vw;
     position: absolute;
-    color: rgb(255, 255, 255);
-    width: 18vw;
-    height: 10vh;
-    font-size: 3vh;
-    text-align: center;
-    padding-top: 3vh;
-    top: 42vh;
-    left: 1.5vw;
-    background-color: #f3a383;
-    border-radius: 1vh;
-  
+    top: 50vh;
+    left: 4vw;
+    font-size: 5vh;
+    color: #FFF;
+
+
 }
-#huki-wrapper:before {
-    content: '';
-     position: absolute;
-     display: block;
-     z-index: 1;
-     border-style: solid;
-     border-color: transparent #f3a383;
-     border-width: 10px 0 10px 10px;
-     top: 50%;
-     right: -10px;
-     margin-top: -10px;
-  }
+
 
 /* ボタンラッパー */
 #button-wrapper {
     width: 100vw;
     position: absolute;
-    top: 50vh;
-    left: 10vw;
-    position: relative;
-  
-}
-
-
-#start-button {
-    height: 10vh;
-    width: 20vw;
-    box-shadow: 0.5rem 0.5rem hsla(0, 0%, 0%, .1);
-    background-image:
-      linear-gradient(90deg, rgba(22, 20, 20, 0.1) 2rem, rgba(27, 25, 25, 0) 2.5rem)
-    , linear-gradient(90deg, #ceb855, #fcf82a);
-    color: rgb(150, 46, 46);
-    font-size: 5vh;
-    border: none;
+    top: 65vh;
+    left: -4vw;
     
 }
 
+#start-button {
+    height: 12vh;
+    width: 15vw;
+    font-size: 3vh;
+    position: absolute;
+    display: inline-block;
+    padding: 0.25vh 0.5vh;
+    text-decoration: none;
+    color: #FFF;
+    background: #fd9535;/*色*/
+    border-radius: 0.5vh;/*角の丸み*/
+    box-shadow: inset 0 0.2vh 0 rgba(255,255,255,0.2), inset 0 -0.2vh 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    border: solid 0.1vh #d27d00;/*線色*/
+}
 #start-button:hover {
     color: rgb(255, 0, 0);
 }
-
 #start-button:focus {
 	outline: none;
 }
-
+#start-button:active {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+  }
 /* ニャテラシーラッパー */
 #nyateracy-wrapper {
     position: absolute;
-    top: 40vh;
-    left: -5vw;
+    top: 55vh;
+    left: -10vw;
 }
 
 #nyateracy-img {
-    height: 70vh;
+    height: 60vh;
 }
 
 /* 暗転ラッパー */
