@@ -1,7 +1,3 @@
-/** 音楽 */
-let bgm = new Audio();
-let soundEffect = new Audio();
-
 /** 暗転を見せる関数 */
 const showDarkness = () => {
     // 暗転
@@ -12,16 +8,17 @@ const showDarkness = () => {
         $('#start-button').show();
         $('#nyateracy-wrapper').show();
         $('#caution-wrapper').hide();
-        $('body').css('backgroundImage', "url(./img/background/top_title.png)");
+        $('body').css('backgroundImage', "url(./img/background/pc_room_noon.jpg)");
         // 明転
         $('#darkness-wrapper').animate({'opacity': 0}, 500, 'swing', () => {
             $('#darkness-wrapper').hide();
-            bgm.volume = 0.2;
-            bgm.play();
+            $('#bgm_opening').get(0).volume = 0.2;
+            $('#bgm_opening').get(0).play();
         });
     })
 }
 
+/** 警告を見せる関数 */
 const showCaution = () => {
     // 暗転
     $('#darkness-wrapper').delay(500).show().animate({'opacity': 1}, 500, 'swing', () => {
@@ -47,9 +44,7 @@ const loading = () => {
     $('#start-button').hide();
     
     // プリロード
-    $("<img>").attr("src", "./img/background/top_title.png");
-    bgm.src = "./music/bgm/so_sweet.mp3";
-    soundEffect.src = "./music/sound_effect/「ピロリ」決定のボタン音・アクセント音.mp3";
+    $("<img>").attr("src", "./img/background/pc_room_noon.jpg");
     
     // 警告を表示
     $('#loading').delay(800).fadeOut(1000, () => {
@@ -62,17 +57,21 @@ $(window).on('load', loading());
 
 /** OKボタンを押す */
 $('#ok-button').on("click", () => {
-    soundEffect.volume = 0.4;
-    soundEffect.play();
+    $('#se_start').get(0).volume = 0.4;
+    $('#se_start').get(0).pause();
+    $('#se_start').get(0).currentTime = 0;
+    $('#se_start').get(0).play();
     showDarkness();
 });
 
 /** スタートボタンを押す */
 $('#start-button').on("click", () => {
-    soundEffect.volume = 0.4;
-    soundEffect.play();
+    $('#se_start').get(0).volume = 0.4;
+    $('#se_start').get(0).pause();
+    $('#se_start').get(0).currentTime = 0;
+    $('#se_start').get(0).play();
     $('#darkness-wrapper').show().animate({'opacity': 1}, 1000, 'swing', () => {
-        window.location.href = './html/conversation1_1.html';
+        window.location.href = './html/menu.html';
     });
 });
 
