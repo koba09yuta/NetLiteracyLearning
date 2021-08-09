@@ -12,8 +12,8 @@ $(window).on('load', loading());
 
 /** オープニングを閉じる */
 $('#opening-wrapper').on("click", () => {
-    $('#sound-effect').get(0).pause();
-    $('#sound-effect').get(0).currentTime = 0;
+    $('#se_opening').get(0).pause();
+    $('#se_opening').get(0).currentTime = 0;
     sceneAdvance();
     sceneShow();
 });

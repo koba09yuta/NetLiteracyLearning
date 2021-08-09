@@ -41,10 +41,7 @@ export const loading = () => {
         $('#whiteout-wrapper').hide();
         $('#loading').delay(1000).fadeOut(1000, function () {
             if (storyData[sceneId].mode === "opening") {
-                $('#sound-effect source').attr('src', objectData.soundEffect.opening);
-                document.querySelector("#sound-effect").load();
-                $('#sound-effect').get(0).volume = 0.4;
-                $('#sound-effect').get(0).play();
+                makeSound("opening");
             }
         });
         sceneShow();
@@ -494,12 +491,13 @@ export const changeHide = (scene) => {
     }
 }
 
+/** 会話の色を変える関数 */
 const changeConversationColor = () => {
     if (storyData[sceneId].title === objectData.character.anata.name) {
         $('.title-box').css('background-color','rgba(0, 64, 128, 0.9)');
         return;
     } if (storyData[sceneId].title === objectData.character.akira.name) {
-        $('.title-box').css('background-color','rgba(0, 128, 0, 0.9)');
+        $('.title-box').css('background-color','rgba(0, 64, 0, 0.9)');
         return;
     } if (storyData[sceneId].title === objectData.character.sho.name) {
         $('.title-box').css('background-color','rgba(128, 0, 0, 0.9)');
@@ -591,18 +589,30 @@ export const changeBack = () => {
 
 /** 効果音を鳴らす関数 */
 export const makeSound = (sound) => {
+    if (sound === "opening") {
+        $('#se_opening').get(0).volume = 0.4;
+        $('#se_opening').get(0).pause();
+        $('#se_opening').get(0).currentTime = 0;
+        $('#se_opening').get(0).play();
+    }
     if (sound === "forward") {
-        $('#sound-effect source').attr('src', objectData.soundEffect.forward);
-        $('#sound-effect').get(0).volume = 0.4;
+        $('#se_forward').get(0).volume = 0.4;
+        $('#se_forward').get(0).pause();
+        $('#se_forward').get(0).currentTime = 0;
+        $('#se_forward').get(0).play();
     }
     if (sound === "click") {
-        $('#sound-effect source').attr('src', objectData.soundEffect.click);
-        $('#sound-effect').get(0).volume = 0.4;
+        $('#se_click').get(0).volume = 0.4;
+        $('#se_click').get(0).pause();
+        $('#se_click').get(0).currentTime = 0;
+        $('#se_click').get(0).play();
     }
     if (sound === "slash") {
-        $('#sound-effect source').attr('src', objectData.soundEffect.slash);
-        $('#sound-effect').get(0).volume = 0.2;
+        $('#se_slash').get(0).volume = 0.2;
+        $('#se_slash').get(0).pause();
+        $('#se_slash').get(0).currentTime = 0;
+        $('#se_slash').get(0).play();
     }
     document.querySelector("#sound-effect").load();
-    $('#sound-effect').get(0).play();
+    // $('#sound-effect').get(0).play();
 }

@@ -441,13 +441,20 @@
     <div class="sound-button" style="display: none;">
         <img id="mute" src="../img/icon/volume_off.svg">
     </div>
-    <!-- 音楽 -->
+    <!-- BGM -->
+    <audio preload="auto" id="roadNoon" src="../music/bgm/昼下がり気分.mp3">
+
     <audio loop id="bgm">
         <source type="audio/mp3">
     </audio>
     <audio preload="auto" id="sound-effect">
         <source type="audio/mp3">
     </audio>
+    <!-- 効果音 -->
+    <audio preload="auto" id="se_opening" src="../music/sound_effect/アコギ　OP1 short.mp3">
+    <audio preload="auto" id="se_forward" src="../music/sound_effect/カーソル移動1.mp3">
+    <audio preload="auto" id="se_click" src="../music/sound_effect/マウスのクリック音.mp3">
+    <audio preload="auto" id="se_slash" src="../music/sound_effect/剣で斬る2.mp3">
     <audio preload="auto" id="whiteout" src="../music/sound_effect/timeleap.mp3">
     <!-- Javascript -->
     <script src="../js/conversation.js" type="module"></script>
