@@ -3,12 +3,8 @@ import objectData from './story1ObjectData.js';
 /** プリロードする関数 */
 export const preload = (fileName, callback) => {
     const imgURL = selectImg(fileName);
-    const musicURL = selectMusic(fileName);
     for(let i = 0; i < imgURL.length; i++) {
         $("<img>").attr("src", imgURL[i]);
-    }
-    for(let i = 0; i < musicURL.length; i++) {
-        $("<audio>").attr("src", imgURL[i]);
     }
     callback();
 }
@@ -80,52 +76,4 @@ const selectImg = (fileName) => {
         ]
     }
     return imgURL;
-}
-
-/** プリロードする音楽を選択する関数 */
-const selectMusic = (fileName) => {
-    let musicURL = [];
-    if (fileName === "conversation1_1.html") {
-        musicURL = [
-            objectData.bgimg.roadNoon,
-            objectData.bgimg.home,
-            // objectData.bgimg.nyateracy,
-            // objectData.bgimg.truth,
-            objectData.bgimg.dhOpening,
-            objectData.bgimg.dhMenu,
-            objectData.soundEffect.opening,
-            objectData.soundEffect.forward,
-            objectData.soundEffect.click,
-            objectData.soundEffect.slash,
-        ]
-    }
-    if (fileName === "conversation1_2.html") {
-        musicURL = [
-            objectData.bgimg.roadNoon,
-            objectData.bgimg.home,
-            // objectData.bgimg.nyateracy,
-            // objectData.bgimg.truth,
-            objectData.bgimg.dhOpening,
-            objectData.bgimg.dhMenu,
-            // objectData.soundEffect.opening,
-            objectData.soundEffect.forward,
-            objectData.soundEffect.click,
-            objectData.soundEffect.slash,
-        ]
-    }
-    if (fileName === "conversation1_3.html") {
-        musicURL = [
-            // objectData.bgimg.roadNoon,
-            objectData.bgimg.home,
-            objectData.bgimg.nyateracy,
-            objectData.bgimg.truth,
-            objectData.bgimg.dhOpening,
-            objectData.bgimg.dhMenu,
-            // objectData.soundEffect.opening,
-            objectData.soundEffect.forward,
-            objectData.soundEffect.click,
-            objectData.soundEffect.slash,
-        ]
-    }
-    return musicURL;
 }
