@@ -13,7 +13,7 @@ $(function(){
     let aryQuiz = [];
     aryQuiz.push(
         {
-            question : 'ゲームでチャットをしていたら、ゲームの友達がおすすめの攻略サイトの<ruby><rb><ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby></rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>を送ってきた。どうする？',
+            question : 'ゲームでチャットをしていたら、ゲームの友達がおすすめの攻略サイトのURLを送ってきた。どうする？',
             answer : [
 
                 '危ないかもしれないので、<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックしない。',
@@ -152,7 +152,7 @@ $(function(){
         if(quiz_success_cnt === 3){
             text += '<br><p class="star">★★★</p>';
         }
-        text += '<br><a href="../../index.html" id="menu">メニューに戻る</a>';
+        text += '<br><a href="../html/menu.html" id="menu">メニューに戻る</a>';
         quizArea.find('.quiz_result').html(text);
         
         quizArea.find('#last_image').slideDown(400);

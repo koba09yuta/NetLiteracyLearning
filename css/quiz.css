@@ -176,7 +176,7 @@ body:hover{
     position: absolute;
     font-size: 20vh;
     color: rgb(193, 219, 44);
-   
+    font-family: "";
 }
 #menu{
     padding: 1vh;
