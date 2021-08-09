@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/missionDamas.css">
+    <link rel="stylesheet" href="../css/menu.css">
     <!-- Bootstrap Javascript(jQuery) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -19,33 +19,43 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <!-- P5 -->
-    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
-    <script src="../js/p5.play.js"></script>
-    <script src="../js/p5Damas.js"></script>
-    <script src="../js/p5.sound.js"></script>
     <!-- タイトルとファビコン -->
     <title>黒猫ニャテラシーのネットリテラシー</title>
     <link rel="shortcut icon" href="../img/icon/favicon.ico">
 </head>
 
-<body style="background-image: url(../img/background/pc_room_evening.jpg);">
-    <div id="pc-wrapper">
-        <!-- ダマスローディング -->
-        <div id="loading">
-            <div id="game-animation">
-                <p class="game-loading-text">クエスト：ダマスをたおせ！</p>
-            </div>
+<body>
+    <!-- ローディング -->
+    <div id="loading">
+        <div id="animation">
+            <div class="loading-circle"></div>
+            <p class="loading-text">Now Loading...</p>
         </div>
-        <div id="canvas" style="text-align: center;"></div> 
     </div>
-    
-    <!-- ミュートボタン（非公開） -->
-    <div class="sound-button" hidden>
-        <img id="mute" src="../img/icon/volume_off.svg">
+    <!-- タイトルラッパー -->
+    <div id="title-wrapper">メインメニュー</div>
+    <!-- メニューラッパー -->
+    <div id="menu-wrapper">
+        <button id="story1" class="unlock">ストーリー1：ゲームにひそむワナ</button>
+        <button id="story2" class="lock">ストーリー2：はじめてのスマホ　<img class="text-img" src="../img/icon/locked.svg"></button>
     </div>
+    <!-- ニャテラシーラッパー -->
+    <div id="nyateracy-wrapper">
+        <div class="balloon2-right">
+            <p>メニューからストーリーをえらぼう！</p>
+        </div>
+        <img src="../img/nyateracy/nyateracy_2.svg" id="nyateracy-img">
+    </div>
+    <!-- 暗転ラッパー -->
+    <div id="darkness-wrapper"></div>
+    <!-- 白ラッパー -->
+    <div id="white-wrapper"></div>
+    <!-- BGM -->
+    <audio preload="auto" loop id="bgm_menu" src="../music/bgm/日曜の午後.mp3">
+    <!-- 効果音 -->
+    <audio preload="auto" id="se_start" src="../music/sound_effect/「ピロリ」決定のボタン音・アクセント音.mp3">
     <!-- Javascript -->
-    <script src="../js/missionDamas.js"></script>
+    <script src="../js/menu.js"></script>
 </body>
 
 </html>

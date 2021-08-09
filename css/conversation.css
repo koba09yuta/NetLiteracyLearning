@@ -183,34 +183,44 @@ button:focus {
 
 /* 会話ラッパー */
 #conversation-wrapper {
-    width: 100%;
     height: 30vh;
     position: absolute;
     top: 60vh;
     z-index: 50;
 }
 
+.conversation-box {
+    width: 60vw;
+    position: absolute;
+    left: 50vw;
+    transform: translateX(-50%);
+}
+
 #title {
+    padding: 0 1vw;
     font-size: 5vh;
 }
 
 .title-box {
     height: 10vh;
-    background-color: rgba(0, 61, 131, 0.9);
 }
 
 #text {
+    padding: 0 1vw;
     font-size: 5vh;
     line-height: 10vh;
 }
 
 .text-box {
     height: 22vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
 }
 
 .pointer {
-    display: flex;
+    position: absolute;
+    top: 16vh;
+    left: 81vw;
+    transform: translateY(-50%);
     justify-content: center;
     align-items: center;
 }
@@ -220,13 +230,14 @@ button:focus {
 }
 
 .pointer:hover .right-triangle {
-    border-left: 12vh solid rgba(0, 50, 131, 0.9);
+    border-left: 12vh solid purple;
+    transition: border-left 0.3s;
 }
 
 .right-triangle {
     border-top: 8vh solid transparent;
     border-bottom: 8vh solid transparent;
-    border-left: 12vh solid rgba(0, 10, 131, 0.9);
+    border-left: 12vh solid blue;
 }
 
 /* PCラッパー */
@@ -340,6 +351,18 @@ button:focus {
     background-color: #000000;
     opacity: 0;
     z-index: 1000;
+}
+
+/* 暗転ラッパー */
+#whiteout-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 0;
+    z-index: 999;
 }
 
 /* ミュートボタン */

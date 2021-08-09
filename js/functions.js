@@ -1,4 +1,5 @@
 /** ローディングを見せる関数 */
+import { preload } from './preload.js';
 import objectData from './story1ObjectData.js';
 import story1_1Data from './story1_1Data.js';
 import story1_2Data from './story1_2Data.js';
@@ -35,16 +36,16 @@ export const loading = () => {
         storyData = story1_3Data;
     }
     sceneLength = storyData.length;
-    $('#darkness-wrapper').hide();
-    $('#loading').delay(1000).fadeOut(1000, function () {
-        if (storyData[sceneId].mode === "opening") {
-            $('#sound-effect source').attr('src', objectData.soundEffect.opening);
-            document.querySelector("#sound-effect").load();
-            $('#sound-effect').get(0).volume = 0.4;
-            $('#sound-effect').get(0).play();
-        }
+    preload(fileName, () => {
+        $('#darkness-wrapper').hide();
+        $('#whiteout-wrapper').hide();
+        $('#loading').delay(1000).fadeOut(1000, function () {
+            if (storyData[sceneId].mode === "opening") {
+                makeSound("opening");
+            }
+        });
+        sceneShow();
     });
-    sceneShow();
 }
 
 /** オープニングを見せる関数 */
@@ -66,6 +67,7 @@ export const showConversation = () => {
     $('#center-right').html(storyData[sceneId].centerRight);
     $('#most-right').html(storyData[sceneId].mostRight);
     $('#back-img').html(storyData[sceneId].img);
+    changeConversationColor();
 }
 
 /** 暗転を見せる関数 */
@@ -78,6 +80,23 @@ export const showDarkness = () => {
         // 明転
         $('#darkness-wrapper').animate({ 'opacity': 0 }, 500, 'swing', () => {
             $('#darkness-wrapper').hide();
+        });
+    });
+}
+
+/** ホワイトアウトを見せる関数 */
+export const showWhiteout = () => {
+    // 暗転
+    $('#whiteout').get(0).volume = 0.1;
+    $('#whiteout').get(0).currentTime = 0;
+    setTimeout(() => $('#whiteout').get(0).play(), 500);
+    $('#whiteout-wrapper').show().animate({ 'opacity': 1 }, 1000, 'swing', () => {
+        // 暗転中に場面を切り替える
+        sceneId++;
+        sceneShow();
+        // 明転
+        $('#whiteout-wrapper').delay(500).animate({ 'opacity': 0 }, 1000, 'swing', () => {
+            $('#whiteout-wrapper').hide();
         });
     });
 }
@@ -98,6 +117,11 @@ export const showGameLoading = () => {
             $('#black-wrapper').css({opacity: 0});
             if (storyData[sceneId].mode === "explanation") {
                 $('#conversation-wrapper').delay(500).fadeIn(200);
+                $('.conversation-box').show();
+                $('.pointer').show();
+                $('#pc-wrapper').show();
+                $('#nyateracy').show();
+                $('#transparent-wrapper').show();
             }
         });
     });
@@ -125,7 +149,6 @@ export const showAnswer = (selectionNumber) => {
     } else if (selectionNumber === 3) {
         selectionData = storyData[sceneId].selection3;
     }
-
     $('#selection-wrapper').hide();
     $('.pointer').show();
     $('#nyateracy').show();
@@ -162,6 +185,12 @@ export const showDisplay = (displayId) => {
         $('#pc-wrapper').css('background-color','rgb(0,181,252)');
         $('#pc-wrapper').css('background-image', 'none');
         $('#desktop').show();
+        if (displayId === 0) {
+            $('#dragon-hunter').show();
+            $('#ransomware').hide();
+            $('#dragon-hunter').removeClass("flush-icon");
+            return;
+        }
         if (displayId === 1) {
             $('#dragon-hunter').show();
             $('#ransomware').show();
@@ -194,7 +223,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 5) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhOpening);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhOpening + ")");
         $('#dh-opening').show();
         return;
     }
@@ -202,7 +231,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 6 || displayId === 7) {
         $("#white-wrapper").css({opacity: 0.2});
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhMenu);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhMenu + ")");
         $('#dh-menu').show();
         $('#dh-quest-btn').removeClass("flush-button");
         $('#dh-friend-btn').removeClass("flush-button");
@@ -218,7 +247,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 8 || displayId === 9) {
         $("#white-wrapper").css({opacity: 0.2});
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhQuest);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhQuest + ")");
         $('#dh-quest').show();
         $('#dh-quest-solo').removeClass("flush-button");
         $('#dh-quest-team').removeClass("flush-button");
@@ -234,7 +263,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 10 || displayId === 11) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhFriend + ")");
         $('#dh-friend').show();
         $('#dh-friend-chat').removeClass("flush-button");
         $('#dh-friend-recruit').removeClass("flush-button");
@@ -254,7 +283,7 @@ export const showDisplay = (displayId) => {
     if (displayId === 13 || displayId === 14 || displayId === 15) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhFriend);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhFriend + ")");
         $('#board').show();
         $('#anata-container').hide();
         $('#sho-container').hide();
@@ -265,29 +294,68 @@ export const showDisplay = (displayId) => {
             $('#anata-container').show();
             $('#sho-container').show();
         }
+        return;
     }
-    // チャット画面（自動遷移）
+    // チャット画面1（自動遷移）
+    if (displayId === 20) {
+        $("#white-wrapper").css({opacity: 0.2}); 
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhPortTown + ")");
+        $('.line__container').show();
+        $('#transparent-wrapper').show();
+        $('#text1-1').delay(1000).fadeIn(500);
+        $('#text1-2').delay(3000).fadeIn(500);
+        $('#text1-3').delay(5000).fadeIn(500);
+        $('#text1-4').delay(7000).fadeIn(500);
+        $('#text1-5').delay(9000).fadeIn(500);
+        $('#text1-6').delay(11000).fadeIn(500);
+        $('.scroll').delay(11500).animate({scrollTop: 1000}, 'fast');
+        setTimeout(() => {
+            $('#transparent-wrapper').hide();
+            $('#conversation-wrapper').show();
+            $('.pointer').show()
+        }, 12500);
+        return;
+    }
+    // チャット画面2（自動遷移）
     if (displayId === 16) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhPortTown + ")");
         $('.line__container').show();
         $('#transparent-wrapper').show();
-        $('#text1').delay(1000).fadeIn(500);
-        $('#text2').delay(3000).fadeIn(500);
-        $('#text3').delay(5000).fadeIn(500);
-        $('#text4').delay(7000).fadeIn(500);
-        $('#text5').delay(9000).fadeIn(500);
-        $('.scroll').delay(9500).animate({scrollTop: 1000}, 'fast');
-        sceneAdvance();
-        setTimeout(sceneShow, 12000);
+        $('#text1-1').hide();
+        $('#text1-2').hide();
+        $('#text1-3').hide();
+        $('#text1-4').hide();
+        $('#text1-5').hide();
+        $('#text1-6').hide();
+        $('#text2-1').delay(1000).fadeIn(500);
+        $('#text2-2').delay(3000).fadeIn(500);
+        $('#text2-3').delay(5000).fadeIn(500);
+        $('#text2-4').delay(7000).fadeIn(500);
+        $('#text2-5').delay(9000).fadeIn(500);
+        $('#text2-6').delay(11000).fadeIn(500);
+        $('.scroll').delay(11500).animate({scrollTop: 1000}, 'fast');
+        setTimeout(() => {
+            $('#conversation-wrapper').show();
+            $('.pointer').show()
+        }, 12500);
         return;
     }
-    // チャット画面（遷移なし）
+    // チャット画面1（遷移なし）
+    if (displayId === 21) {
+        $("#white-wrapper").css({opacity: 0.2}); 
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhPortTown + ")");
+        $('.line__container').show();
+        return;
+    }
+    // チャット画面2（遷移なし）
     if (displayId === 17) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
-        $('#pc-wrapper').css('background-image', objectData.bgimg.dhPortTown);
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhPortTown + ")");
         $('.line__container').show();
         return;
     }
@@ -316,7 +384,7 @@ export const showExplanation = () => {
     $('#text').html(storyData[sceneId].text);
     $('#nyateracy').html(storyData[sceneId].nyateracy);
     showDisplay(storyData[sceneId].displayId);
-    
+    changeConversationColor();
 }
 
 /** パソコン操作を表示する関数 */
@@ -384,6 +452,7 @@ export const changeHide = (scene) => {
     $('#img-wrapper').hide();
     $('#selection-wrapper').hide();
     $('#conversation-wrapper').hide();
+    $('.conversation-box').hide();
     $('.pointer').hide();
     $('#pc-wrapper').hide();
     $('#nyateracy').hide();
@@ -396,6 +465,7 @@ export const changeHide = (scene) => {
         $('#people-wrapper').show();
         $('#img-wrapper').show();
         $('#conversation-wrapper').show();
+        $('.conversation-box').show();
         $('.pointer').show();
         return;
     }
@@ -408,6 +478,7 @@ export const changeHide = (scene) => {
     }
     if (scene === "explanation") {
         $('#conversation-wrapper').show();
+        $('.conversation-box').show();
         $('.pointer').show();
         $('#pc-wrapper').show();
         $('#nyateracy').show();
@@ -418,6 +489,26 @@ export const changeHide = (scene) => {
         $('#pc-wrapper').show();
         return;
     }
+}
+
+/** 会話の色を変える関数 */
+const changeConversationColor = () => {
+    if (storyData[sceneId].title === objectData.character.anata.name) {
+        $('.title-box').css('background-color','rgba(0, 64, 128, 0.95)');
+        return;
+    } if (storyData[sceneId].title === objectData.character.akira.name) {
+        $('.title-box').css('background-color','rgba(0, 64, 0, 0.95)');
+        return;
+    } if (storyData[sceneId].title === objectData.character.sho.name) {
+        $('.title-box').css('background-color','rgba(128, 0, 0, 0.95)');
+        return;
+    } if (storyData[sceneId].title === objectData.character.nyateracy.name ||
+        storyData[sceneId].title === "？？？") {
+        $('.title-box').css('background-color','rgba(96, 96, 96, 0.95)');
+        return;
+    }
+    $('.title-box').css('background-color','rgba(0, 64, 128, 0.9)');
+    return;
 }
 
 /** シーンが進む際の処理をする関数 */
@@ -432,6 +523,10 @@ export const sceneShow = () => {
     }
     if (storyData[sceneId].mode === "darkness") {
         showDarkness();
+        return;
+    }
+    if (storyData[sceneId].mode === "whiteout") {
+        showWhiteout();
         return;
     }
     if (storyData[sceneId].mode === "gameLoading") {
@@ -455,57 +550,85 @@ export const sceneShow = () => {
 /** 背景画像やBGMを切り替える関数 */
 export const changeBack = () => {
     if (storyData[sceneId].bgimg) {
-        $('body').css('backgroundImage', storyData[sceneId].bgimg);
+        $('body').css('backgroundImage', "url(" + storyData[sceneId].bgimg + ")");
     }
     if (storyData[sceneId].bgm) {
+        $('#bgm_roadNoon').get(0).pause();
+        $('#bgm_home').get(0).pause();
+        $('#bgm_nyateracy').get(0).pause();
+        $('#bgm_truth').get(0).pause();
+        $('#bgm_dhOpening').get(0).pause();
+        $('#bgm_dhMenu').get(0).pause();
         if (storyData[sceneId].bgm === "stop") {
-            $('#bgm').get(0).pause();
-            $('#bgm').get(0).currentTime = 0;
             return;
         }
         if (storyData[sceneId].bgm === "roadNoon") {
-            $('#bgm source').attr('src', objectData.bgm.roadNoon);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_roadNoon').get(0).volume = 0.2;
+            $('#bgm_roadNoon').get(0).currentTime = 0;
+            $('#bgm_roadNoon').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "home") {
-            $('#bgm source').attr('src', objectData.bgm.home);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_home').get(0).volume = 0.2;
+            $('#bgm_home').get(0).currentTime = 0;
+            $('#bgm_home').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "nyateracy") {
-            $('#bgm source').attr('src', objectData.bgm.nyateracy);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_nyateracy').get(0).volume = 0.2;
+            $('#bgm_nyateracy').get(0).currentTime = 0;
+            $('#bgm_nyateracy').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "truth") {
-            $('#bgm source').attr('src', objectData.bgm.truth);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_truth').get(0).volume = 0.2;
+            $('#bgm_truth').get(0).currentTime = 0;
+            $('#bgm_truth').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "dhOpening") {
-            $('#bgm source').attr('src', objectData.bgm.dhOpening);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_dhOpening').get(0).volume = 0.2;
+            $('#bgm_dhOpening').get(0).currentTime = 0;
+            $('#bgm_dhOpening').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "dhMenu") {
-            $('#bgm source').attr('src', objectData.bgm.dhMenu);
-            $('#bgm').get(0).volume = 0.1;
+            $('#bgm_dhMenu').get(0).volume = 0.2;
+            $('#bgm_dhMenu').get(0).currentTime = 0;
+            $('#bgm_dhMenu').get(0).play();
+            return;
         }
-        document.querySelector("#bgm").load();
-        $('#bgm').get(0).play();
     }
 }
 
 /** 効果音を鳴らす関数 */
 export const makeSound = (sound) => {
+    if (sound === "opening") {
+        $('#se_opening').get(0).volume = 0.4;
+        $('#se_opening').get(0).pause();
+        $('#se_opening').get(0).currentTime = 0;
+        $('#se_opening').get(0).play();
+        return;
+    }
     if (sound === "forward") {
-        $('#sound-effect source').attr('src', objectData.soundEffect.forward);
-        $('#sound-effect').get(0).volume = 0.4;
+        $('#se_forward').get(0).volume = 0.4;
+        $('#se_forward').get(0).pause();
+        $('#se_forward').get(0).currentTime = 0;
+        $('#se_forward').get(0).play();
+        return;
     }
     if (sound === "click") {
-        $('#sound-effect source').attr('src', objectData.soundEffect.click);
-        $('#sound-effect').get(0).volume = 0.4;
+        $('#se_click').get(0).volume = 0.4;
+        $('#se_click').get(0).pause();
+        $('#se_click').get(0).currentTime = 0;
+        $('#se_click').get(0).play();
+        return;
     }
     if (sound === "slash") {
-        $('#sound-effect source').attr('src', objectData.soundEffect.slash);
-        $('#sound-effect').get(0).volume = 0.2;
+        $('#se_slash').get(0).volume = 0.2;
+        $('#se_slash').get(0).pause();
+        $('#se_slash').get(0).currentTime = 0;
+        $('#se_slash').get(0).play();
+        return;
     }
-    document.querySelector("#sound-effect").load();
-    $('#sound-effect').get(0).play();
 }

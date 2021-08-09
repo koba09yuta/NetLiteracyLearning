@@ -9,7 +9,8 @@ const story1ObjectData = {
             "pose1": "<img src='../img/nyateracy/nyateracy_1.svg' style='height: 120vh;'>",
             "pose2": "<img src='../img/nyateracy/nyateracy_2.svg' style='height: 120vh;'>",
             "pose3": "<img src='../img/nyateracy/nyateracy_3.svg' style='height: 150vh; transform:translateY(-30vh);'>",
-            "pose4": "<img src='../img/nyateracy/nyateracy_4.svg' style='height: 250vh; transform:translateY(-5vh);''>"
+            "pose4": "<img src='../img/nyateracy/nyateracy_4.svg' style='height: 250vh; transform:translateY(-5vh);''>",
+            "pose5": "<img src='../img/nyateracy/nyateracy_2.svg' style='height: 80vh; transform:scale(-1, 1) translateX(50vw) translateY(20vh);'>",
         },
         "akira": {
             "name": "アキラ",
@@ -26,16 +27,16 @@ const story1ObjectData = {
         "phone": "<img src='../img/other/phone.svg' style='height: 60vh;'>"
     },
     "bgimg": {
-        "roadNoon": "url(../img/background/residential_area_noon.jpg)",
-        "roomNoon": "url(../img/background/pc_room_noon.jpg)",
-        "roomEvening": "url(../img/background/pc_room_evening.jpg)",
-        "roomNight": "url(../img/background/pc_room_night.jpg)",
-        "hackerRoom": "url(../img/background/hacker_room.jpg)",
-        "dhOpening": "url(../img/game/dh_background/dh_opening.jpg)",
-        "dhMenu": "url(../img/game/dh_background/dh_menu.jpg)",
-        "dhQuest": "url(../img/game/dh_background/dh_quest.jpg)",
-        "dhFriend": "url(../img/game/dh_background/dh_friend.jpg)",
-        "dhPortTown": "url(../img/game/dh_background/dh_port_town.jpg)"
+        "roadNoon": "../img/background/residential_area_noon.jpg",
+        "roomNoon": "../img/background/pc_room_noon.jpg",
+        "roomEvening": "../img/background/pc_room_evening.jpg",
+        "roomNight": "../img/background/pc_room_night.jpg",
+        "hackerRoom": "../img/background/hacker_room.jpg",
+        "dhOpening": "../img/game/dh_background/dh_opening.jpg",
+        "dhMenu": "../img/game/dh_background/dh_menu.jpg",
+        "dhQuest": "../img/game/dh_background/dh_quest.jpg",
+        "dhFriend": "../img/game/dh_background/dh_friend.jpg",
+        "dhPortTown": "../img/game/dh_background/dh_port_town.jpg"
     },
     "bgm": {
         "roadNoon": "../music/bgm/昼下がり気分.mp3",
@@ -50,8 +51,6 @@ const story1ObjectData = {
         "forward": "../music/sound_effect/カーソル移動1.mp3",
         "click": "../music/sound_effect/マウスのクリック音.mp3",
         "slash": "../music/sound_effect/剣で斬る2.mp3",
-        "correct": "../music/sound_effect/正解音.mp3",
-        "incorrect": "../music/sound_effect/不正解のブザー音_3種.mp3"
     }
 }
 

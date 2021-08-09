@@ -17,7 +17,7 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "うらやましいな、どうしたら強くなれるか聞いてみよう！",
+        "text": "うらやましいな、どうして強いのか「チャットルーム」で聞いてみよう！",
         "nyateracy": ""
     },
     {
@@ -28,15 +28,6 @@ const story1_3Data = [
     },
     {
         "mode": "gameLoading",
-    },
-    {
-        "mode": "explanation",
-        "displayId": 10,
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.anata.name,
-        "text": "「チャットルーム」をおせば聞けそうだ！",
-        "nyateracy": ""
     },
     {
         "mode": "operation",
@@ -52,9 +43,6 @@ const story1_3Data = [
         "displayId": 16,
         "bgm": "",
         "bgimg": ""
-    },
-    {
-        "mode": "darkness",
     },
     {
         "mode": "explanation",
@@ -86,30 +74,29 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": ""
     },
-
     {
         "mode": "darkness",
     },
     {
         "mode": "conversation",
-        "bgm": objectData.bgm.home,
+        "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
         "text": "さて、これで強くなったかなー？",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
-        "mostRight": "",
+        "mostRight": objectData.character.anata.pose1,
         "nyateracy": "",
         "img": ""
     },
     {
         "mode": "explanation",
-        "displayId": 3,
+        "displayId": 1,
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "さっそくゲームを起動してみよう！",
+        "text": "さっそくドラゴンハンターを起動してみよう！",
         "nyateracy": ""
     },
     {
@@ -216,7 +203,16 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
-        "text": "ボクはニャテラシー！時がもどせる<ruby><rb>不思議</rb><rp>（</rp><rt>ふしぎ</rt><rp>）</rp></ruby>なネコちゃんさ♪",
+        "text": "ボクはニャテラシー！時をもどせる<ruby><rb>不思議</rb><rp>（</rp><rt>ふしぎ</rt><rp>）</rp></ruby>なネコちゃんさ♪",
+        "nyateracy": objectData.character.nyateracy.pose2
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.nyateracy.name,
+        "text": "キミのネットリテラシーを高めるためにやってきたんだ！",
         "nyateracy": objectData.character.nyateracy.pose2
     },
     {
@@ -261,7 +257,7 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
-        "text": "何がいけなかったのか考えてみて！",
+        "text": "ネットの中には<ruby><rb>危険</rb><rp>（</rp><rt>きけん</rt><rp>）</rp></ruby>がたくさんあるんだよ",
         "nyateracy": objectData.character.nyateracy.pose4
     },
     {
@@ -270,13 +266,13 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
-        "text": "時をもどす前に、トラブルの<ruby><rb>裏側</rb><rp>（</rp><rt>うらがわ</rt><rp>）</rp></ruby>をいっしょに見てみよう！",
+        "text": "時をもどしながら、いっしょにトラブルの<ruby><rb>裏側</rb><rp>（</rp><rt>うらがわ</rt><rp>）</rp></ruby>を見てみよう！",
         "nyateracy": objectData.character.nyateracy.pose4
     },
 
     // 過去にもどる~クイズ
     {
-        "mode": "darkness",
+        "mode": "whiteout",
     },
     {
         "mode": "explanation",
@@ -293,7 +289,7 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title":  objectData.character.anata.name,
-        "text": "・・・「小学生です！チームを組んで<ruby><rb>戦</rb><rp>（</rp><rt>たたか</rt><rp>）</rp></ruby>える強い人をぼしゅう！」これでよし！",
+        "text": "・・・「多摩小5年です！いっしょにダマスをたおそう！」これでよし！",
         "nyateracy": ""
     },
     {
@@ -313,7 +309,7 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": objectData.bgimg.hackerRoom,
         "title": objectData.character.sho.name,
-        "text": "この「あなた」って人、小学生か。小学生のふりをすればうまくだませそうだな。",
+        "text": "この「あなた」って人、小学校名ばらしてるぜ。うまくだませそうだな。",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": objectData.character.sho.pose1,
@@ -323,6 +319,27 @@ const story1_3Data = [
     },
     {
         "mode": "darkness",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 14,
+        "bgm": "",
+        "bgimg": objectData.bgimg.roomNoon,
+        "title":  objectData.character.nyateracy.name,
+        "text": "こういうネットの掲示板には、学校名などの<ruby><rb>個人情報</rb><rp>（</rp><rt>こじんじょうほう</rt><rp>）</rp></ruby>は書いてはいけないよ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 14,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.nyateracy.name,
+        "text": "いつだれに悪いことに使われるか分からないからね！",
+        "nyateracy": objectData.character.nyateracy.pose1
+    },
+    {
+        "mode": "whiteout",
     },
     {
         "mode": "explanation",
@@ -343,16 +360,44 @@ const story1_3Data = [
         "nyateracy": ""
     },
     {
+        "mode": "darkness",
+    },
+    {
+        "mode": "conversation",
+        "bgm": "",
+        "bgimg": objectData.bgimg.hackerRoom,
+        "title": objectData.character.sho.name,
+        "text": "ククク、小学生のふりをして、なかよくなったふりをしよう。",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": objectData.character.sho.pose1,
+        "mostRight": "",
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
         "mode": "explanation",
         "displayId": 15,
         "bgm": "",
-        "bgimg": "",
+        "bgimg": objectData.bgimg.roomNoon,
         "title":  objectData.character.anata.name,
         "text": "ショウは実は、大人だったんだ。小学生のふりをしてキミをだましていたんだよ。",
         "nyateracy": objectData.character.nyateracy.pose1
     },
     {
-        "mode": "darkness",
+        "mode": "explanation",
+        "displayId": 15,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.nyateracy.name,
+        "text": "ネットでは相手の顔が見えないから、むやみに<ruby><rb>信用</rb><rp>（</rp><rt>しんよう</rt><rp>）</rp></ruby>してはダメだよ！",
+        "nyateracy": objectData.character.nyateracy.pose1
+    },
+    {
+        "mode": "whiteout",
     },
     {
         "mode": "explanation",
@@ -406,25 +451,34 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
-        "text": "こういうチャットのURLは危険だから<ruby><rb>絶対</rb><rp>（</rp><rt>ぜったい</rt><rp>）</rp></ruby>にクリックしてはいけないよ！",
+        "text": "こういうチャットの<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>は危険だから<ruby><rb>絶対</rb><rp>（</rp><rt>ぜったい</rt><rp>）</rp></ruby>にクリックしてはいけないよ！",
         "nyateracy": ""
     },
     {
         "mode": "explanation",
-        "displayId": 18,
+        "displayId": 17,
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
-        "text": "クリックしただけで、ウイルスをパソコンに入れられてしまうこともあるので、気をつけよう！",
+        "text": "<ruby><rb>保護者</rb><rp>（</rp><rt>ほごしゃ</rt><rp>）</rp></ruby>の人とセキュリティアプリが入っているかどうかも確認しておこう！",
         "nyateracy": ""
     },
     {
-        "mode": "darkness",
+        "mode": "whiteout",
     },
     {
         "mode": "explanation",
         "displayId": 1,
         "bgm": "nyateracy",
+        "bgimg": objectData.bgimg.roomEvening,
+        "title": objectData.character.nyateracy.name,
+        "text": "さあ、ショウとチャットをする前の時間までもどってきたよ！",
+        "nyateracy": objectData.character.nyateracy.pose1
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
         "bgimg": objectData.bgimg.roomEvening,
         "title": objectData.character.nyateracy.name,
         "text": "これが今回起こったことの真実だったんだ。",
@@ -454,7 +508,25 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
-        "text": "さあ、じゃあ<ruby><rb>復習</rb><rp>（</rp><rt>ふくしゅう</rt><rp>）</rp></ruby>クイズをしてみよう！",
+        "text": "今回は時をもどしてあげたけど、使い方によっては取り返しがつかなくなることもあるんだ！",
+        "nyateracy": objectData.character.nyateracy.pose3
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.nyateracy.name,
+        "text": "今度は気をつけて、オンラインゲームを遊ぼうね！",
+        "nyateracy": objectData.character.nyateracy.pose3
+    },
+    {
+        "mode": "explanation",
+        "displayId": 1,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.nyateracy.name,
+        "text": "さあ、じゃあ今回のことのおさらいをしておこう！",
         "nyateracy": objectData.character.nyateracy.pose4
     },
     /*
@@ -480,10 +552,10 @@ const story1_3Data = [
             "nyateracy": objectData.character.nyateracy.pose1
         },
         "selection3": {
-            "selection": "知らない人から送られてきたURLをクリックした",
+            "selection": "知らない人から送られてきた<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックした",
             "answer": true,
             "title": objectData.character.nyateracy.name,
-            "text": "その通り！知らない人を<ruby><rb>信</rb><rp>（</rp><rt>しん</rt><rp>）</rp></ruby>じてURLをクリックしちゃったのが<ruby><rb>原因</rb><rp>（</rp><rt>げんいん</rt><rp>）</rp></ruby>だね。",
+            "text": "その通り！知らない人を<ruby><rb>信</rb><rp>（</rp><rt>しん</rt><rp>）</rp></ruby>じて<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックしちゃったのが<ruby><rb>原因</rb><rp>（</rp><rt>げんいん</rt><rp>）</rp></ruby>だね。",
             "nyateracy": objectData.character.nyateracy.pose1
         },
     }
