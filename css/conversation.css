@@ -203,7 +203,6 @@ button:focus {
 
 .title-box {
     height: 10vh;
-    background-color: rgba(0, 61, 131, 0.9);
 }
 
 #text {
@@ -214,7 +213,7 @@ button:focus {
 
 .text-box {
     height: 22vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
 }
 
 .pointer {
@@ -231,13 +230,14 @@ button:focus {
 }
 
 .pointer:hover .right-triangle {
-    border-left: 12vh solid rgba(0, 50, 131, 0.9);
+    border-left: 12vh solid purple;
+    transition: border-left 0.3s;
 }
 
 .right-triangle {
     border-top: 8vh solid transparent;
     border-bottom: 8vh solid transparent;
-    border-left: 12vh solid rgba(0, 10, 131, 0.9);
+    border-left: 12vh solid blue;
 }
 
 /* PCラッパー */

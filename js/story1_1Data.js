@@ -138,7 +138,7 @@ const story1_1Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "アキラに言われたゲーム、さっそくやってみよう！",
+        "text": "アキラに教えてもらったゲーム、さっそくやってみよう！",
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
@@ -174,7 +174,7 @@ const story1_1Data = [
     },
     {
         "mode": "explanation",
-        "displayId": 2,
+        "displayId": 0,
         "bgm": "",
         "bgimg": "",
         "title": "【<ruby><rb>操作</rb><rp>（</rp><rt>そうさ</rt><rp>）</rp></ruby>の<ruby><rb>説明</rb><rp>（</rp><rt>せつめい</rt><rp>）</rp></ruby>】",

@@ -13,11 +13,11 @@ $(function(){
     let aryQuiz = [];
     aryQuiz.push(
         {
-            question : 'ゲームでチャットをしていたら、ゲームの友達がおすすめの攻略サイトのURLを送ってきた。どうする？',
+            question : 'ゲームでチャットをしていたら、ゲームの友達がおすすめの攻略サイトの<ruby><rb><ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby></rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>を送ってきた。どうする？',
             answer : [
-                '友達が言っているので、URLをクリックする。',
-                '友達のおすすめサイトなので、他の友達にURLを教える。',
-                '危ないかもしれないので、URLをクリックしない。']
+                '友達が言っているので、<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックする。',
+                '友達のおすすめサイトなので、他の友達に<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>を教える。',
+                '危ないかもしれないので、<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックしない。']
         }
         ,{
             question : '問題２が入ります',

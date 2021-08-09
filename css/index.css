@@ -144,7 +144,7 @@ body {
 button {
     height: 12vh;
     width: 25vw;
-    background-color: black;
+    background-color: #222;
     color: white;
     font-size: 6vh;
     border: none;
