@@ -9,7 +9,8 @@ const story1ObjectData = {
             "pose1": "<img src='../img/nyateracy/nyateracy_1.svg' style='height: 120vh;'>",
             "pose2": "<img src='../img/nyateracy/nyateracy_2.svg' style='height: 120vh;'>",
             "pose3": "<img src='../img/nyateracy/nyateracy_3.svg' style='height: 150vh; transform:translateY(-30vh);'>",
-            "pose4": "<img src='../img/nyateracy/nyateracy_4.svg' style='height: 250vh; transform:translateY(-5vh);''>"
+            "pose4": "<img src='../img/nyateracy/nyateracy_4.svg' style='height: 250vh; transform:translateY(-5vh);''>",
+            "pose5": "<img src='../img/nyateracy/nyateracy_2.svg' style='height: 80vh; transform:scale(-1, 1) translateX(50vw) translateY(20vh);'>",
         },
         "akira": {
             "name": "アキラ",

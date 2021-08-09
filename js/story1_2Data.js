@@ -122,12 +122,12 @@ const story1_2Data = [
     },
     {
         "mode": "explanation",
-        "displayId": 0,
+        "displayId": 14,
         "bgm": "stop",
         "bgimg": "",
         "title":  "？？？",
         "text": "・・・。",
-        "nyateracy": objectData.character.nyateracy.pose1
+        "nyateracy": objectData.character.nyateracy.pose5
     },
     {
         "mode": "darkness",
