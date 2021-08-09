@@ -50,8 +50,6 @@ const story1ObjectData = {
         "forward": "../music/sound_effect/カーソル移動1.mp3",
         "click": "../music/sound_effect/マウスのクリック音.mp3",
         "slash": "../music/sound_effect/剣で斬る2.mp3",
-        "correct": "../music/sound_effect/正解音.mp3",
-        "incorrect": "../music/sound_effect/不正解のブザー音_3種.mp3"
     }
 }
 

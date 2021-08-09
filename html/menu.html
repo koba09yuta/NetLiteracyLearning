@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../css/menu.css">
     <!-- Bootstrap Javascript(jQuery) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -21,7 +21,7 @@
         crossorigin="anonymous"></script>
     <!-- タイトルとファビコン -->
     <title>黒猫ニャテラシーのネットリテラシー</title>
-    <link rel="shortcut icon" href="./img/icon/favicon.ico">
+    <link rel="shortcut icon" href="../img/icon/favicon.ico">
 </head>
 
 <body>
@@ -32,45 +32,30 @@
             <p class="loading-text">Now Loading...</p>
         </div>
     </div>
-    <!-- ロゴラッパー -->
-    <div id="logo-wrapper">
-        <img src="./img/icon/tri_logo.svg" class="logo">
-    </div>
-    <!-- 警告ラッパー -->
-    <div id="caution-wrapper">
-        <div class="caution-message">
-            <img src="./img/icon/musical_note.svg">
-            <p>
-                このサイトでは音楽が流れます。<br>
-                スピーカーの<ruby><rb>音量</rb><rp>（</rp><rt>おんりょう</rt><rp>）</rp></ruby>にご注意ください。
-            </p>
-        </div>
-    </div>
     <!-- タイトルラッパー -->
-    <div id="title-wrapper">
-        <div class="text-center">黒猫ニャテラシーの<br>ネットリテラシー</div>
-    </div>
-    <!-- ボタンラッパー -->
-    <div id="button-wrapper">
-        <div class="text-center">
-            <button id="ok-button">ＯＫ</button>
-            <button id="start-button">スタート</button>
-        </div>
+    <div id="title-wrapper">メインメニュー</div>
+    <!-- メニューラッパー -->
+    <div id="menu-wrapper">
+        <button id="story1" class="unlock">ストーリー1：ゲームにひそむワナ</button>
+        <button id="story2" class="lock">ストーリー2：はじめてのスマホ　<img class="text-img" src="../img/icon/locked.svg"></button>
     </div>
     <!-- ニャテラシーラッパー -->
     <div id="nyateracy-wrapper">
-        <img src="./img/nyateracy/nyateracy_2.svg" style='transform: scale(-1, 1);' id="nyateracy-img">
+        <div class="balloon2-right">
+            <p>メニューからストーリーをえらぼう！</p>
+        </div>
+        <img src="../img/nyateracy/nyateracy_2.svg" id="nyateracy-img">
     </div>
     <!-- 暗転ラッパー -->
     <div id="darkness-wrapper"></div>
     <!-- 白ラッパー -->
     <div id="white-wrapper"></div>
     <!-- BGM -->
-    <audio preload="auto" loop id="bgm_opening" src="../music/bgm/so_sweet.mp3">
+    <audio preload="auto" loop id="bgm_menu" src="../music/bgm/日曜の午後.mp3">
     <!-- 効果音 -->
     <audio preload="auto" id="se_start" src="../music/sound_effect/「ピロリ」決定のボタン音・アクセント音.mp3">
     <!-- Javascript -->
-    <script src="./js/index.js"></script>
+    <script src="../js/menu.js"></script>
 </body>
 
 </html>
