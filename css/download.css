@@ -17,13 +17,16 @@
 }
 
 /* 上部の文字 */
-#thanks {
-    width: 75vw;
+#download-title {
+    width: 100%;
     font-size: 6vh;
     position: absolute;
     top: 5vh;
-    left: 50vw;
-    transform: translateX(-50%);
+    text-align: center;
+}
+
+#inquiry {
+    font-size: 3vh;
 }
 
 /* ダウンロードボタン */
@@ -31,12 +34,12 @@
     background-image: url(../img/icon/images.png);
     background-size: cover;
     background-position: center;
-    width: 35vh;
-    height: 35vh;
+    width: 30vh;
+    height: 30vh;
     border-radius: 50%;
     border: none;
     position: absolute;
-    top: 20vh;
+    top: 25vh;
     left: 40vw;
     transform: translateX(-50%);
 }
@@ -61,10 +64,6 @@
     100%{
         opacity: 0.5;
     }
-}
-
-#dlButton:hover {
-    cursor: pointer;
 }
 
 /* ダウンロード完了の文字 */

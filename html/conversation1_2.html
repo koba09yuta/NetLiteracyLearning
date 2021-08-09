@@ -176,7 +176,7 @@
                         <td>&nbsp;</td>
                         <td><u id="LV">LV 9 あなた</u><br>
                             <label id="LV">ID : ANATA1219</label></br>
-                            <label id="com">小学生です！いっしょにダマスをたおそう！<br></label>
+                            <label id="com">多摩小5年です！いっしょにダマスをたおそう！<br></label>
                         </td>
                     </tr>
                 </table>
@@ -206,8 +206,74 @@
             </div>
             <!-- ▼会話エリア scrollを外すと高さ固定解除 -->
             <div class="line__contents scroll">
-                <!-- 自分の吹き出し1 -->
-                <div class="line__right chat-box" id="text1">
+                 <!-- 自分の吹き出し1-1 -->
+                 <div class="line__right chat-box" id="text1-1">
+                    <div class="line__right-text">
+                        <div class="text">
+                            はじめまして！よろしく！
+                        </div>
+                    </div>
+                    <figure>
+                        <img src="../img/icon/anata.svg" />
+                    </figure>
+                </div>
+                <!-- 相手の吹き出し1-2 -->
+                <div class="line__left chat-box" id="text1-2">
+                    <figure>
+                        <img src="../img/icon/sho.svg" />
+                    </figure>
+                    <div class="line__left-text">
+                        <div class="text">
+                            よろしく！ボクは東京に住んでいる小学5年生のショウだよ！
+                        </div>
+                    </div>
+                </div>
+                <!-- 自分の吹き出し1-3 -->
+                <div class="line__right chat-box" id="text1-3">
+                    <div class="line__right-text">
+                        <div class="text">
+                            え！マジで！<br>ボクも東京の多摩小の5年だよ！
+                        </div>
+                    </div>
+                    <figure>
+                        <img src="../img/icon/anata.svg" />
+                    </figure>
+                </div>
+                <!-- 相手の吹き出し1-4 -->
+                <div class="line__left chat-box" id="text1-4">
+                    <figure>
+                        <img src="../img/icon/sho.svg" />
+                    </figure>
+                    <div class="line__left-text">
+                        <div class="text">
+                            おっ！そうなんだ！<br>今度会って遊ぼうぜ！
+                        </div>
+                    </div>
+                </div>
+                <!-- 自分の吹き出し1-5 -->
+                <div class="line__right chat-box" id="text1-5">
+                    <div class="line__right-text">
+                        <div class="text">
+                            いいよ！それよりさっそくダマスたおしにいこうよ！
+                        </div>
+                    </div>
+                    <figure>
+                        <img src="../img/icon/anata.svg" />
+                    </figure>
+                </div>
+                <!-- 相手の吹き出し1-6 -->
+                <div class="line__left chat-box" id="text1-6">
+                    <figure>
+                        <img src="../img/icon/sho.svg" />
+                    </figure>
+                    <div class="line__left-text">
+                        <div class="text">
+                            いいぜ！<br>さっそくいこうぜ！
+                        </div>
+                    </div>
+                </div>
+                <!-- 自分の吹き出し2-1 -->
+                <div class="line__right chat-box" id="text2-1">
                     <div class="line__right-text">
                         <div class="text">
                             やったねショウ！<br>どうしてそんなに強いの？
@@ -218,8 +284,8 @@
                     </figure>
                 </div>
 
-                <!-- 相手の吹き出し1 -->
-                <div class="line__left chat-box" id="text2">
+                <!-- 相手の吹き出し2-2 -->
+                <div class="line__left chat-box" id="text2-2">
                     <figure>
                         <img src="../img/icon/sho.svg" />
                     </figure>
@@ -229,8 +295,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- 自分の吹き出し2 -->
-                <div class="line__right chat-box" id="text3">
+                <!-- 自分の吹き出し2-3 -->
+                <div class="line__right chat-box" id="text2-3">
                     <div class="line__right-text">
                         <div class="text">
                             えーー！！フレンドだろ！<br>だれにも言わないから教えてよ！
@@ -240,23 +306,22 @@
                         <img src="../img/icon/anata.svg" />
                     </figure>
                 </div>
-                <!-- 相手の吹き出し2 -->
-                <div class="line__left chat-box" id="text4">
+                <!-- 相手の吹き出し2-4 -->
+                <div class="line__left chat-box" id="text2-4">
                     <figure>
                         <img src="../img/icon/sho.svg" />
                     </figure>
                     <div class="line__left-text">
                         <div class="text">
-
                             わかったよ、強化ツールを使うんだ。
                             これを入れるとキャラクターが強くなるんだ。
-                            下のURLからダウンロードできるぞ。
-                            <u id="url" class="pc-forward">http://irerudakede-tuyokunaruyo.com</u>
+                            下のURLからダウンロードできるぞ。<br>
+                            <u id="url" class="pc-forward" onclick="func1()">http://irerudakede-tuyokunaruyo.com</u>
                         </div>
                     </div>
                 </div>
-                <!-- 相手の吹き出し3 -->
-                <div class="line__left chat-box" id="text5">
+                <!-- 相手の吹き出し2-5 -->
+                <div class="line__left chat-box" id="text2-5">
                     <figure>
                         <img src="../img/icon/sho.svg" />
                     </figure>
@@ -266,18 +331,31 @@
                         </div>
                     </div>
                 </div>
-                <!--　▲会話エリア ここまで -->
+                <!-- 自分の吹き出し2-6 -->
+                <div class="line__right chat-box" id="text2-6">
+                    <div class="line__right-text">
+                        <div class="text">
+                            そうだったんだ！さっそく使ってみるね！
+                        </div>
+                    </div>
+                    <figure>
+                        <img src="../img/icon/anata.svg" />
+                    </figure>
+                </div>
             </div>
         </div>
         <!-- ダウンロード画面 -->
         <div class="download_container" class="dragon-hunter">
             <!-- ダウンロードゲージ -->
-            <label id="thanks">【公式】DRAGON HUNTER 強化ソフト</label>
+            <p id="download-title">
+                【公式】ドラゴンハンター 強化ソフト<br>
+                <span id="inquiry">お問い合わせはこちら：0120-341-596</span>
+            </p>
             <div>
                 <div id="dlProgressText"></div>
                 <progress id="dlProgress" value="0" max="100">0%</progress>
             </div>
-            <input type="button" id="dlButton" class="flush-icon" onclick="func1()" value="">
+            <input type="button" id="dlButton" value="">
             <label id="complete">ダウンロードが完了しました</label>
             <!-- 遷移先を入れる -->
             <u id="exit" class="pc-forward">ページを閉じる</u>
@@ -288,13 +366,15 @@
                 let intervalID;
                 // ボタンを押した時に動く関数
                 function func1() {
-                    $('#dlButton').removeClass("flush-icon");
-                    $('#dlProgress').fadeIn();
-                    val = 0;
-                    // ボタンを無効にする(何回も押せないように)
-                    document.getElementById("dlButton").disabled = true;
-                    // 50msおきにプログレスバーを更新する
-                    intervalID = setInterval("updateProgress()", 30);
+                    setTimeout(() => {
+                        $('#dlButton').removeClass("flush-icon");
+                        $('#dlProgress').fadeIn();
+                        val = 0;
+                        // ボタンを無効にする(何回も押せないように)
+                        document.getElementById("dlButton").disabled = true;
+                        // 50msおきにプログレスバーを更新する
+                        intervalID = setInterval("updateProgress()", 30);
+                    }, 1000)
                 }
                 // プログレスバーを更新する
                 function updateProgress() {
@@ -355,6 +435,8 @@
     <div id="transparent-wrapper"></div>
     <!-- 暗転ラッパー -->
     <div id="darkness-wrapper"></div>
+    <!-- 暗転ラッパー -->
+    <div id="whiteout-wrapper"></div>
     <!-- ミュートボタン（非公開） -->
     <div class="sound-button" style="display: none;">
         <img id="mute" src="../img/icon/volume_off.svg">
@@ -366,6 +448,7 @@
     <audio preload="auto" id="sound-effect">
         <source type="audio/mp3">
     </audio>
+    <audio preload="auto" id="whiteout" src="../music/sound_effect/timeleap.mp3">
     <!-- Javascript -->
     <script src="../js/conversation.js" type="module"></script>
 </body>

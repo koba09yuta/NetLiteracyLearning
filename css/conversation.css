@@ -353,6 +353,18 @@ button:focus {
     z-index: 1000;
 }
 
+/* 暗転ラッパー */
+#whiteout-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 0;
+    z-index: 999;
+}
+
 /* ミュートボタン */
 .sound-button {
     width: 8vh;

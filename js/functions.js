@@ -38,6 +38,7 @@ export const loading = () => {
     sceneLength = storyData.length;
     preload(fileName, () => {
         $('#darkness-wrapper').hide();
+        $('#whiteout-wrapper').hide();
         $('#loading').delay(1000).fadeOut(1000, function () {
             if (storyData[sceneId].mode === "opening") {
                 $('#sound-effect source').attr('src', objectData.soundEffect.opening);
@@ -85,6 +86,23 @@ export const showDarkness = () => {
     });
 }
 
+/** ホワイトアウトを見せる関数 */
+export const showWhiteout = () => {
+    // 暗転
+    $('#whiteout').get(0).volume = 0.1;
+    $('#whiteout').get(0).currentTime = 0;
+    setTimeout(() => $('#whiteout').get(0).play(), 500);
+    $('#whiteout-wrapper').show().animate({ 'opacity': 1 }, 1000, 'swing', () => {
+        // 暗転中に場面を切り替える
+        sceneId++;
+        sceneShow();
+        // 明転
+        $('#whiteout-wrapper').delay(500).animate({ 'opacity': 0 }, 1000, 'swing', () => {
+            $('#whiteout-wrapper').hide();
+        });
+    });
+}
+
 /** ゲームローディングを見せる関数 */
 export const showGameLoading = () => {
     $('#black-wrapper').show().animate({opacity: 1}, 500, 'swing', () => {
@@ -101,6 +119,11 @@ export const showGameLoading = () => {
             $('#black-wrapper').css({opacity: 0});
             if (storyData[sceneId].mode === "explanation") {
                 $('#conversation-wrapper').delay(500).fadeIn(200);
+                $('.conversation-box').show();
+                $('.pointer').show();
+                $('#pc-wrapper').show();
+                $('#nyateracy').show();
+                $('#transparent-wrapper').show();
             }
         });
     });
@@ -128,7 +151,6 @@ export const showAnswer = (selectionNumber) => {
     } else if (selectionNumber === 3) {
         selectionData = storyData[sceneId].selection3;
     }
-
     $('#selection-wrapper').hide();
     $('.pointer').show();
     $('#nyateracy').show();
@@ -165,6 +187,12 @@ export const showDisplay = (displayId) => {
         $('#pc-wrapper').css('background-color','rgb(0,181,252)');
         $('#pc-wrapper').css('background-image', 'none');
         $('#desktop').show();
+        if (displayId === 0) {
+            $('#dragon-hunter').show();
+            $('#ransomware').hide();
+            $('#dragon-hunter').removeClass("flush-icon");
+            return;
+        }
         if (displayId === 1) {
             $('#dragon-hunter').show();
             $('#ransomware').show();
@@ -268,25 +296,64 @@ export const showDisplay = (displayId) => {
             $('#anata-container').show();
             $('#sho-container').show();
         }
+        return;
     }
-    // チャット画面（自動遷移）
+    // チャット画面1（自動遷移）
+    if (displayId === 20) {
+        $("#white-wrapper").css({opacity: 0.2}); 
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhPortTown + ")");
+        $('.line__container').show();
+        $('#transparent-wrapper').show();
+        $('#text1-1').delay(1000).fadeIn(500);
+        $('#text1-2').delay(3000).fadeIn(500);
+        $('#text1-3').delay(5000).fadeIn(500);
+        $('#text1-4').delay(7000).fadeIn(500);
+        $('#text1-5').delay(9000).fadeIn(500);
+        $('#text1-6').delay(11000).fadeIn(500);
+        $('.scroll').delay(11500).animate({scrollTop: 1000}, 'fast');
+        setTimeout(() => {
+            $('#transparent-wrapper').hide();
+            $('#conversation-wrapper').show();
+            $('.pointer').show()
+        }, 12500);
+        return;
+    }
+    // チャット画面2（自動遷移）
     if (displayId === 16) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
         $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhPortTown + ")");
         $('.line__container').show();
         $('#transparent-wrapper').show();
-        $('#text1').delay(1000).fadeIn(500);
-        $('#text2').delay(3000).fadeIn(500);
-        $('#text3').delay(5000).fadeIn(500);
-        $('#text4').delay(7000).fadeIn(500);
-        $('#text5').delay(9000).fadeIn(500);
-        $('.scroll').delay(9500).animate({scrollTop: 1000}, 'fast');
-        sceneAdvance();
-        setTimeout(sceneShow, 12000);
+        $('#text1-1').hide();
+        $('#text1-2').hide();
+        $('#text1-3').hide();
+        $('#text1-4').hide();
+        $('#text1-5').hide();
+        $('#text1-6').hide();
+        $('#text2-1').delay(1000).fadeIn(500);
+        $('#text2-2').delay(3000).fadeIn(500);
+        $('#text2-3').delay(5000).fadeIn(500);
+        $('#text2-4').delay(7000).fadeIn(500);
+        $('#text2-5').delay(9000).fadeIn(500);
+        $('#text2-6').delay(11000).fadeIn(500);
+        $('.scroll').delay(11500).animate({scrollTop: 1000}, 'fast');
+        setTimeout(() => {
+            $('#conversation-wrapper').show();
+            $('.pointer').show()
+        }, 12500);
         return;
     }
-    // チャット画面（遷移なし）
+    // チャット画面1（遷移なし）
+    if (displayId === 21) {
+        $("#white-wrapper").css({opacity: 0.2}); 
+        $('#pc-wrapper').css('background-color','transparent');
+        $('#pc-wrapper').css('background-image', "url(" + objectData.bgimg.dhPortTown + ")");
+        $('.line__container').show();
+        return;
+    }
+    // チャット画面2（遷移なし）
     if (displayId === 17) {
         $("#white-wrapper").css({opacity: 0.2}); 
         $('#pc-wrapper').css('background-color','transparent');
@@ -387,6 +454,7 @@ export const changeHide = (scene) => {
     $('#img-wrapper').hide();
     $('#selection-wrapper').hide();
     $('#conversation-wrapper').hide();
+    $('.conversation-box').hide();
     $('.pointer').hide();
     $('#pc-wrapper').hide();
     $('#nyateracy').hide();
@@ -399,6 +467,7 @@ export const changeHide = (scene) => {
         $('#people-wrapper').show();
         $('#img-wrapper').show();
         $('#conversation-wrapper').show();
+        $('.conversation-box').show();
         $('.pointer').show();
         return;
     }
@@ -411,6 +480,7 @@ export const changeHide = (scene) => {
     }
     if (scene === "explanation") {
         $('#conversation-wrapper').show();
+        $('.conversation-box').show();
         $('.pointer').show();
         $('#pc-wrapper').show();
         $('#nyateracy').show();
@@ -435,6 +505,10 @@ export const sceneShow = () => {
     }
     if (storyData[sceneId].mode === "darkness") {
         showDarkness();
+        return;
+    }
+    if (storyData[sceneId].mode === "whiteout") {
+        showWhiteout();
         return;
     }
     if (storyData[sceneId].mode === "gameLoading") {

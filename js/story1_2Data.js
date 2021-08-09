@@ -3,179 +3,12 @@ import objectData from './story1ObjectData.js'
 const story1_2Data = [
     // ダマス戦1回目~ダマス戦2回目
     {
-        "mode": "conversation",
-        "bgm": "home",
+        "mode": "explanation",
+        "displayId": 7,
+        "bgm": "dhMenu",
         "bgimg": objectData.bgimg.roomNight,
         "title": objectData.character.anata.name,
         "text": "こんなの勝てないよ・・・、強すぎる・・・",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": objectData.character.anata.pose1,
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.anata.name,
-        "text": "明日アキラにフレンドをたのもうかな・・・",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": objectData.character.anata.pose1,
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "darkness",
-    },
-    {
-        "mode": "conversation",
-        "bgm": "roadNoon",
-        "bgimg": objectData.bgimg.roadNoon,
-        "title": "",
-        "text": "次の日",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": "",
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": "【通学路】",
-        "text": "（学校帰りに友達のアキラキミとゲームの<ruby><rb>話</rb><rp>（</rp><rt>はなし</rt><rp>）</rp></ruby>中）",
-        "mostLeft": objectData.character.anata.pose1,
-        "centerLeft": objectData.character.akira.pose2,
-        "centerRight": "",
-        "mostRight": "",
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.akira.name,
-        "text": "えっ、お前ダマスに<ruby><rb>苦戦</rb><rp>（</rp><rt>くせん</rt><rp>）</rp></ruby>してんのか？",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": objectData.character.akira.pose1,
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.anata.name,
-        "text": "そうなんだ！フレンドになってもらえないかな？",
-        "mostLeft": objectData.character.anata.pose1,
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": "",
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.akira.name,
-        "text": "オレ今フレンドがいっぱいなんだよ！",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": objectData.character.akira.pose1,
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.akira.name,
-        "text": "お前がもっと強くなったらフレンドになってやるよ！",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": objectData.character.akira.pose1,
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.anata.name,
-        "text": "そっかあ・・・、もう少し自力でがんばってみるよ！",
-        "mostLeft": objectData.character.anata.pose1,
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": "",
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "darkness",
-    },
-    {
-        "mode": "conversation",
-        "bgm": "home",
-        "bgimg": objectData.bgimg.roomEvening,
-        "title": objectData.character.anata.name,
-        "text": "ただいまー！！",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": objectData.character.anata.pose1,
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "conversation",
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.anata.name,
-        "text": "今日もドラゴンハンターやるかあ。",
-        "mostLeft": "",
-        "centerLeft": "",
-        "centerRight": "",
-        "mostRight": objectData.character.anata.pose1,
-        "nyateracy": "",
-        "img": ""
-    },
-    {
-        "mode": "operation",
-        "displayId": 2,
-        "bgm": "",
-        "bgimg": ""
-    },
-    {
-        "mode": "gameLoading",
-    },
-    {
-        "mode": "operation",
-        "displayId": 5,
-        "bgm": "dhOpening",
-        "bgimg": ""
-    },
-    {
-        "mode": "gameLoading",
-    },
-    {
-        "mode": "explanation",
-        "displayId": 7,
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.anata.name,
-        "text": "今日こそダマスたおしたいんだけど、今のボクじゃたおせないなあ",
         "nyateracy": ""
     },
     {
@@ -184,7 +17,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "アキラは強くならないとフレンドになってくれないのかあ。",
+        "text": "どうしたらいいんだろう・・・。",
         "nyateracy": ""
     },
     {
@@ -193,7 +26,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "そうだ！誰かほかの強い人に<ruby><rb>手伝</rb><rp>（</rp><rt>てつだ</rt><rp>）</rp></ruby>ってもらおう！",
+        "text": "そういえば、アキラが全国の人とプレイできるって言ってたな。",
         "nyateracy": ""
     },
     {
@@ -202,10 +35,19 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "この「フレンド」っていうのをおせばよさそうだ！",
+        "text": "だれかほかの人に手伝ってもらおう！",
         "nyateracy": ""
     },
     {
+        "mode": "explanation",
+        "displayId": 7,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "「フレンド」っていうのをおせばよさそうだ！",
+        "nyateracy": ""
+    },
+        {
         "mode": "operation",
         "displayId": 7,
         "bgm": "",
@@ -220,7 +62,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "フレンドをぼしゅうしてみよう！",
+        "text": "フレンドぼしゅうをしてみよう！",
         "nyateracy": ""
     },
     {
@@ -264,6 +106,34 @@ const story1_2Data = [
     },
     {
         "mode": "conversation",
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "今日はもうねよう！おやすみー！",
+        "mostLeft": "",
+        "centerLeft": "",
+        "centerRight": "",
+        "mostRight":  objectData.character.anata.pose1,
+        "nyateracy": "",
+        "img": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 0,
+        "bgm": "stop",
+        "bgimg": "",
+        "title":  "？？？",
+        "text": "・・・。",
+        "nyateracy": objectData.character.nyateracy.pose1
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "conversation",
         "bgm": "home",
         "bgimg": objectData.bgimg.roomNoon,
         "title": "",
@@ -284,7 +154,7 @@ const story1_2Data = [
         "mostLeft": "",
         "centerLeft": "",
         "centerRight": "",
-        "mostRight": "",
+        "mostRight": objectData.character.anata.pose1,
         "nyateracy": "",
         "img": ""
     },
@@ -321,7 +191,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "さっそく見てみよう！",
+        "text": "さっそくフレンドぼしゅうを見てみよう！",
         "nyateracy": ""
     },
     {
@@ -332,15 +202,6 @@ const story1_2Data = [
     },
     {
         "mode": "gameLoading",
-    },
-    {
-        "mode": "explanation",
-        "displayId": 11,
-        "bgm": "",
-        "bgimg": "",
-        "title": objectData.character.anata.name,
-        "text": "さっそくフレンドぼしゅうを見てみよう！",
-        "nyateracy": ""
     },
     {
         "mode": "operation",
@@ -367,6 +228,42 @@ const story1_2Data = [
         "bgimg": "",
         "title":  objectData.character.anata.name,
         "text": "しかも、ボクと同じ小学生だ！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "darkness",
+    },
+    {
+        "mode": "explanation",
+        "displayId": 10,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.anata.name,
+        "text": "さっそくショウにダマスいっしょにたおすのをたのもう！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "operation",
+        "displayId": 10,
+        "bgm": "",
+        "bgimg": ""
+    },
+    {
+        "mode": "gameLoading",
+    },
+    {
+        "mode": "operation",
+        "displayId": 20,
+        "bgm": "",
+        "bgimg": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 21,
+        "bgm": "",
+        "bgimg": "",
+        "title":  objectData.character.anata.name,
+        "text": "やった、ショウがダマスたおすの<ruby><rb>手伝</rb><rp>（</rp><rt>てつだ</rt><rp>）</rp></ruby>ってくれる！",
         "nyateracy": ""
     },
     {
