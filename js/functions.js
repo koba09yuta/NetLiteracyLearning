@@ -559,31 +559,47 @@ export const changeBack = () => {
             return;
         }
         if (storyData[sceneId].bgm === "roadNoon") {
-            $('#bgm source').attr('src', objectData.bgm.roadNoon);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_roadNoon').get(0).volume = 0.2;
+            $('#bgm_roadNoon').get(0).pause();
+            $('#bgm_roadNoon').get(0).currentTime = 0;
+            $('#bgm_roadNoon').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "home") {
-            $('#bgm source').attr('src', objectData.bgm.home);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_home').get(0).volume = 0.2;
+            $('#bgm_home').get(0).pause();
+            $('#bgm_home').get(0).currentTime = 0;
+            $('#bgm_home').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "nyateracy") {
-            $('#bgm source').attr('src', objectData.bgm.nyateracy);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_nyateracy').get(0).volume = 0.2;
+            $('#bgm_nyateracy').get(0).pause();
+            $('#bgm_nyateracy').get(0).currentTime = 0;
+            $('#bgm_nyateracy').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "truth") {
-            $('#bgm source').attr('src', objectData.bgm.truth);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_truth').get(0).volume = 0.2;
+            $('#bgm_truth').get(0).pause();
+            $('#bgm_truth').get(0).currentTime = 0;
+            $('#bgm_truth').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "dhOpening") {
-            $('#bgm source').attr('src', objectData.bgm.dhOpening);
-            $('#bgm').get(0).volume = 0.2;
+            $('#bgm_dhOpening').get(0).volume = 0.2;
+            $('#bgm_dhOpening').get(0).pause();
+            $('#bgm_dhOpening').get(0).currentTime = 0;
+            $('#bgm_dhOpening').get(0).play();
+            return;
         }
         if (storyData[sceneId].bgm === "dhMenu") {
-            $('#bgm source').attr('src', objectData.bgm.dhMenu);
-            $('#bgm').get(0).volume = 0.1;
+            $('#bgm_dhMenu').get(0).volume = 0.2;
+            $('#bgm_dhMenu').get(0).pause();
+            $('#bgm_dhMenu').get(0).currentTime = 0;
+            $('#bgm_dhMenu').get(0).play();
+            return;
         }
-        document.querySelector("#bgm").load();
-        $('#bgm').get(0).play();
     }
 }
 
@@ -594,25 +610,27 @@ export const makeSound = (sound) => {
         $('#se_opening').get(0).pause();
         $('#se_opening').get(0).currentTime = 0;
         $('#se_opening').get(0).play();
+        return;
     }
     if (sound === "forward") {
         $('#se_forward').get(0).volume = 0.4;
         $('#se_forward').get(0).pause();
         $('#se_forward').get(0).currentTime = 0;
         $('#se_forward').get(0).play();
+        return;
     }
     if (sound === "click") {
         $('#se_click').get(0).volume = 0.4;
         $('#se_click').get(0).pause();
         $('#se_click').get(0).currentTime = 0;
         $('#se_click').get(0).play();
+        return;
     }
     if (sound === "slash") {
         $('#se_slash').get(0).volume = 0.2;
         $('#se_slash').get(0).pause();
         $('#se_slash').get(0).currentTime = 0;
         $('#se_slash').get(0).play();
+        return;
     }
-    document.querySelector("#sound-effect").load();
-    // $('#sound-effect').get(0).play();
 }
