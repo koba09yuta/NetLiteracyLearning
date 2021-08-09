@@ -553,49 +553,47 @@ export const changeBack = () => {
         $('body').css('backgroundImage', "url(" + storyData[sceneId].bgimg + ")");
     }
     if (storyData[sceneId].bgm) {
+        $('#bgm_roadNoon').get(0).pause();
+        $('#bgm_home').get(0).pause();
+        $('#bgm_nyateracy').get(0).pause();
+        $('#bgm_truth').get(0).pause();
+        $('#bgm_dhOpening').get(0).pause();
+        $('#bgm_dhMenu').get(0).pause();
         if (storyData[sceneId].bgm === "stop") {
-            $('#bgm').get(0).pause();
-            $('#bgm').get(0).currentTime = 0;
             return;
         }
         if (storyData[sceneId].bgm === "roadNoon") {
             $('#bgm_roadNoon').get(0).volume = 0.2;
-            $('#bgm_roadNoon').get(0).pause();
             $('#bgm_roadNoon').get(0).currentTime = 0;
             $('#bgm_roadNoon').get(0).play();
             return;
         }
         if (storyData[sceneId].bgm === "home") {
             $('#bgm_home').get(0).volume = 0.2;
-            $('#bgm_home').get(0).pause();
             $('#bgm_home').get(0).currentTime = 0;
             $('#bgm_home').get(0).play();
             return;
         }
         if (storyData[sceneId].bgm === "nyateracy") {
             $('#bgm_nyateracy').get(0).volume = 0.2;
-            $('#bgm_nyateracy').get(0).pause();
             $('#bgm_nyateracy').get(0).currentTime = 0;
             $('#bgm_nyateracy').get(0).play();
             return;
         }
         if (storyData[sceneId].bgm === "truth") {
             $('#bgm_truth').get(0).volume = 0.2;
-            $('#bgm_truth').get(0).pause();
             $('#bgm_truth').get(0).currentTime = 0;
             $('#bgm_truth').get(0).play();
             return;
         }
         if (storyData[sceneId].bgm === "dhOpening") {
             $('#bgm_dhOpening').get(0).volume = 0.2;
-            $('#bgm_dhOpening').get(0).pause();
             $('#bgm_dhOpening').get(0).currentTime = 0;
             $('#bgm_dhOpening').get(0).play();
             return;
         }
         if (storyData[sceneId].bgm === "dhMenu") {
             $('#bgm_dhMenu').get(0).volume = 0.2;
-            $('#bgm_dhMenu').get(0).pause();
             $('#bgm_dhMenu').get(0).currentTime = 0;
             $('#bgm_dhMenu').get(0).play();
             return;
