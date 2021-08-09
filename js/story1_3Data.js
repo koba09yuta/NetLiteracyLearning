@@ -326,7 +326,7 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": objectData.bgimg.roomNoon,
         "title":  objectData.character.nyateracy.name,
-        "text": "こういうネットの掲示板には、学校名などの<ruby><rb>個人情報</rb><rp>（</rp><rt>こじんじょうほう</rt><rp>）</rp></ruby>は絶対書いてはいけないよ！",
+        "text": "こういうネットの掲示板には、学校名などの<ruby><rb>個人情報</rb><rp>（</rp><rt>こじんじょうほう</rt><rp>）</rp></ruby>は書いてはいけないよ！",
         "nyateracy": ""
     },
     {
@@ -392,7 +392,7 @@ const story1_3Data = [
         "displayId": 15,
         "bgm": "",
         "bgimg": "",
-        "title":  objectData.character.anata.name,
+        "title":  objectData.character.nyateracy.name,
         "text": "ネットでは相手の顔が見えないから、むやみに<ruby><rb>信用</rb><rp>（</rp><rt>しんよう</rt><rp>）</rp></ruby>してはダメだよ！",
         "nyateracy": objectData.character.nyateracy.pose1
     },

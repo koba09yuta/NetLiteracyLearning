@@ -70,6 +70,7 @@ export const showConversation = () => {
     $('#center-right').html(storyData[sceneId].centerRight);
     $('#most-right').html(storyData[sceneId].mostRight);
     $('#back-img').html(storyData[sceneId].img);
+    changeConversationColor();
 }
 
 /** 暗転を見せる関数 */
@@ -386,7 +387,7 @@ export const showExplanation = () => {
     $('#text').html(storyData[sceneId].text);
     $('#nyateracy').html(storyData[sceneId].nyateracy);
     showDisplay(storyData[sceneId].displayId);
-    
+    changeConversationColor();
 }
 
 /** パソコン操作を表示する関数 */
@@ -491,6 +492,25 @@ export const changeHide = (scene) => {
         $('#pc-wrapper').show();
         return;
     }
+}
+
+const changeConversationColor = () => {
+    if (storyData[sceneId].title === objectData.character.anata.name) {
+        $('.title-box').css('background-color','rgba(0, 64, 128, 0.9)');
+        return;
+    } if (storyData[sceneId].title === objectData.character.akira.name) {
+        $('.title-box').css('background-color','rgba(0, 128, 0, 0.9)');
+        return;
+    } if (storyData[sceneId].title === objectData.character.sho.name) {
+        $('.title-box').css('background-color','rgba(128, 0, 0, 0.9)');
+        return;
+    } if (storyData[sceneId].title === objectData.character.nyateracy.name ||
+        storyData[sceneId].title === "？？？") {
+        $('.title-box').css('background-color','rgba(96, 96, 96, 0.9)');
+        return;
+    }
+    $('.title-box').css('background-color','rgba(0, 64, 128, 0.9)');
+    return;
 }
 
 /** シーンが進む際の処理をする関数 */

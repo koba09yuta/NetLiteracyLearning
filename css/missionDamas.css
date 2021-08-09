@@ -6,7 +6,6 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-    background-image: url("../img/background/pc_room_evening.jpg");
     height: 100vh;
     overflow: hidden;
 }
