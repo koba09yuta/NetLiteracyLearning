@@ -494,17 +494,17 @@ export const changeHide = (scene) => {
 /** 会話の色を変える関数 */
 const changeConversationColor = () => {
     if (storyData[sceneId].title === objectData.character.anata.name) {
-        $('.title-box').css('background-color','rgba(0, 64, 128, 0.9)');
+        $('.title-box').css('background-color','rgba(0, 64, 128, 0.95)');
         return;
     } if (storyData[sceneId].title === objectData.character.akira.name) {
-        $('.title-box').css('background-color','rgba(0, 64, 0, 0.9)');
+        $('.title-box').css('background-color','rgba(0, 64, 0, 0.95)');
         return;
     } if (storyData[sceneId].title === objectData.character.sho.name) {
-        $('.title-box').css('background-color','rgba(128, 0, 0, 0.9)');
+        $('.title-box').css('background-color','rgba(128, 0, 0, 0.95)');
         return;
     } if (storyData[sceneId].title === objectData.character.nyateracy.name ||
         storyData[sceneId].title === "？？？") {
-        $('.title-box').css('background-color','rgba(96, 96, 96, 0.9)');
+        $('.title-box').css('background-color','rgba(96, 96, 96, 0.95)');
         return;
     }
     $('.title-box').css('background-color','rgba(0, 64, 128, 0.9)');

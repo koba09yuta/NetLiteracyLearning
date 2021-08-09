@@ -92,7 +92,7 @@ const story1_3Data = [
     },
     {
         "mode": "explanation",
-        "displayId": 3,
+        "displayId": 1,
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
@@ -451,7 +451,7 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
-        "text": "こういうチャットのURLは危険だから<ruby><rb>絶対</rb><rp>（</rp><rt>ぜったい</rt><rp>）</rp></ruby>にクリックしてはいけないよ！",
+        "text": "こういうチャットの<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>は危険だから<ruby><rb>絶対</rb><rp>（</rp><rt>ぜったい</rt><rp>）</rp></ruby>にクリックしてはいけないよ！",
         "nyateracy": ""
     },
     {
@@ -552,10 +552,10 @@ const story1_3Data = [
             "nyateracy": objectData.character.nyateracy.pose1
         },
         "selection3": {
-            "selection": "知らない人から送られてきたURLをクリックした",
+            "selection": "知らない人から送られてきた<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックした",
             "answer": true,
             "title": objectData.character.nyateracy.name,
-            "text": "その通り！知らない人を<ruby><rb>信</rb><rp>（</rp><rt>しん</rt><rp>）</rp></ruby>じてURLをクリックしちゃったのが<ruby><rb>原因</rb><rp>（</rp><rt>げんいん</rt><rp>）</rp></ruby>だね。",
+            "text": "その通り！知らない人を<ruby><rb>信</rb><rp>（</rp><rt>しん</rt><rp>）</rp></ruby>じて<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックしちゃったのが<ruby><rb>原因</rb><rp>（</rp><rt>げんいん</rt><rp>）</rp></ruby>だね。",
             "nyateracy": objectData.character.nyateracy.pose1
         },
     }
