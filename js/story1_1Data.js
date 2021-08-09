@@ -61,6 +61,24 @@ const story1_1Data = [
         "nyateracy": ""
     },
     {
+        "mode": "explanation",
+        "displayId": 5,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "オンラインで全国の人とつながれるんだ。",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 5,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.akira.name,
+        "text": "チャットしながらいっしょにできて楽しいんだぜ！",
+        "nyateracy": ""
+    },
+    {
         "mode": "conversation",
         "bgm": "",
         "bgimg": "",
