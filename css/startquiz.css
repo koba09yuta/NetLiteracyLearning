@@ -83,7 +83,6 @@ body {
     }
 }
 
-
 /* タイトルラッパー */
 #title-wrapper {
     color: rgb(255, 255, 255);
@@ -102,10 +101,7 @@ body {
     left: 4vw;
     font-size: 5vh;
     color: #FFF;
-
-
 }
-
 
 /* ボタンラッパー */
 #button-wrapper {
@@ -113,7 +109,6 @@ body {
     position: absolute;
     top: 65vh;
     left: -4vw;
-    
 }
 
 #start-button {

@@ -2,8 +2,9 @@
 
 /* 全体 */
 body {
-    font-family: "UD Digi Kyokasho N-R";
+    font-family: "たぬき油性マジック";
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
     overflow: hidden;
     user-select: none;
@@ -11,11 +12,12 @@ body {
 /* ニャテラシーラッパー */
 #nyateracy-wrapper {
     position: absolute;
-    top: 25vh;
-    left: -5vw;
+    top: 40vh;
+    left: -10vw;
+    display: none;
 }
 #nyateracy-img {
-    height: 100vh;
+    height: 70vh;
 }
 body:hover{
     cursor: default;
@@ -23,13 +25,12 @@ body:hover{
 /* クイズのすべてを管理する親要素 */
 .quiz_area{
     text-align: center;
-    font-weight: 900;
     display: flex;
     position: absolute;
-    left: 28vw;
-    top: 8vh;
-    font-size: 4vh;
-    color: rgb(0, 0, 0);
+    left: 15vw;
+    top: 10vh;
+    font-size: 3.5vh;
+    color: rgb(255, 255, 255);
 }
 /* 解説のすべてを管理する親要素 */
 .comment_area{
@@ -37,6 +38,7 @@ body:hover{
     background-position: center;
     left: 30vw;
     top: 5vh;
+    user-select: none;
 }
 /* 回答後に上に被せてタップできなくするための要素（デフォルト非表示、回答後に一時的に表示） */
 .quiz_area .quiz_area_bg{
@@ -57,75 +59,77 @@ body:hover{
 .quiz_area .quiz_area_icon{
     position: absolute;
     box-sizing: border-box;
-    top: 50%;
-    left: 50%;
-    z-index: 999;
-    transform: translate(-50%, -50%);
+    top: 13vh;
+    left: 27vw;
     color: red;
     display: none;
-    font-size: 10em;
+    font-size: 45vh;
     font-weight: bold;
-    -webkit-text-stroke: 4px #FFF;
     
 }
 /* 画面に解説を表示するための要素 */
 #comment_image{
-    width: 75vw;
-    height: 75vh;
-    top: 0vh;
-    left: -15vw;
+    width: 80vw;
+    height: 80vh;
+    top: -2vh;
+    left: -1.5vw;
     position: absolute;
     background-size: cover;
     display: none;
+    border-radius: 5vh;
+   
 }
 /* 画面に解説を表示するための要素 */
 #last_image{
-    width: 75vw;
-    height: 75vh;
-    top: 0vh;
-    left: -15vw;
+    width: 82vw;
+    height: 82vh;
+    top: -3vh;
+    left: -3vw;
     position: absolute;
     background-size: cover;
     display: none;
+    border-radius: 5vh;
    
 }
-/* 画面に戻るボタンを表示するための要素 */
+/* 次のクイズへ行くボタンを表示するための要素 */
 .back_button{
     border-radius: 100vh;
     text-align: center;
     width: 10vw;
+    height: 5vh;
     position: absolute;
-    top: 60vh;
-    left: 50vw;
+    top: 72.5vh;
+    left: 65vw;
     color: #000;
     background-color: #fff100;
-    border-bottom: 1vh solid #ccc100;
+    border-bottom: 0.3vh solid #ccc100;
     display: none;
 }
 .back_button:hover {
     margin-top: 3px;
     color: #000;
     background: #fff20a;
-    border-bottom: 1vh solid #ccc100;
+    border-bottom: 0.5vh solid #ccc100;
   }
- /* 画面に戻るボタンを表示するための要素 */
+ /* メニューに戻るボタンを表示するための要素 */
  .last_button{
     border-radius: 100vh;
     text-align: center;
     width: 10vw;
+    height: 5vh;
     position: absolute;
-    top: 70vh;
-    left: 50vw;
+    top: 73.5vh;
+    left: 65vw;
     color: #000;
     background-color: #fff100;
-    border-bottom: 1vh solid #ccc100;
+    border-bottom: 0.3vh solid #ccc100;
     display: none;
 }
 .last_button:hover {
     margin-top: 3px;
     color: #000;
     background: #fff20a;
-    border-bottom: 1vh solid #ccc100;
+    border-bottom: 0.5vh solid #ccc100;
   }
 
 /* .trueまたは.falseのクラスが付与されたら表示するものとみなす */
@@ -140,66 +144,71 @@ body:hover{
 }
 /* .falseは不正解（×を表示） */
 .quiz_area .quiz_area_icon.false:before{
-    content: '×';
-    color: blue;
+    content: ' ？';
+    color: rgb(46, 85, 255);
 }
 /* 現在の問題数を表示 */
 .quiz_area .quiz_no{
     font-weight: 900;
     color: rgb(165, 26, 7);
+    
 }
 /* 問題文 */
 .quiz_area .quiz_question{
-    padding-right: 10vw;
-    font-size: 4vh;
+    padding: 3vh 13vh 3vh 0vh;
+    font-size: 5vh;
     color: rgb(255, 255, 255);
     font-weight: bold; 
 }
 /* 回答後の結果 */
-.quiz_area .quiz_result{
-    display: none;
-}
 .clear{
-    font-size: 10vh;
     color: rgb(255, 255, 255);
+    width: 100vw;
+    left: -10vw;
+    font-size: 12vh;
+    position: absolute;
+    
 }
 .star{
-    font-size: 20vh;
-    color: rgb(197, 177, 0);
+    width: 100vw;
     top: 20vh;
-    left: 10vw;
+    left: -10vw;
     position: absolute;
+    font-size: 20vh;
+    color: rgb(193, 219, 44);
+   
 }
 #menu{
-    color: black;
-    position: absolute;
-    width: 16vw;
-    height: 7vh;
-    top: 55vh;
-    left: 40vw;
-    padding-top: 1.5vh;
-    padding-left: 2vh;
-    overflow: hidden;
-    box-shadow: 0.30rem 0.25rem hsla(0, 0%, 0%, .1);
-    background-image:
-      linear-gradient(90deg, rgba(22, 20, 20, 0.1) 2rem, rgba(27, 25, 25, 0) 2.5rem)
-    , linear-gradient(90deg, rgb(248, 248, 147), hsla(60, 100%, 85%, 1));
+    padding: 1vh;
+    width: 20vw;
+    top: 60vh;
+    left: 30vw;
     font-size: 3vh;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-align: center;
+    position: absolute;
+    text-decoration: none;
+    color: #FFF;
+    background: #fd9535;/*色*/
+    border-radius: 0.5vh;/*角の丸み*/
+    box-shadow: inset 0 0.2vh 0 rgba(255,255,255,0.2), inset 0 -0.2vh 0 rgba(0, 0, 0, 0.05);
+    border: solid 0.1vh #d27d00;/*線色*/
 }
-/* 以下クイズの選択肢のデザイン */
+#menu:hover {
+    color: rgb(255, 0, 0);
+}
+#menu:focus {
+	outline: none;
+}
+
 
 /* 選択肢エリア全体 */
 .quiz_area .quiz_ans_area ul{
-    margin: 10px 0 0 0;
-    padding-top: 3vh;
+    
+    padding-top: 5vh;
     padding-right: 10vw;
     display: block;
     text-align: center;
+    position: absolute;
 }
-
 
 /* 選択肢の要素 */
 .quiz_area .quiz_ans_area ul li{
@@ -210,20 +219,23 @@ body:hover{
     width: 100%;
     height: 10vh;
     padding-top: 2.5vh;
-    margin-bottom: 30px;
+    margin-bottom: 4vh;
     cursor: pointer;
     box-shadow: 0.7rem 0.7rem hsla(0, 0%, 0%, .1);
-    background-image:
-    linear-gradient(90deg, rgba(226, 140, 207, 0.397) 2rem, rgba(27, 25, 25, 0) 2.5rem)
-    , linear-gradient(90deg, rgb(248, 248, 147), hsla(60, 100%, 85%, 1));
+    background: #fd9535;/*色*/
+    border-radius: 0.5vh;/*角の丸み*/
+    box-shadow: inset 0 0.2vh 0 rgba(255,255,255,0.2), inset 0 -0.2vh 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    border: solid 0.1vh #d27d00;/*線色*/
 }
+
  .quiz_area .quiz_ans_area li:hover{
     color: rgb(255, 0, 0);
     }
 
 /* 押した後 */
 .quiz_area .quiz_ans_area ul li.selected{
-    background-color: #5f5656;
+    background-color: #da8b8b;
 }
 
 

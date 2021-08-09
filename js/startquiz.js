@@ -1,27 +1,18 @@
-
-
 /** ローディングを見せる関数 */
 const loading = () => {
-    $('#huki-wrapper').hide();
-    $('#title-wrapper').hide();
-    $('#button-wrapper').hide();
-    $('#nyateracy-wrapper').hide();
-    $('#logo-wrapper').show();
-    $('#loading').delay(800).fadeOut(300, () => {
-        $('#darkness-wrapper').hide();
-        $('#huki-wrapper').show();
-        $('#title-wrapper').show();
-        $('#button-wrapper').show();
-        $('#nyateracy-wrapper').show();
-        $('body').css('backgroundImage', "url(../../img/background/Board.png)");
-        $('#bgm').get(0).play();
+    
+    $('#loading').delay(800).fadeOut(1000, () => {
+　  $('body').css('backgroundImage', "url(../../img/background/Board.png)");
+    $('#huki-wrapper').show();
+    $('#title-wrapper').show();
+    $('#darkness-wrapper').hide(200);
+    $('#bgm').get(0).play();
     });
+    
 }
 
 /** ページを読み込む */
-$('#bgm').get(0).play();
 $(window).on('load', loading());
-
 
 /** 効果音を鳴らす関数 */
 const makeSound = (sound) => {
@@ -35,13 +26,11 @@ const makeSound = (sound) => {
     $('#sound-effect').get(0).play();
 }
 
-
-
-
 /** スタートボタンを押す */
 $('#start-button').on("click", () => {
+    $('#sound-effect').get(0).volume = 0.4;
     $('#sound-effect').get(0).play();
-    $('#darkness-wrapper').show().animate({'opacity': 1}, 700, 'swing', () => {
+    $('#darkness-wrapper').show().animate({'opacity': 1}, 1000, 'swing', () => {
         window.location.href = '../html/quiz.html';
     });
 });

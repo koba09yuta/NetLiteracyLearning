@@ -1,6 +1,6 @@
 const music = document.getElementById('bgm');
 music.volume = 0.09;
-$('body').css('backgroundImage', "url(../img/background/blackboard.png)");
+$('body').css('backgroundImage', "url(../img/background/Board.png)");
 
 $(function(){
     let quizArea = $('.quiz_area'); //クイズを管理するDOMを指定
@@ -15,31 +15,22 @@ $(function(){
         {
             question : 'ゲームでチャットをしていたら、ゲームの友達がおすすめの攻略サイトのURLを送ってきた。どうする？',
             answer : [
-                '友達が言っているので、URLをクリックする。',
-                '友達のおすすめサイトなので、他の友達にURLを教える。',
-                '危ないかもしれないので、URLをクリックしない。']
+                '危ないかもしれないので、URLをクリックしない',
+                '友達のおすすめサイトなので、他の友達にURLを教える',
+                '友達が言っているので、URLをクリックする']
         }
         ,{
-            question : '問題２が入ります',
-            answer : ['選択肢１が入ります', '選択肢２が入ります', '選択肢３が入ります']
+            question : 'ショウとの初めてのチャット！あなたの発言でキケンなところはどこだろう？',
+            answer : ['ボクも東京！多摩小わかる？5年だよ！', 'はじめまして！よろしくお願いします！', 'さっそくダマスたおしに行こうよ！！']
         }
         ,{
-            question : '問題３が入ります',
-            answer : ['選択肢１が入ります', '選択肢２が入ります', '選択肢３が入ります']
+            question : 'ゲームで遊んでいたらウイルスに感染してしまった！どうしたらいい？',
+            answer : ['親に相談する', 'ダウンロードページに書いてあった電話番号に電話する', '無視してページを閉じる']
         }
         
     );
 
-
-    //解説の配列を設定
-    let aryComment = ["DRAGON.png","DRAGON.png","DRAGON.png"];
-    
    
-
-
-
-
-    
     quizReset();
     
      //回答を選択した後の処理
@@ -54,23 +45,29 @@ $(function(){
             $('#sound-effect source').attr('src',"../music/sound_effect/正解音.mp3");
             document.querySelector("#sound-effect").load();
             $('#sound-effect').get(0).play();
-
+            quizArea.find('.quiz_set').delay(1500).hide(1);
+            quizArea.find('#comment_image').delay(1500).slideDown(400);
+            quizArea.find('.back_button').delay(1500).slideDown(400);
+            $("#nyateracy-wrapper").delay(1500).slideDown(1);
             //正解数をカウント
             quiz_success_cnt++;
+　　　　　　 changeIMG();
+           
         }else{
             //不正解の処理
             quizArea.find('.quiz_area_icon').addClass('false');
-            $('#sound-effect source').attr('src',"../music/sound_effect/不正解のブザー音_3種.mp3");
+            $('#sound-effect source').attr('src',"../music/sound_effect/伸びる.mp3");
             document.querySelector("#sound-effect").load();
             $('#sound-effect').get(0).play();
+            quiz_cnt--;
+            quiz_success_cnt--;
         }
         setTimeout(function(){
             //表示を元に戻す
             quizArea.find('.quiz_ans_area ul li').removeClass('selected');
             quizArea.find('.quiz_area_icon').removeClass('true false');
-            quizArea.find('.quiz_area_bg').hide();
-            quizArea.find('#comment_image').show();
-            quizArea.find('.back_button').show();
+            
+           
             //問題のカウントを進める
             quiz_cnt++;
             if(quiz_fin_cnt > quiz_cnt){
@@ -85,16 +82,20 @@ $(function(){
     
     //次へボタンをクリックしたときの処理
     quizArea.on('click', '.back_button', function(){
+        quizArea.find('.quiz_set').show();
         quizArea.find('#comment_image').hide();
         quizArea.find('.back_button').hide();
-        changeIMG();
+        $("#nyateracy-wrapper").hide();
+        
     });
 
     //おわるボタンをクリックしたときの処理
     quizArea.on('click', '.last_button', function(){
         quizArea.find('#last_image').hide();
         quizArea.find('.last_button').hide();
-        changeIMG();
+        quizArea.find('#comment_image').hide();
+        quizArea.find('.back_button').hide();
+        
     });
 
     //もう一度挑戦するを押した時の処理
@@ -148,13 +149,12 @@ $(function(){
         }
         if(quiz_success_cnt === 3){
             text += '<br><p class="star">★★★</p>';
-            text += '<br><br><br>すごい！やったね！';
         }
         text += '<br><a href="../../index.html" id="menu">メニューに戻る</a>';
         quizArea.find('.quiz_result').html(text);
-        quizArea.find('.quiz_result').show();
-        quizArea.find('#last_image').show();
-        quizArea.find('.last_button').show();
+        
+        quizArea.find('#last_image').slideDown(400);
+        quizArea.find('.last_button').slideDown(400);
     }
 
     

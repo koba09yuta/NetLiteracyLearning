@@ -38,12 +38,14 @@
             </div>
             <div class="quiz_area_bg"></div>
             <div class="quiz_area_icon"></div>
-            <img id="comment_image" src="../img/quiz/comment_image.png"></img>
-            <div class="back_button">次へ ⇨</div>
         </div>
 
         <div class="quiz_result"> </div>
-        <img id="last_image" src="../img/quiz/comment_image.png"></img>
+        
+        <img id="comment_image" src="../img/quiz/quiz1.svg"></img>
+            <div class="back_button">次へ⇒</div>
+       
+        <img id="last_image" src="../img/quiz/quiz3.svg"></img>
         <div class="last_button">おわる</div>
     </div>
 
@@ -52,13 +54,12 @@
         var img = new Array();
         
         img[0] = new Image();
-        img[0].src = "../img/quiz/comment_image.png";
+        img[0].src = "../img/quiz/quiz1.svg";
         img[1] = new Image();
-        img[1].src = "../img/quiz/comment_image.png";
+        img[1].src = "../img/quiz/quiz1.svg";
         img[2] = new Image();
-        img[2].src=  "../img/quiz/comment_image.png";
-        img[3] = new Image();
-        img[3].src=  "../img/background/DRAGON.png";
+        img[2].src=  "../img/quiz/quiz2.svg";
+        
         //画像番号用のグローバル変数
         var cnt=0;
         //画像切り替え関数
@@ -74,9 +75,6 @@
         }
         </script>
     
-   
-   
-   
     <!-- クイズここまで -->
 
 
@@ -86,7 +84,7 @@
     </div>
     <!-- 音楽 -->
     <audio autoplay loop id="bgm">
-        <source src="../music/bgm/学校がはじまる感じ.mp3" type="audio/mp3">
+        <source src="../music/bgm/thinking2.mp3" type="audio/mp3">
     </audio>
     <audio preload="auto" id="sound-effect">
         <source type="audio/mp3">
