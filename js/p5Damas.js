@@ -21,8 +21,8 @@ function preload() {
     dfH = loadImage('../img/game/dfH.png');
     hlH = loadImage('../img/game/hlH.png');
 
-    label1=loadImage('../img/game/label1.svg');
-    label2=loadImage('../img/game/label2.svg');
+    label1 = loadImage('../img/game/label1.svg');
+    label2 = loadImage('../img/game/label2.svg');
     //ダマス
     enemy = loadImage('../img/game/damas.svg');
     //終了画面
@@ -53,7 +53,7 @@ function setup() {
 
     //配置基準をオブジェクトのセンターに
     rectMode(CENTER);
-    
+
     //フォント
     textFont("游ゴシック Medium");
 
@@ -102,7 +102,7 @@ function setup() {
     dBarShoSp = new damageBar();
 
     //キャラパラメータ
-    anata = new player(100, 2, 0.8);
+    anata = new player(100, 3, 0.8);
     sho = new player(999, 12, 3);
     damas = new player(200, 6, 6);
 
@@ -113,6 +113,8 @@ function setup() {
     punchSe = volumeSetUp(punchSe);
     defenceSe = volumeSetUp(defenceSe);
     healSe = volumeSetUp(healSe);
+
+    turn = 0;
 }
 //クラス初期化
 function reset() {
@@ -122,9 +124,11 @@ function reset() {
     dBarShoSp = new damageBar();
 
     //キャラパラメータ
-    anata = new player(100, 2, 0.8);
+    anata = new player(100, 3, 0.8);
     sho = new player(999, 12, 3);
     damas = new player(200, 6, 6);
+
+    turn = 0;
 }
 //モード切り替え（開発者確認コマンド）
 /*function keyPressed() {
@@ -199,6 +203,9 @@ function mousePressed() {
 function cmdPlay() {
     //メニュー選択画面
     if (cmd == 0) {
+        //turnカウント
+        turn++;
+
         //攻撃
         if (adh == "at") {
             cmd = 1;
@@ -212,7 +219,13 @@ function cmdPlay() {
         if (adh == "hl") {
             cmd = 3;
             if (anata.damageTotal != 0) {
-                anata.damageTotal -= anata.hp / 2;
+                //回復値設定
+                anata.damage = anata.atack() * 2;
+                anata.damageTotal -= anata.damage;
+                if (anata.damageTotal < 0) {
+                    anata.damage += anata.damageTotal;
+                    anata.damageTotal = 0;
+                }
                 createHeal();
             }
         }
@@ -222,19 +235,24 @@ function cmdPlay() {
         at = atN; df = dfN; hl = hlN;
         if (damas.hp - damas.damageTotal < 1) cmd = 6;
         else if (mode == "solo" || cmd == 5) {
-            anata.damage = anata.receive(damas.atack());
-            sho.damage = sho.receive(damas.atack());
-            if (cmd == 2 || tmpCmd == 2) {
-                anata.damage = 0;
-                anata.damageTotal += anata.damage;
-                sho.damageTotal += sho.damage;
-                createDefence();
+            //ダマスの攻撃
+            if (turn != 3) {
+                anata.damage = anata.receive(damas.atack());
+                sho.damage = sho.receive(damas.atack());
+
+                if (cmd == 2 || tmpCmd == 2) {
+                    anata.damage = int(anata.damage/5);
+                    anata.damageTotal += anata.damage;
+                    sho.damageTotal += sho.damage;
+                    createDefence();
+                }
+                else {
+                    anata.damageTotal += anata.damage;
+                    sho.damageTotal += sho.damage;
+                    createAtack();
+                }
             }
-            else {
-                anata.damageTotal += anata.damage;
-                sho.damageTotal += sho.damage;
-                createAtack();
-            }
+            else damas.power = 20;
             cmd = 4;
         }
         else {
@@ -279,7 +297,7 @@ function draw() {
     //ウインドウ
     rectMode(CENTER);
     if (atackSp.life > 0 && atackSp.life < 30 && anata.damage != 0) fill(100, 0, 0, 200);
-    else if (defenceSp.life > 0 && defenceSp.life < 29 && anata.damage == 0) fill(0, 0, 100, 200);
+    else if (defenceSp.life > 0 && defenceSp.life < 29) fill(0, 0, 100, 200);
     else fill(0, 0, 0, 200);
 
     rect(width / 2, height * 4 / 5, windowWidth * 0.5, windowHeight * 0.3, 20, 20, 20, 20);
@@ -295,7 +313,7 @@ function draw() {
         let bool1 = sp.overlap(atSp, () => { adh = "at"; at = atH; });
         let bool2 = sp.overlap(dfSp, () => { adh = "df"; df = dfH; });
         let bool3 = sp.overlap(hlSp, () => { adh = "hl"; hl = hlH; });
-        press(bool1||bool2||bool3);
+        press(bool1 || bool2 || bool3);
 
         //描画とスプライト削除
         drawSprite(atSp); drawSprite(dfSp); drawSprite(hlSp);
@@ -321,9 +339,9 @@ function draw() {
     if (cmd == 7) damyWrapp(cmd);
     if (cmd == 8) damyWrapp(cmd);
 
-    //<ruby><rb>敵</rb><rp>（</rp><rt>てき</rt><rp>）</rp></ruby>の攻撃
+    //攻撃、防御、回復
     if (atackSp != null && anata.damage != 0) drawSprite(atackSp);
-    if (defenceSp != null && anata.damage == 0) drawSprite(defenceSp);
+    if (defenceSp != null) drawSprite(defenceSp);
     if (healSp != null) drawSprite(healSp);
 
     //ダメージバー
@@ -345,13 +363,13 @@ function draw() {
 }
 
 function iconPosition(sp) {
-    sp.position.x = width / 10.5;
+    sp.position.x = width / 11;
     sp.position.y = height * 7 / 11;
 
     //スケール変換
     if (width / 15 > 500) sp.scale = scaleAll;
-    else sp.scale = scaleAll * width / 750 * 0.25;
-    drawSprite(sp);
+    else sp.scale = width / 750 * 0.4;
+    if ((sp.height / 2 + sp.position.x) < canvas.height) drawSprite(sp);
 }
 
 function battleMenu(cmdSp, img, posY) {
@@ -384,7 +402,7 @@ function damyWrapp(cmd) {
     clickDamy.shapeColor = color(0, 0, 0, 0);
     let bool = sp.overlap(clickDamy,);
     press(bool);
-    
+
     drawSprite(clickDamy);
 
     //セリフ
@@ -397,16 +415,19 @@ function damyWrapp(cmd) {
         text('あなたの　まもる！\nたてを　かまえた！　▼', width / 2, height * 7 / 9);
     }
     else if (cmd == 3) {
-        if (anata.damageTotal == 0) {
+        if (anata.damage == 0) {
             text("あなたの　かいふく！\nHPは　まんたんだった！　▼", width / 2, height * 7 / 9);
         }
-        else text('あなたの　かいふく！\nHPが　' + anata.hp / 2 + '　かいふくした！　▼', width / 2, height * 7 / 9);
+        else text('あなたの　かいふく！\nHPが　' + anata.damage + '　かいふくした！　▼', width / 2, height * 7 / 9);
     }
     else if (cmd == 4) {
-        if (mode == "solo") {
-            text('ダマスの　こうげき！\nあなたに　' + anata.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
+        if (turn == 3) text('まずい！\nダマスが　おこった！！　▼', width / 2, height * 7 / 9);
+        else {
+            if (mode == "solo") {
+                text('ダマスの　こうげき！\nあなたに　' + anata.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
+            }
+            else text('ダマスの　こうげき！\nあなたに　' + anata.damage + '　のダメージ\nショウに　' + sho.damage + '　のダメージ　▼', width / 2, height * 6 / 8);
         }
-        else text('ダマスの　こうげき！\nあなたに　' + anata.damage + '　のダメージ\nショウに　' + sho.damage + '　のダメージ　▼', width / 2, height * 6 / 8);
     }
     else if (cmd == 5) {
         text('ショウの　こうげき！\nダマスに　' + damas.damage + '　のダメージ　▼', width / 2, height * 7 / 9);
@@ -423,25 +444,30 @@ function damyWrapp(cmd) {
         endWindowSp.scale = scaleAll * width / 1500 * 1.2;
         drawSprite(endWindowSp);
         labelSp1.position.x = width / 2;
-        labelSp1.position.y = height * 3.8 / 9;
+        if (mode == "solo") labelSp1.position.y = height * (7.5 - (width / 1000)) / 15;
+        else labelSp1.position.y = height * 7.5 / 15;
         labelSp1.shapeColor = color(100, 0, 0, 0);
         labelSp2.position.x = width / 2;
-        labelSp2.position.y = height * 5.2 / 9;
+        labelSp2.position.y = height * (7.5 + (width / 1000)) / 15;
         labelSp2.shapeColor = color(100, 0, 0, 0);
         labelSp1.scale = scaleAll * width / 750 * 0.30;
         labelSp2.scale = scaleAll * width / 750 * 0.30;
-        
 
-        drawSprite(labelSp1);
-        drawSprite(labelSp2);
         let bool1 = sp.overlap(labelSp1, () => adh = "re");
         let bool2 = sp.overlap(labelSp2, () => adh = "st1");
-        press(bool1||bool2);
+
+        drawSprite(labelSp1);
+        if (mode == "solo") {
+            drawSprite(labelSp2);
+            press(bool1 || bool2);
+        }
+        else press(bool1);
+
     }
     clickDamy.remove();
 }
 
-function press(bool){
+function press(bool) {
     if (bool) {
         pressFlag = true;
         cursor(HAND);
