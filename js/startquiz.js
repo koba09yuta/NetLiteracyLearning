@@ -2,7 +2,6 @@
 const loading = () => {
     
     $('#loading').delay(800).fadeOut(1000, () => {
-　  $('body').css('backgroundImage', "url(../../img/background/Board.png)");
     $('#huki-wrapper').show();
     $('#title-wrapper').show();
     $('#darkness-wrapper').hide(200);
@@ -30,7 +29,7 @@ const makeSound = (sound) => {
 $('#start-button').on("click", () => {
     $('#sound-effect').get(0).volume = 0.4;
     $('#sound-effect').get(0).play();
-    $('#darkness-wrapper').show().animate({'opacity': 1}, 1000, 'swing', () => {
+    $('#darkness-wrapper').show().animate({'opacity': 1}, 500, 'swing', () => {
         window.location.href = '../html/quiz.html';
     });
 });

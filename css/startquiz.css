@@ -5,6 +5,7 @@ body {
     font-family:"たぬき油性マジック";
     background-size: cover;
     background-attachment: fixed;
+    background-image: url(../img/background/Board.png);
     height: 100vh;
     overflow: hidden;
     user-select: none;
@@ -90,7 +91,7 @@ body {
     font-size: 14vh;
     position: absolute;
     top: 25vh;
-    left: 5vw;
+    left: 0vw;
 }
 
 /* 吹き出しラッパー */
@@ -98,7 +99,7 @@ body {
     width: 100vw;
     position: absolute;
     top: 50vh;
-    left: 4vw;
+    left: 0vw;
     font-size: 5vh;
     color: #FFF;
 }
@@ -108,7 +109,7 @@ body {
     width: 100vw;
     position: absolute;
     top: 65vh;
-    left: -4vw;
+    left: -8vw;
 }
 
 #start-button {
