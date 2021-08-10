@@ -61,7 +61,7 @@ body:hover{
     position: absolute;
     box-sizing: border-box;
     top: 13vh;
-    left: 27vw;
+    left: 32vw;
     color: red;
     display: none;
     font-size: 45vh;
@@ -101,16 +101,16 @@ body:hover{
     position: absolute;
     top: 72.5vh;
     left: 65vw;
-    color: #000;
-    background-color: #fff100;
-    border-bottom: 0.3vh solid #ccc100;
+    color: rgb(255, 255, 255);
+    background-color: #ffac2f;
+    border-bottom: 0.3vh solid #ff9100;
     display: none;
 }
 .back_button:hover {
     margin-top: 3px;
-    color: #000;
-    background: #fff20a;
-    border-bottom: 0.5vh solid #ccc100;
+    color: rgb(255, 0, 0);
+    background: #e98c00;
+    border-bottom: 0.5vh solid #8f5100;
   }
  /* メニューに戻るボタンを表示するための要素 */
  .last_button{
@@ -122,15 +122,15 @@ body:hover{
     top: 72.5vh;
     left: 65vw;
     color: #000;
-    background-color: #fff100;
-    border-bottom: 0.3vh solid #ccc100;
+    background-color: #ffac2f;
+    border-bottom: 0.3vh solid #ff9100;
     display: none;
 }
 .last_button:hover {
     margin-top: 3px;
     color: #000;
-    background: #fff20a;
-    border-bottom: 0.5vh solid #ccc100;
+    background: #e98c00;
+    border-bottom: 0.5vh solid #8f5100;
   }
 
 /* .trueまたは.falseのクラスが付与されたら表示するものとみなす */
