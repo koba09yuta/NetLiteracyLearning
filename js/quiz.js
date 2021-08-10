@@ -41,7 +41,7 @@ $(function(){
         }
         ,{
             question : 'ゲームで遊んでいたらウイルスに感染してしまった！そんな時はどうしたらいい？',
-            answer : ['親に相談する', 'ダウンロードページに書いてあった電話番号に電話する', '無視してページを閉じる']
+            answer : ['親に<ruby><rb>相談</rb><rp>（</rp><rt>そうだん</rt><rp>）</rp></ruby>する', 'ダウンロードページに書いてあった電話番号に電話する', '<ruby><rb>無視</rb><rp>（</rp><rt>むし</rt><rp>）</rp></ruby>してページを閉じる']
         }
         
     );
@@ -166,9 +166,14 @@ $(function(){
         if(quiz_success_cnt === 3){
             text += '<br><p class="star">★★★</p>';
         }
+
+        text += '<p id="conclude1">☑ 怪しい<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>はクリックしない</p>';
+        text += '<p id="conclude2">☑ <ruby><rb>個人情報</rb><rp>（</rp><rt>こじんじょうほう</rt><rp>）</rp></ruby>は公開しない</p>';
+        text += '<p id="conclude3">☑ ネットトラブルは親に<ruby><rb>相談</rb><rp>（</rp><rt>そうだん</rt><rp>）</rp></ruby>する</p>';
         text += '<br><a href="../html/menu.html" id="menu">メニューに戻る</a>';
+
+
         quizArea.find('.quiz_result').html(text);
-        
         quizArea.find('#last_image').slideDown(600);
         quizArea.find('.last_button').slideDown(600);
     }
@@ -183,6 +188,28 @@ $(function(){
             arr[j] = tmp;
         }
         return arr;
+    }
+
+    //画像を配列に格納する
+    var img = new Array();
+
+    img[0] = new Image();
+    img[0].src = "../img/quiz/quiz1.svg";
+    img[1] = new Image();
+    img[1].src = "../img/quiz/quiz1.svg";
+    img[2] = new Image();
+    img[2].src = "../img/quiz/quiz2.svg";
+
+    //画像番号用のグローバル変数
+    var cnt = 0;
+    //画像切り替え関数
+    function changeIMG() {
+
+        //画像番号を進める
+        if (cnt == 2) { cnt = 0; }
+        else { cnt++; }
+        //画像を切り替える
+        document.getElementById("comment_image").src = img[cnt].src;
     }
 });
 

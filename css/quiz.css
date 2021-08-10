@@ -174,18 +174,43 @@ body:hover{
 }
 .star{
     width: 100vw;
-    top: 23vh;
+    top: 24vh;
     left: -10vw;
     position: absolute;
     font-size: 20vh;
     color: rgb(193, 219, 44);
     font-family: "";
 }
+#conclude1{
+    font-size: 3.5vh;
+    width: 100vw;
+    top: 60vh;
+    left: -10vw;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.911);
+    
+}
+#conclude2{
+    font-size: 3.5vh;
+    width: 100vw;
+    top: 66vh;
+    left: -13.4vw;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.911);
+}
+#conclude3{
+    font-size: 3.5vh;
+    width: 100vw;
+    top: 72vh;
+    left: -10vw;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.911);
+}
 #menu{
     padding: 1vh;
-    width: 20vw;
-    top: 65vh;
-    left: 30vw;
+    width: 13vw;
+    top: 70vh;
+    left: 65vw;
     font-size: 3vh;
     position: absolute;
     text-decoration: none;
