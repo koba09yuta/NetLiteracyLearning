@@ -35,7 +35,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "だれかほかの人に手伝ってもらおう！",
+        "text": "だれかほかの人に<ruby><rb>手伝</rb><rp>（</rp><rt>てつだ</rt><rp>）</rp></ruby>ってもらおう！",
         "nyateracy": ""
     },
     {
@@ -116,18 +116,6 @@ const story1_2Data = [
         "mostRight":  objectData.character.anata.pose1,
         "nyateracy": "",
         "img": ""
-    },
-    {
-        "mode": "darkness",
-    },
-    {
-        "mode": "explanation",
-        "displayId": 14,
-        "bgm": "stop",
-        "bgimg": "",
-        "title":  "？？？",
-        "text": "・・・。",
-        "nyateracy": objectData.character.nyateracy.pose5
     },
     {
         "mode": "darkness",
