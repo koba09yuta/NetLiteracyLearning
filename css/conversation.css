@@ -230,14 +230,14 @@ button:focus {
 }
 
 .pointer:hover .right-triangle {
-    border-left: 12vh solid purple;
-    transition: border-left 0.3s;
+    border-left: 12vh solid rgba(32, 96, 192, 0.95);
+    transition: border-left 0.25s;
 }
 
 .right-triangle {
     border-top: 8vh solid transparent;
     border-bottom: 8vh solid transparent;
-    border-left: 12vh solid blue;
+    border-left: 12vh solid rgba(0, 10, 131, 0.95);
 }
 
 /* PCラッパー */
