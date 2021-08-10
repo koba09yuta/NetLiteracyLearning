@@ -182,6 +182,7 @@ body:hover{
     font-family: "";
 }
 #conclude1{
+    text-align: center;
     font-size: 3.5vh;
     width: 100vw;
     top: 60vh;
@@ -191,17 +192,19 @@ body:hover{
     
 }
 #conclude2{
+    text-align: center;
     font-size: 3.5vh;
     width: 100vw;
-    top: 66vh;
-    left: -13.4vw;
+    top: 67vh;
+    left: -13.2vw;
     position: absolute;
     color: rgba(255, 255, 255, 0.911);
 }
 #conclude3{
+    text-align: center;
     font-size: 3.5vh;
     width: 100vw;
-    top: 72vh;
+    top: 74vh;
     left: -10vw;
     position: absolute;
     color: rgba(255, 255, 255, 0.911);
