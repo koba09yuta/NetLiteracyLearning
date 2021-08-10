@@ -1,6 +1,20 @@
 const music = document.getElementById('bgm');
 music.volume = 0.09;
-$('body').css('backgroundImage', "url(../img/background/Board.png)");
+
+/** ローディングを見せる関数 */
+const loading = () => {
+    
+     // 明転
+        $('#darkness-wrapper').animate({'opacity': 0}, 500, 'swing', () => {
+        $('#darkness-wrapper').hide();
+        
+    });
+    
+}
+
+/** ページを読み込む */
+$(window).on('load', loading());
+
 
 $(function(){
     let quizArea = $('.quiz_area'); //クイズを管理するDOMを指定
@@ -48,8 +62,8 @@ $(function(){
             document.querySelector("#sound-effect").load();
             $('#sound-effect').get(0).play();
             quizArea.find('.quiz_set').delay(1500).hide(1);
-            quizArea.find('#comment_image').delay(1500).slideDown(400);
-            quizArea.find('.back_button').delay(1500).slideDown(400);
+            quizArea.find('#comment_image').delay(1500).slideDown(600);
+            quizArea.find('.back_button').delay(1500).slideDown(600);
             $("#nyateracy-wrapper").delay(1500).slideDown(1);
             //正解数をカウント
             quiz_success_cnt++;
@@ -155,8 +169,8 @@ $(function(){
         text += '<br><a href="../html/menu.html" id="menu">メニューに戻る</a>';
         quizArea.find('.quiz_result').html(text);
         
-        quizArea.find('#last_image').slideDown(400);
-        quizArea.find('.last_button').slideDown(400);
+        quizArea.find('#last_image').slideDown(600);
+        quizArea.find('.last_button').slideDown(600);
     }
 
     

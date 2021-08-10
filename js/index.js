@@ -10,7 +10,7 @@ const showDarkness = () => {
         $('#caution-wrapper').hide();
         $('body').css('backgroundImage', "url(./img/background/pc_room_noon.jpg)");
         // 明転
-        $('#darkness-wrapper').animate({'opacity': 0}, 500, 'swing', () => {
+        $('#darkness-wrapper').animate({'opacity': 0}, 1000, 'swing', () => {
             $('#darkness-wrapper').hide();
             $('#bgm_opening').get(0).volume = 0.2;
             $('#bgm_opening').get(0).play();

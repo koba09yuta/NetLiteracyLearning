@@ -20,18 +20,19 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <title>黒猫ニャテラシーのネットリテラシー</title>
+    <link rel="shortcut icon" href="../img/icon/favicon.ico">
 </head>
 
 
 
 <body>
-    
-    
-   </div>
+
+
+    </div>
     <!-- クイズ -->
     <div class="quiz_area">
         <div class="quiz_set">
-            第<span class="quiz_no">0</span>問
+            第　問<span class="quiz_no">0</span> 　　　　
             <div class="quiz_question"></div>
             <div class="quiz_ans_area">
                 <ul></ul>
@@ -41,10 +42,10 @@
         </div>
 
         <div class="quiz_result"> </div>
-        
+
         <img id="comment_image" src="../img/quiz/quiz1.svg"></img>
-            <div class="back_button">次へ⇒</div>
-       
+        <div class="back_button">次へ⇒</div>
+
         <img id="last_image" src="../img/quiz/quiz3.svg"></img>
         <div class="last_button">おわる</div>
     </div>
@@ -52,36 +53,36 @@
     <script>
         //画像を配列に格納する
         var img = new Array();
-        
+
         img[0] = new Image();
         img[0].src = "../img/quiz/quiz1.svg";
         img[1] = new Image();
         img[1].src = "../img/quiz/quiz1.svg";
         img[2] = new Image();
-        img[2].src=  "../img/quiz/quiz2.svg";
-        
-        //画像番号用のグローバル変数
-        var cnt=0;
-        //画像切り替え関数
-        function changeIMG(){
+        img[2].src = "../img/quiz/quiz2.svg";
 
-          //画像番号を進める
-          if (cnt == 2)
-          { cnt=0; }
-          else
-          { cnt++; }
-          //画像を切り替える
-          document.getElementById("comment_image").src=img[cnt].src;
+        //画像番号用のグローバル変数
+        var cnt = 0;
+        //画像切り替え関数
+        function changeIMG() {
+
+            //画像番号を進める
+            if (cnt == 2) { cnt = 0; }
+            else { cnt++; }
+            //画像を切り替える
+            document.getElementById("comment_image").src = img[cnt].src;
         }
-        </script>
-    
+    </script>
+
     <!-- クイズここまで -->
 
 
     <!-- ニャテラシーラッパー -->
     <div id="nyateracy-wrapper">
-    <img src="../img/nyateracy/nyateracy_3.svg" style='transform: scale(-1, 1);' id="nyateracy-img">
+        <img src="../img/nyateracy/nyateracy_3.svg" style='transform: scale(-1, 1);' id="nyateracy-img">
     </div>
+    <!-- 暗転ラッパー -->
+    <div id="darkness-wrapper"></div>
     <!-- 音楽 -->
     <audio autoplay loop id="bgm">
         <source src="../music/bgm/thinking2.mp3" type="audio/mp3">
