@@ -31,6 +31,8 @@ const selectImg = (fileName) => {
             objectData.bgimg.dhQuest,
             // objectData.bgimg.dhFriend,
             // objectData.bgimg.dhPortTown,
+            
+            "../img/game/damas.svg"
         ]
     }
     if (fileName === "conversation1_2.html") {

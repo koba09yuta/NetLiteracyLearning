@@ -59,7 +59,16 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title": objectData.character.anata.name,
-        "text": "みんなやってるなら、ボクもやってみよ！強くなりたいし！！！",
+        "text": "みんなやってるなら、ボクもやってみよう！強くなりたいし！！！",
+        "nyateracy": ""
+    },
+    {
+        "mode": "explanation",
+        "displayId": 17,
+        "bgm": "",
+        "bgimg": "",
+        "title": objectData.character.anata.name,
+        "text": "この青くなっている<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックしよう！",
         "nyateracy": ""
     },
     {
@@ -326,7 +335,7 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": objectData.bgimg.roomNoon,
         "title":  objectData.character.nyateracy.name,
-        "text": "こういうネットの掲示板には、学校名などの<ruby><rb>個人情報</rb><rp>（</rp><rt>こじんじょうほう</rt><rp>）</rp></ruby>は書いてはいけないよ！",
+        "text": "こういうネットの掲示板には、学校名などの<ruby><rb>個人情報</rb><rp>（</rp><rt>こじんじょうほう</rt><rp>）</rp></ruby>を書いてはいけないよ！",
         "nyateracy": ""
     },
     {
