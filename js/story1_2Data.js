@@ -89,7 +89,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title":  objectData.character.anata.name,
-        "text": "・・・「小学生です！チームを組んで<ruby><rb>戦</rb><rp>（</rp><rt>たたか</rt><rp>）</rp></ruby>える強い人をぼしゅう！」これでよし！",
+        "text": "・・・「<ruby><rb>多摩</rb><rp>（</rp><rt>たま</rt><rp>）</rp></ruby>小5年です！いっしょにダマスをたおそう！」これでよし！",
         "nyateracy": ""
     },
     {
@@ -251,7 +251,7 @@ const story1_2Data = [
         "bgm": "",
         "bgimg": "",
         "title":  objectData.character.anata.name,
-        "text": "やった、ショウがダマスたおすの<ruby><rb>手伝</rb><rp>（</rp><rt>てつだ</rt><rp>）</rp></ruby>ってくれる！",
+        "text": "やった、ショウがダマスをたおすの<ruby><rb>手伝</rb><rp>（</rp><rt>てつだ</rt><rp>）</rp></ruby>ってくれる！",
         "nyateracy": ""
     },
     {
