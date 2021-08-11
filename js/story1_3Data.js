@@ -298,7 +298,7 @@ const story1_3Data = [
         "bgm": "",
         "bgimg": "",
         "title":  objectData.character.anata.name,
-        "text": "・・・「多摩小5年です！いっしょにダマスをたおそう！」これでよし！",
+        "text": "・・・「<ruby><rb>多摩</rb><rp>（</rp><rt>たま</rt><rp>）</rp></ruby>小5年です！いっしょにダマスをたおそう！」これでよし！",
         "nyateracy": ""
     },
     {
@@ -336,7 +336,7 @@ const story1_3Data = [
         "bgimg": objectData.bgimg.roomNoon,
         "title":  objectData.character.nyateracy.name,
         "text": "こういうネットの掲示板には、学校名などの<ruby><rb>個人情報</rb><rp>（</rp><rt>こじんじょうほう</rt><rp>）</rp></ruby>を書いてはいけないよ！",
-        "nyateracy": ""
+        "nyateracy": objectData.character.nyateracy.pose5
     },
     {
         "mode": "explanation",
@@ -345,7 +345,7 @@ const story1_3Data = [
         "bgimg": "",
         "title":  objectData.character.nyateracy.name,
         "text": "いつだれに悪いことに使われるか分からないからね！",
-        "nyateracy": objectData.character.nyateracy.pose1
+        "nyateracy": objectData.character.nyateracy.pose5
     },
     {
         "mode": "whiteout",
@@ -392,9 +392,9 @@ const story1_3Data = [
         "displayId": 15,
         "bgm": "",
         "bgimg": objectData.bgimg.roomNoon,
-        "title":  objectData.character.anata.name,
+        "title":  objectData.character.nyateracy.name,
         "text": "ショウは実は、大人だったんだ。小学生のふりをしてキミをだましていたんだよ。",
-        "nyateracy": objectData.character.nyateracy.pose1
+        "nyateracy": objectData.character.nyateracy.pose5
     },
     {
         "mode": "explanation",
@@ -403,7 +403,7 @@ const story1_3Data = [
         "bgimg": "",
         "title":  objectData.character.nyateracy.name,
         "text": "ネットでは相手の顔が見えないから、むやみに<ruby><rb>信用</rb><rp>（</rp><rt>しんよう</rt><rp>）</rp></ruby>してはダメだよ！",
-        "nyateracy": objectData.character.nyateracy.pose1
+        "nyateracy": objectData.character.nyateracy.pose5
     },
     {
         "mode": "whiteout",
@@ -452,7 +452,7 @@ const story1_3Data = [
         "bgimg": objectData.bgimg.roomEvening,
         "title": objectData.character.nyateracy.name,
         "text": "ショウはキミをだましてお金を取ろうと、わざとウイルスの入ったソフトを入れさせたんだ。",
-        "nyateracy": objectData.character.nyateracy.pose2
+        "nyateracy": objectData.character.nyateracy.pose5
     },
     {
         "mode": "explanation",
@@ -461,7 +461,7 @@ const story1_3Data = [
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
         "text": "こういうチャットの<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>は危険だから<ruby><rb>絶対</rb><rp>（</rp><rt>ぜったい</rt><rp>）</rp></ruby>にクリックしてはいけないよ！",
-        "nyateracy": ""
+        "nyateracy": objectData.character.nyateracy.pose5
     },
     {
         "mode": "explanation",
@@ -470,7 +470,7 @@ const story1_3Data = [
         "bgimg": "",
         "title": objectData.character.nyateracy.name,
         "text": "<ruby><rb>保護者</rb><rp>（</rp><rt>ほごしゃ</rt><rp>）</rp></ruby>の人とセキュリティアプリが入っているかどうかも確認しておこう！",
-        "nyateracy": ""
+        "nyateracy": objectData.character.nyateracy.pose5
     },
     {
         "mode": "whiteout",

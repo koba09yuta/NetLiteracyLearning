@@ -27,21 +27,21 @@ $(function(){
     let aryQuiz = [];
     aryQuiz.push(
         {
-            question : 'ゲームでチャットをしていたら、ゲームの友達がおすすめの攻略サイトのURLを送ってきた。どうする？',
+            question : 'ゲームでチャットをしていたら、ゲームの<ruby><rb>友達</rb><rp>（</rp><rt>ともだち</rt><rp>）</rp></ruby>がおすすめの強化ツールの<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>を送ってきた。どうする？',
             answer : [
 
-                '危ないかもしれないので、<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックしない。',
-                '友達のおすすめサイトなので、他の友達に<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>を教える。',
-                '友達が言っているので、<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックする。']
+                '<ruby><rb>危</rb><rp>（</rp><rt>あぶ</rt><rp>）</rp></ruby>ないかもしれないので、<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックしない。',
+                '<ruby><rb>友達</rb><rp>（</rp><rt>ともだち</rt><rp>）</rp></ruby>のおすすめサイトなので、他の<ruby><rb>友達</rb><rp>（</rp><rt>ともだち</rt><rp>）</rp></ruby>に<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>を教える。',
+                '<ruby><rb>友達</rb><rp>（</rp><rt>ともだち</rt><rp>）</rp></ruby>が言っているので、<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>をクリックする。']
                 
         }
         ,{
-            question : 'ショウとの初めてのチャット！あなたの発言でキケンなところはどこだろう？',
-            answer : ['ボクも東京！多摩小わかる？5年だよ！', 'はじめまして！よろしくお願いします！', 'さっそくダマスたおしに行こうよ！！']
+            question : 'ショウとの<ruby><rb>初</rb><rp>（</rp><rt>はじ</rt><rp>）</rp></ruby>めてのチャット！あなたの発言で<ruby><rb>危険</rb><rp>（</rp><rt>きけん</rt><rp>）</rp></ruby>なところはどこだろう？',
+            answer : ['ボクも東京！<ruby><rb>多摩</rb><rp>（</rp><rt>たま</rt><rp>）</rp></ruby>小わかる？5年だよ！', 'はじめまして！よろしくお<ruby><rb>願</rb><rp>（</rp><rt>ねが</rt><rp>）</rp></ruby>いします！', 'さっそくダマスをたおしに行こうよ！！']
         }
         ,{
-            question : 'ゲームで遊んでいたらウイルスに感染してしまった！そんな時はどうしたらいい？',
-            answer : ['親に<ruby><rb>相談</rb><rp>（</rp><rt>そうだん</rt><rp>）</rp></ruby>する', 'ダウンロードページに書いてあった電話番号に電話する', '<ruby><rb>無視</rb><rp>（</rp><rt>むし</rt><rp>）</rp></ruby>してページを閉じる']
+            question : 'ゲームで遊んでいたらウイルスに<ruby><rb>感染</rb><rp>（</rp><rt>かんせん</rt><rp>）</rp></ruby>してしまった！そんな時はどうしたらいい？',
+            answer : ['親に相談する', 'ダウンロードページに書いてあった電話番号に電話する', '<ruby><rb>無視</rb><rp>（</rp><rt>むし</rt><rp>）</rp></ruby>してページを<ruby><rb>閉</rb><rp>（</rp><rt>と</rt><rp>）</rp></ruby>じる']
         }
         
     );
@@ -132,7 +132,7 @@ $(function(){
         //何問目かを表示
         quizArea.find('.quiz_no').text((quiz_cnt + 1));
         //問題文を表示
-        quizArea.find('.quiz_question').text(aryQuiz[quiz_cnt]['question']);
+        quizArea.find('.quiz_question').html(aryQuiz[quiz_cnt]['question']);
         //解説を表示
        // quizArea.find('.comment_image').image(aryComment[quiz_cnt]);
         //正解の回答を取得する
@@ -167,13 +167,12 @@ $(function(){
             text += '<br><p class="star">★★★</p>';
         }
 
-        text += '<p id="conclude1">☑ 怪しい<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>はクリックしない</p>';
+        text += '<p id="conclude1">☑ あやしい<ruby><rb>URL</rb><rp>（</rp><rt>ユーアールエル</rt><rp>）</rp></ruby>はクリックしない</p>';
         text += '<p id="conclude2">☑ <ruby><rb>個人情報</rb><rp>（</rp><rt>こじんじょうほう</rt><rp>）</rp></ruby>は公開しない</p>';
-        text += '<p id="conclude3">☑ ネットトラブルは親に<ruby><rb>相談</rb><rp>（</rp><rt>そうだん</rt><rp>）</rp></ruby>する</p>';
+        text += '<p id="conclude3">☑ ネットトラブルは親に相談する</p>';
         text += '<br><a href="../html/menu.html" id="menu">メニューに戻る</a>';
 
-
-        quizArea.find('.quiz_result').html(text);
+        setTimeout(() => quizArea.find('.quiz_result').html(text), 600);
         quizArea.find('#last_image').slideDown(600);
         quizArea.find('.last_button').slideDown(600);
     }

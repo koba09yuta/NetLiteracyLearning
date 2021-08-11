@@ -174,7 +174,7 @@ body:hover{
 }
 .star{
     width: 100vw;
-    top: 24vh;
+    top: 20vh;
     left: -10vw;
     position: absolute;
     font-size: 20vh;
@@ -185,7 +185,7 @@ body:hover{
     text-align: center;
     font-size: 3.5vh;
     width: 100vw;
-    top: 60vh;
+    top: 50vh;
     left: -10vw;
     position: absolute;
     color: rgba(255, 255, 255, 0.911);
@@ -195,7 +195,7 @@ body:hover{
     text-align: center;
     font-size: 3.5vh;
     width: 100vw;
-    top: 67vh;
+    top: 57vh;
     left: -13.2vw;
     position: absolute;
     color: rgba(255, 255, 255, 0.911);
@@ -204,7 +204,7 @@ body:hover{
     text-align: center;
     font-size: 3.5vh;
     width: 100vw;
-    top: 74vh;
+    top: 64vh;
     left: -10vw;
     position: absolute;
     color: rgba(255, 255, 255, 0.911);
