@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-image: url(../img/background/Board.png);
     background-attachment: fixed;
+    background-position: top center;
     height: 100vh;
     overflow: hidden;
     user-select: none;
@@ -149,15 +150,17 @@ body:hover{
     color: rgb(46, 85, 255);
 }
 /* 現在の問題数を表示 */
-.quiz_area .quiz_no{
+.quiz_area .quiz_no_area{
+    font-size: 5vh;
     font-weight: 900;
     color: rgb(255, 255, 255);
     position: absolute;
-    left: 40vw;
+    left: 50%;
+    transform: translateX(-50%);
 }
 /* 問題文 */
 .quiz_area .quiz_question{
-    padding: 3vh 13vh 3vh 0vh;
+    padding: 10vh 13vh 3vh 0vh;
     font-size: 5vh;
     color: rgb(255, 255, 255);
     font-weight: bold; 
@@ -170,7 +173,6 @@ body:hover{
     left: -10vw;
     font-size: 12vh;
     position: absolute;
-    
 }
 .star{
     width: 100vw;
