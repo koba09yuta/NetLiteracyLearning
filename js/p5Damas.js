@@ -241,7 +241,7 @@ function cmdPlay() {
                 sho.damage = sho.receive(damas.atack());
 
                 if (cmd == 2 || tmpCmd == 2) {
-                    anata.damage = int(anata.damage/5);
+                    anata.damage = 0 /*int(anata.damage/5)*/;
                     anata.damageTotal += anata.damage;
                     sho.damageTotal += sho.damage;
                     createDefence();
@@ -421,7 +421,7 @@ function damyWrapp(cmd) {
         else text('あなたの　かいふく！\nHPが　' + anata.damage + '　かいふくした！　▼', width / 2, height * 7 / 9);
     }
     else if (cmd == 4) {
-        if (turn == 3) text('まずい！\nダマスが　おこった！！　▼', width / 2, height * 7 / 9);
+        if (turn == 3) text('まずい！　ダマスが　おこった！！\nこうげきりょくが　あがった！　▼', width / 2, height * 7 / 9);
         else {
             if (mode == "solo") {
                 text('ダマスの　こうげき！\nあなたに　' + anata.damage + '　のダメージ　▼', width / 2, height * 7 / 9);

@@ -1,8 +1,4 @@
 @charset "UTF-8";
-*{
-	/*font-family: 'Times New Roman', Times, serif;*/
-}
-
 html {
 	/*background-image:url("../img/hitori.png");*/
 	background-color: rgb(100, 100, 100);
@@ -14,6 +10,10 @@ html {
 	background-color: rgb(255, 255, 255);
 	width: 100vw;
 	z-index: 10;
+}
+
+#menu  a{
+	font-size: 20px;
 }
 
 #dumy {
